@@ -4,11 +4,12 @@ import React from 'react';
 import AppActions from '../../actions/AppActions';
 import ItemsStore from '../../stores/ItemsStore';
 import Body from '../Body/Body';
-import Footer from '../Footer/Footer';
+import Menu from '../Menu/Menu';
 
 function getAppState() {
   return {
-    items: ItemsStore.getAll()
+    title: 'Discover',
+    items: ItemsStore.getAll(),
   };
 }
 
@@ -32,8 +33,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={styles.app}>
+        <Menu items={this.state.items} title={this.state.title} />
         <Body items={this.state.items} />
-        <Footer />
       </div>
     );
   }

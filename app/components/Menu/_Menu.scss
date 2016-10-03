@@ -1,6 +1,30 @@
+@import "mixins";
+
 .menu {
-  background: #eee;
-  border-radius: 8px;
-  padding: 10px 10px 10px 40px;
-  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 2rem 0;
+  margin: 0;
+  height: 100vh;
+}
+
+.menuWrapper {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  border-right: 1px solid white;
+  width: 5rem;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  transform-origin: 35% -29%;
 }

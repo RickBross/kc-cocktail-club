@@ -1,11 +1,11 @@
 import styles from './_Menu.scss';
 import React from 'react';
 import MenuBar from './MenuBar';
-import MenuList from './MenuList';
+import MenuItem from './MenuItem';
 
 let { Component, PropTypes } = React;
 
-export default class Menu extends Component {
+export default class MenuList extends Component {
 
   static defaultProps = {
     items: []
@@ -17,10 +17,11 @@ export default class Menu extends Component {
 
   render() {
     return (
-        <section className={styles.menu}>
-          <MenuBar title={this.props.title} />
-          {/*<MenuList items={this.props.items} />*/}
-        </section>
+      <nav>
+        {this.props.items.map((item) => {
+          return (<MenuItem item={item} />);
+        }, this)}
+      </nav>
     );
   }
 }

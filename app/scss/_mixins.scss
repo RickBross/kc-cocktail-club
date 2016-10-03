@@ -3,3 +3,11 @@
 @mixin my-padding-mixin($some-number) {
   padding: $some-number;
 }
+@mixin rotate($some-number) {
+  -webkit-transform: rotate($some-number);
+  -moz-transform: rotate($some-number);
+  -ms-transform: rotate($some-number);
+  -o-transform: rotate($some-number);
+  transform: rotate($some-number);
+  margin: 0 auto;
+}
