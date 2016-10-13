@@ -1,4 +1,5 @@
 /* _base.scss */
+$assets_path: "http://localhost:8000";
 
 html, body, body > div {
   margin: 0;
@@ -10,7 +11,7 @@ html, body, body > div {
 }
 
 body {
-  background-image: url('http://localhost:8000/images/hero-bg.png');
+  background-image: url('#{$assets_path}/images/hero-bg.png');
 }
 
 .hidden {
