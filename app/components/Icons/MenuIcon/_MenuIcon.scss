@@ -1,0 +1,21 @@
+.menuIcon {
+    border-top: .2rem solid white;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+
+  &:before {
+      content: '';
+      border-bottom: .2rem solid white;
+      width: 21px;
+      top: 7px;
+      position: absolute;
+  }
+  &:after {
+    content: '';
+    border-bottom: .2rem solid white;
+    width: 14px;
+    top: 14px;
+    position: absolute;
+  }
+}
