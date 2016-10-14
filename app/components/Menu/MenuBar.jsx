@@ -22,9 +22,10 @@ export default class MenuBar extends Component {
     return (
       <div className={styles.menuWrapper}>
         <h1 className={classNames(styles.title, 'left')}>{this.props.title}</h1>
-        <a href="#" className={classNames(styles.menuIconWrapper, rootStyles.center)} onClick={this.props.onclick}>
-          <MenuIcon onclick={this.menuBtnClicked} />
-        </a>
+
+        <span className={classNames(styles.menuIconWrapper, rootStyles.center)}>
+          <MenuIcon onclick={this.menuBtnClicked.bind(this)} />
+        </span>
       </div>
     );
   }

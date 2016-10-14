@@ -6,15 +6,9 @@ let { Component, PropTypes } = React;
 
 export default class MenuItem extends Component {
 
-
-
-  static propTypes = {
-    onclick: PropTypes.func.isRequired
-  };
-
   render() {
     return (
-      <span className={classNames(styles.menuIcon, this.props.classNames)}></span>
+      <span onClick={this.props.onclick} className={classNames(styles.menuIcon, this.props.classNames)}></span>
     );
   }
 }
