@@ -1,21 +1,55 @@
 .menuIcon {
-    border-top: .2rem solid white;
-    width: 21px;
-    height: 21px;
-    display: inline-block;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
 
-  &:before {
-      content: '';
-      border-bottom: .2rem solid white;
-      width: 21px;
-      top: 7px;
-      position: absolute;
-  }
-  &:after {
-    content: '';
-    border-bottom: .2rem solid white;
-    width: 14px;
-    top: 14px;
-    position: absolute;
-  }
+.menuIcon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.menuIcon span:nth-child(1) {
+  top: 0px;
+}
+
+.menuIcon span:nth-child(2), .menuIcon span:nth-child(3) {
+  top: 6px;
+}
+
+.menuIcon span:nth-child(4) {
+  top: 12px;
+  width: 70%;
+}
+
+.menuIconActive span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.menuIconActive span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.menuIconActive span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menuIconActive span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
 }

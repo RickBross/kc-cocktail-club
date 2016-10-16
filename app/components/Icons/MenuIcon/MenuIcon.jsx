@@ -19,16 +19,25 @@ export default class MenuItem extends Component {
   rootClassNames(){
     let classes = [];
 
-    classes = classNames(styles.menuIcon, {
-      active: this.props.active
-    });
+    var activeStyles;
+
+    if (this.props.active) {
+      activeStyles = styles.menuIconActive;
+    }
+
+    classes = classNames(styles.menuIcon, activeStyles);
 
     return classes;
   }
 
   render() {
     return (
-      <span onClick={this.props.onclick} className={this.rootClassNames()}></span>
+      <span onClick={this.props.onclick} className={this.rootClassNames()}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
     );
   }
 }
