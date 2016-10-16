@@ -1,15 +1,12 @@
 @import "mixins";
 
 .menu {
-  position: absolute;
-  left: 0;
-  top: 0;
   padding: 2rem 0;
   margin: 0;
   height: 100vh;
 }
 
-.menuWrapper {
+.container {
   position: relative;
   margin: 0;
   min-height: 100%;

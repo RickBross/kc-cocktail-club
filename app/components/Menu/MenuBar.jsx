@@ -11,20 +11,21 @@ export default class MenuBar extends Component {
 
   menuBtnClicked = (e) => {
     e.preventDefault();
-    this.openMenu();
+    this.toggleMenu();
   }
 
-  openMenu = () => {
-    console.log('menu open');
+  toggleMenu = () => {
+    this.props.active = !this.props.active
   }
 
   render() {
     return (
-      <div className={styles.menuWrapper}>
-        <h1 className={classNames(styles.title, 'left')}>{this.props.title}</h1>
-
+      <div className={classNames(styles.container)}>
+        <div className={classNames(styles.titleWrapper)}>
+          <h1 className={classNames(styles.title)}>{this.props.title}</h1>
+        </div>
         <span className={classNames(styles.menuIconWrapper, rootStyles.center)}>
-          <MenuIcon onclick={this.menuBtnClicked.bind(this)} />
+          <MenuIcon active={this.props.active} classNames={'Rick'} onclick={this.menuBtnClicked.bind(this)} />
         </span>
       </div>
     );
