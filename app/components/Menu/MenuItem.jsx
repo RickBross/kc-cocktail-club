@@ -10,7 +10,6 @@ export default class MenuItem extends Component {
 
   onItemClick = (e) => {
     e.preventDefault();
-    window.alert('You clicked ' + this.props.item.label);
   }
 
   render() {

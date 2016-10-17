@@ -1,6 +1,23 @@
 /* _base.scss */
+$assets_path: "http://localhost:8000";
 
-html, body {
+html, body, body > div {
   margin: 0;
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('#{$assets_path}/images/hero-bg.png');
+}
+
+.hidden {
+  display: none;
+}
+
+.center {
+  margin: 0 auto;
 }

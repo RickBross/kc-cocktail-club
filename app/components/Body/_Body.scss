@@ -2,11 +2,20 @@
 
 .body {
   font-size: inherit;
-  padding: 20px;
+  flex-grow: 1;
+  order: 2;
 }
 
-.header {
-  border-bottom: 1px solid $border-color;
-  margin: 0 0 20px 0;
-  padding-bottom: 20px;
+@media (min-width: 768px) {
+  .body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .HolyGrail-content {
+    flex: 1;
+  }
+  .HolyGrail-nav, .HolyGrail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
 }
