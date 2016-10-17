@@ -1,39 +1,20 @@
-# React seed [![Build Status](https://travis-ci.org/badsyntax/react-seed.svg?branch=master)](https://travis-ci.org/badsyntax/react-seed)
+# KC Cocktail Club SPA
 
-A boilerplate for building React apps with ES6 and webpack.
-
-## What you get
-
-* React 0.13
-* ES6, ES7 & JSX to ES5 via babel
-* webpack with react hot loader, and other useful loaders
-* [Local CSS](https://github.com/webpack/css-loader#local-scope)
-* Karma, mocha, chai & sinon for testing with mocking examples
-* Basic flux architecture with app actions, stores and example web API usage
-* React router ([feature/react-router](https://github.com/badsyntax/react-seed/tree/feature/react-router))
-* Material UI ([feature/material-ui](https://github.com/badsyntax/react-seed/tree/feature/material-ui))
+[![React-seed Build Status](https://travis-ci.org/badsyntax/react-seed.svg?branch=master)](https://travis-ci.org/badsyntax/react-seed)
 
 ## Getting started
 
 ### Installing with git
 
 ```bash
-git clone --depth=1 https://github.com/badsyntax/react-seed.git my-project
+git clone --depth=1 https://github.com/RickBross/kc-cocktail-club kc-cocktail-club
 ```
-
-### Installing with yeoman
-
-1. `npm install -g yo`
-2. `npm install -g generator-react-seed`
-3. Use the generator like so: `yo react-seed`
 
 ## npm scripts
 
 * `npm start` - Build and start the app in dev mode at http://localhost:8000
 * `npm test` - Run the tests
 * `npm run build` - Run a production build
-
-## Examples
 
 ### Writing components:
 
@@ -127,24 +108,6 @@ describe('Menu', () => {
 
 ```
 
-## Sass, CSS & webpack
-
-`import` Sass and CSS files from within your JavaScript component files:
-
-```js
-// Filename: app.jsx
-import 'normalize.css/normalize.css';
-import styles from './scss/app.scss';
-```
-
-* **Note:** If you're importing component Sass files from within your JavaScript component files, then each sass file will be compiled as part of a different compile process, and thus you cannot share global references. See [this issue](https://github.com/jtangelder/sass-loader/issues/105) for more information.
-* Sass include paths can be adjusted in the `webpack/loaders.js` file.
-* All CSS (compiled or otherwise) is run through Autoprefixer and style-loader. Any images/fonts etc referenced in the CSS will be copied to the build dir.
-* CSS files are combined in the order in which they are imported in JavaScript, thus
-you should always import your CSS/Sass before importing any other JavaScript files.
-* If not using local CSS, use an approach like [BEM](http://cssguidelin.es/#bem-like-naming) to avoid specificity
-issues that might exist due to unpredicatable order of CSS rules.
-
 ## HTML files
 
 All required `.html` files are compiled with lodash.template and synced into the `./build` directory:
@@ -161,7 +124,6 @@ import './index.html';
 * Use fat arrows for anonymous functions
 * Don't use `var`. Use `let` and `const`.
 
-
 ## Releasing
 
 1. `npm version patch`
@@ -169,12 +131,6 @@ import './index.html';
 3. `npm login` (Optional)
 4. `npm publish`
 
-## Credits
+## Developers
 
-This project was initially forked from https://github.com/tcoopman/react-es6-browserify
-
-## License
-
-Copyright (c) 2015 Richard Willis
-
-MIT (http://opensource.org/licenses/MIT)
+1. Rick Bross (![@RickBross](https://github.com/RickBross/))
