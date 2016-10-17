@@ -22,6 +22,4 @@ class MenuStore extends BaseStore {
 
 let store = new MenuStore();
 
-console.log(store);
-
 export default store;
