@@ -7,7 +7,7 @@ import {Home, Recipes, Events} from '../../pages';
 let { PropTypes } = React;
 
 const routes = (
-  <Route path="/" component={Home}>
+  <Route path="/">
     <IndexRoute component={Home} />
     <Route path="/events" component={Events} />
     <Route path="/recipes" component={Recipes} />
