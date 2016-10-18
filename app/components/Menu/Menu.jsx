@@ -5,6 +5,7 @@ import MenuStore from '../../stores/MenuStore';
 import styles from './_Menu.scss';
 import React from 'react';
 import MenuBar from './MenuBar';
+import MenuPanel from './MenuPanel';
 import MenuList from './MenuList';
 
 let { Component, PropTypes } = React;
@@ -27,10 +28,22 @@ export default class Menu extends Component {
     MenuStore.setProps({active: !MenuStore.getProp('active')});
   }
 
+  getWrapperClasses() {
+
+    let wrapperActive;
+
+    if (this.props.active) {
+      wrapperActive = styles.active;
+    }
+
+    return classNames(styles.wrapper, wrapperActive);
+  }
+
   render() {
     return (
-        <section onClick={this.onClick.bind(this)} className={classNames(styles.menu, {active: this.props.active})}>
+        <section onClick={this.onClick.bind(this)} className={this.getWrapperClasses()}>
           <MenuBar title={this.props.title} active={this.props.active} />
+          <MenuPanel active={this.props.active} />
           {/*<MenuList items={this.props.items} />*/}
         </section>
     );

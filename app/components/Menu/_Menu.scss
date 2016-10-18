@@ -1,16 +1,29 @@
 @import "mixins";
+$activeBg: #EAEAE8;
+$activeText: #1A2E2E;
 
-.menu {
+.wrapper {
   padding: 2rem 0;
   margin: 0;
   height: 100vh;
+  transition: background .25s ease-in-out;
+  .title {
+    transition: color .25s ease-in-out;
+  }
+}
+
+.wrapper.active {
+  background: $activeBg;
+  .title {
+    color: $activeText;
+  }
 }
 
 .container {
   position: relative;
   margin: 0;
   min-height: 100%;
-  border-right: 1px solid white;
+  border-right: 1px solid $activeBg;
   width: 5rem;
 }
 
@@ -18,7 +31,7 @@
   padding: 0;
   margin: 0;
   font-size: 1rem;
-  color: white;
+  color: $activeBg;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -30,4 +43,8 @@
   display: block;
   width: 21px;
   height: 17px;
+}
+
+.panel {
+  background: $activeBg;
 }
