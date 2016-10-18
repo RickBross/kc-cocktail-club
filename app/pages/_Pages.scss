@@ -32,50 +32,65 @@ $activeSecondaryText: #EAEAE8;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  &::before {
+    content: '';
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient($filter,$filter);
+    transition: 1.2s all ease-out;
+  }
+  &:hover::before {
+    opacity:0;
+  }
 
   &.whiskeyBlock {
+    background-image: url('http://localhost:8000/images/recipes/banner-whiskey.png');
+    background-size: auto 100%;
+    background-position: -5rem 0px;
+    transition: all .2s ease-out;
+    &:hover {
+      //background-image: linear-gradient($hoverFilter,$hoverFilter), url('http://localhost:8000/images/recipes/banner-whiskey.png');
+    }
   }
   &.vodkaBlock {
-    background: linear-gradient(rgba(26, 46, 46, 0.65),rgba(26, 46, 46, 0.65)),url('http://localhost:8000/images/recipes/banner-vodka.png');
+    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-vodka.png');
     background-size: auto 100%;
     background-position: 55% 0;
+    transition: all .2s ease-out;
+    &:hover {
+      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-vodka.png');
+    }
   }
   &.ginBlock {
-    background:
-      /* top, transparent red, faked with gradient */
-      linear-gradient(
-        $filter,
-        $filter
-      ),
-      /* bottom, image */
-      url('http://localhost:8000/images/recipes/banner-gin.png');
-      background-size: auto 100%;
-      background-position: 35% 0;
+    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-gin.png');
+    background-size: auto 100%;
+    background-position: 35% 0;
+    transition: all .2s ease-out;
+    &:hover {
+      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-gin.png');
+    }
   }
   &.rumBlock {
     -webkit-filter: grayscale;
-    background:
-      /* top, transparent red, faked with gradient */
-      linear-gradient(
-        $filter,
-        $filter
-      ),
-      /* bottom, image */
-      url('http://localhost:8000/images/recipes/banner-rum.png');
-      background-size: auto 100%;
-      background-position: 0 0;
+    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-rum.png');
+    background-size: auto 100%;
+    background-position: 0 0;
+    transition: all .2s ease-out;
+    &:hover {
+      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-rum.png');
+    }
   }
   &.tequilaBlock {
-    background:
-      /* top, transparent red, faked with gradient */
-      linear-gradient(
-        $filter,
-        $filter
-      ),
-      /* bottom, image */
-      url('http://localhost:8000/images/recipes/banner-tequila.png');
-      background-size: auto 100%;
-      background-position: 45% 0;
+    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-tequila.png');
+    background-size: auto 100%;
+    background-position: 45% 0;
+    transition: all .2s ease-out;
+    &:hover {
+      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-tequila.png');
+    }
   }
 }
 
@@ -83,6 +98,7 @@ $activeSecondaryText: #EAEAE8;
   text-align: center;
   text-transform: uppercase;
   line-height: 2rem;
+  z-index: 20;
   & > span:first-child {
     color: $activeSecondaryText;
     font-size: 2rem;
