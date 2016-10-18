@@ -1,7 +1,7 @@
 @import "mixins";
 $activePrimaryBg: #EAEAE8;
 $activeSecondaryBg: #1A2E2E;
-$activeText: #1A2E2E;
+$activePrimaryText: #1A2E2E;
 $activeSecondaryText: #EAEAE8;
 
 .body {
@@ -26,7 +26,7 @@ $activeSecondaryText: #EAEAE8;
     background: $activePrimaryBg;
   }
   .title {
-    color: $activeText;
+    color: $activePrimaryText;
   }
   .panel {
     left: 4.95rem;
@@ -56,8 +56,59 @@ $activeSecondaryText: #EAEAE8;
   transform-origin: 35% -29%;
 }
 
-.menuItem {
+nav {
+  list-style: none;
+  padding: 2rem 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+.item {
   color: $activeSecondaryText;
+  padding: 1rem 2rem;
+
+  &:hover {
+    background: $activePrimaryBg;
+    color: $activePrimaryText;
+    position: relative;
+  }
+  &:hover::before {
+    content: '';
+    width: 7px;
+    background: black;
+    height: 1px;
+    position: absolute;
+    display: block;
+    right: 1rem;
+    top: 50%;
+  }
+  &:hover::after {
+    content: '';
+    display: block;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 4px;
+    height: 4px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 1rem;
+    margin-top: -2px;
+    top: 50%;
+  }
+
+  span:first-child {
+    font-size: .45rem;
+    line-height: 1rem;
+    font-style: italic;
+    letter-spacing: .15rem;
+  }
+  span:last-child {
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    font-size: 1.25rem;
+  }
 }
 
 .menuIconWrapper {
