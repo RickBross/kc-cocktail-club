@@ -54,7 +54,7 @@ export default class Menu extends Component {
     return (
         <div className={this.parent} className={this.getWrapperClasses()}>
           <MenuBar title={this.props.title} active={this.props.active} onclick={this.onClick.bind(this)} />
-          <MenuPanel active={this.props.active} />
+          <MenuPanel active={this.props.active} closeMenu={this.onClick.bind(this)} />
           {/*<MenuList items={this.props.items} />*/}
         </div>
     );

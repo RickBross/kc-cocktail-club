@@ -6,6 +6,8 @@ export const ITEMS_GET_SUCCESS = 'ITEMS_GET_SUCCESS';
 export const ITEMS_GET_ERROR = 'ITEMS_GET_ERROR';
 export const ITEMS_UPDATED = 'ITEMS_UPDATED';
 
+export const APP_UPDATED = 'APP_UPDATED';
+
 export const MENU_UPDATED = 'MENU_UPDATED';
 
 export const PAGES = {
@@ -25,6 +27,24 @@ export const PAGES = {
     linkTo: '/book-an-event'
   },
 };
+
+export const RECIPES = [
+  {
+    title: 'whiskey',
+  },
+  {
+    title: 'vodka',
+  },
+  {
+    title: 'gin',
+  },
+  {
+    title: 'rum',
+  },
+  {
+    title: 'tequila',
+  }
+];
 
 export const SOCIAL_ITEMS = [
   { title: "vimeo", href: "http://facebook.com/", img:"/images/vimeo.png"},

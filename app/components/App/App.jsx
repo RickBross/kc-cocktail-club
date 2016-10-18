@@ -7,6 +7,7 @@ import React from 'react';
 import AppActions from '../../actions/AppActions';
 import ItemsStore from '../../stores/ItemsStore';
 import MenuStore from '../../stores/MenuStore';
+import AppStore from '../../stores/AppStore';
 import classNames from 'classnames'
 
 import {
@@ -27,6 +28,7 @@ function getAppState() {
   return {
     items: ItemsStore.getAll(),
     menu: MenuStore.getProps(),
+    app: AppStore.getProps(),
   };
 }
 
@@ -36,12 +38,14 @@ export default class App extends React.Component {
 
   componentDidMount() {
     ItemsStore.addChangeListener(this.onChange);
+    AppStore.addChangeListener(this.onChange);
     MenuStore.addChangeListener(this.onChange);
     AppActions.getItems();
   }
 
   componentWillUnmount() {
     ItemsStore.removeChangeListener(this.onChange);
+    AppStore.removeChangeListener(this.onChange);
     MenuStore.removeChangeListener(this.onChange);
   }
 
@@ -50,8 +54,11 @@ export default class App extends React.Component {
   }
 
   render() {
+
+    console.log();
+
     return (
-      <div className={classNames(styles.app)}>
+      <div className={classNames(styles.app)} style={{ backgroundSize: this.state.app.backgroundSize, backgroundPosition: this.state.app.backgroundPosition, backgroundImage: this.state.app.background }}>
         <div className={styles.body}>
           <Router history={hashHistory}>
             { routes }

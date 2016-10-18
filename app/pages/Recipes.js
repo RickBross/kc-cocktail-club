@@ -3,10 +3,21 @@ import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
 import MenuStore from '../stores/MenuStore';
+import AppStore from '../stores/AppStore';
 
 import styles from './_Pages.scss';
 
+import {
+  RECIPES,
+} from '../constants/AppConstants';
+
 export default class Recipes extends React.Component {
+
+  componentWillMount() {
+    AppStore.setProps({background:'linear-gradient(rgba(26, 46, 46, 0.65),rgba(26, 46, 46, 0.65)),url(http://localhost:8000/images/recipes/banner-whiskey.png)'});
+    AppStore.setProps({backgroundSize:'auto 100%'});
+    AppStore.setProps({backgroundPosition:'0 0'});
+  }
 
   render() {
     return (
@@ -16,7 +27,16 @@ export default class Recipes extends React.Component {
           active={MenuStore.getProp('active')}
         />
         <div className={classNames(styles.body, styles.recipes)}>
-          <h1>Recipes Page</h1>
+          {RECIPES.map((item, i) => {
+            return (
+              <div className={classNames(styles.recipesBlock, styles[item.title+'Block'])}>
+                <div className={classNames(styles.recipesBlockText)}>
+                    <span>{item.title}</span><br />
+                    <span>View Recipes</span>
+                </div>
+              </div>
+            );
+          }, this)}
         </div>
       </div>
     );
