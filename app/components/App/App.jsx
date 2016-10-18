@@ -23,7 +23,6 @@ export default class App extends React.Component {
     ItemsStore.addChangeListener(this.onChange);
     MenuStore.addChangeListener(this.onChange);
     AppActions.getItems();
-    MenuStore.setProps({title:'Discover'});
   }
 
   componentWillUnmount() {
