@@ -1,21 +1,14 @@
 @import "toolkit";
 
-.body {
+.home {
   font-size: inherit;
-  flex-grow: 1;
-  order: 2;
+  padding: 2rem;
+  display: flex;
+  height: 100vh;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
 }
 
-@media (min-width: 768px) {
-  .body {
-    flex-direction: row;
-    flex: 1;
-  }
-  .HolyGrail-content {
-    flex: 1;
-  }
-  .HolyGrail-nav, .HolyGrail-ads {
-    /* 12em is the width of the columns */
-    flex: 0 0 12em;
-  }
+.homeLogo {
+  max-width: 100%;
 }

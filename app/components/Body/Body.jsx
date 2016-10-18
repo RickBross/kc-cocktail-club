@@ -22,7 +22,6 @@ export default class Body extends React.Component {
         <Router history={hashHistory}>
           { routes }
         </Router>
-        <Footer />
       </div>
     );
   }
