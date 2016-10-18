@@ -30,10 +30,12 @@ export default class Recipes extends React.Component {
           {RECIPES.map((item, i) => {
             return (
               <div key={item.title} className={classNames(styles.recipesBlock, styles[item.title+'Block'])}>
-                <div className={classNames(styles.recipesBlockText)}>
-                    <span>{item.title}</span><br />
-                    <span>View Recipes</span>
-                </div>
+                <a href={'#/recipes?type='+item.title+'&a='+Date.now()} className={classNames(styles.fill, styles.link)}>
+                  <div className={classNames(styles.recipesBlockText)}>
+                      <span>{item.title}</span><br />
+                      <span>View Recipes</span>
+                  </div>
+                </a>
               </div>
             );
           }, this)}

@@ -51,11 +51,19 @@ $activeSecondaryText: #EAEAE8;
   }
 }
 
-.recipesBlock {
-  width: 20%;
-  display: flex;
+.fill {
+  width: 100%;
+  height: 100%;
+  display: block;
   align-items: center;
   justify-content: center;
+  display: flex;
+  position: relative;
+}
+
+.recipesBlock {
+  flex-grow: 1;
+  display: flex;
   position: relative;
   &:hover .recipesBlockText > span:last-child {
     margin-right: 1.5rem;
