@@ -6,7 +6,7 @@ import MenuStore from '../stores/MenuStore';
 
 import styles from './_Pages.scss';
 
-export default class Events extends React.Component {
+export default class Tickets extends React.Component {
 
   render() {
     return (
@@ -15,8 +15,8 @@ export default class Events extends React.Component {
           title={MenuStore.getProp('title')}
           active={MenuStore.getProp('active')}
         />
-        <div className={classNames(styles.body, styles.events)}>
-          <h1>Events Page</h1>
+        <div className={classNames(styles.body, styles.recipes)}>
+          <h1>Tickets Page</h1>
         </div>
       </div>
     );

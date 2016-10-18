@@ -11,11 +11,7 @@ html, body, body > div {
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
   -ms-user-select: none;      /* IE 10+ */
-  user-select: none;          /* Likely future */      
-}
-
-body {
-  background-image: url('#{$assets_path}/images/hero-bg.png');
+  user-select: none;          /* Likely future */
 }
 
 .hidden {

@@ -1,3 +1,6 @@
+
+$activeText: #1A2E2E;
+
 .menuIcon {
   width: 21px;
   height: 21px;
@@ -6,6 +9,9 @@
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   cursor: pointer;
+  &.menuIconActive span:nth-child(2), &.menuIconActive span:nth-child(3) {
+    background: $activeText;
+  }
 }
 
 .menuIcon span {
@@ -13,7 +19,7 @@
   position: absolute;
   height: 3px;
   width: 100%;
-  background: white;
+  background: #EAEAE8;
   border-radius: 9px;
   opacity: 1;
   left: 0;

@@ -1,14 +1,97 @@
 @import "toolkit";
+$filter: rgba(26, 46, 46, 0.65);
+$hoverFilter: rgba(26, 46, 46, 0);
 
-.home {
-  font-size: inherit;
-  padding: 2rem;
+$activePrimaryBg: #EAEAE8;
+$activeSecondaryBg: #1A2E2E;
+$activePrimaryText: #1A2E2E;
+$activeSecondaryText: #EAEAE8;
+
+.body {
   display: flex;
   height: 100vh;
+  font-size: inherit;
+}
+.home {
+  padding: 2rem;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
 }
 
 .homeLogo {
   max-width: 100%;
+}
+
+.recipes {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipesBlock {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.whiskeyBlock {
+  }
+  &.vodkaBlock {
+    background: linear-gradient(rgba(26, 46, 46, 0.65),rgba(26, 46, 46, 0.65)),url('http://localhost:8000/images/recipes/banner-vodka.png');
+    background-size: auto 100%;
+    background-position: 55% 0;
+  }
+  &.ginBlock {
+    background:
+      /* top, transparent red, faked with gradient */
+      linear-gradient(
+        $filter,
+        $filter
+      ),
+      /* bottom, image */
+      url('http://localhost:8000/images/recipes/banner-gin.png');
+      background-size: auto 100%;
+      background-position: 35% 0;
+  }
+  &.rumBlock {
+    -webkit-filter: grayscale;
+    background:
+      /* top, transparent red, faked with gradient */
+      linear-gradient(
+        $filter,
+        $filter
+      ),
+      /* bottom, image */
+      url('http://localhost:8000/images/recipes/banner-rum.png');
+      background-size: auto 100%;
+      background-position: 0 0;
+  }
+  &.tequilaBlock {
+    background:
+      /* top, transparent red, faked with gradient */
+      linear-gradient(
+        $filter,
+        $filter
+      ),
+      /* bottom, image */
+      url('http://localhost:8000/images/recipes/banner-tequila.png');
+      background-size: auto 100%;
+      background-position: 45% 0;
+  }
+}
+
+.recipesBlockText {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2rem;
+  & > span:first-child {
+    color: $activeSecondaryText;
+    font-size: 2rem;
+  }
+  & > span:last-child {
+    color: $activeSecondaryText;
+    font-size: .6rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: .25rem;
+  }
 }

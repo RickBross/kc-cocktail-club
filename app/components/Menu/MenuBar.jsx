@@ -20,13 +20,15 @@ export default class MenuBar extends Component {
 
   render() {
     return (
-      <div className={classNames(styles.container)}>
-        <div className={classNames(styles.titleWrapper)}>
-          <h1 className={classNames(styles.title)}>{this.props.title}</h1>
+      <div className={classNames(styles.bar)} onClick={this.props.onclick}>
+        <div className={classNames(styles.wrapper)}>
+          <div className={classNames(styles.titleWrapper)}>
+            <h1 className={classNames(styles.title)}>{this.props.title}</h1>
+          </div>
+          <span className={classNames(styles.menuIconWrapper, rootStyles.center)}>
+            <MenuIcon active={this.props.active} classNames={'Rick'} onclick={this.menuBtnClicked.bind(this)} />
+          </span>
         </div>
-        <span className={classNames(styles.menuIconWrapper, rootStyles.center)}>
-          <MenuIcon active={this.props.active} classNames={'Rick'} onclick={this.menuBtnClicked.bind(this)} />
-        </span>
       </div>
     );
   }

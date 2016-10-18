@@ -1,3 +1,5 @@
 export {default as Home} from './Home.js'
 export {default as Recipes} from './Recipes.js'
 export {default as Events} from './Events.js'
+export {default as Tickets} from './Tickets.js'
+export {default as Booking} from './Booking.js'
