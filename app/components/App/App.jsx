@@ -1,7 +1,7 @@
 import styles from './_App.scss';
 
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import {Home, Recipes, Events} from '../../pages';
+import { Home, Recipes, Events, Tickets, Booking } from '../../pages';
 
 import React from 'react';
 import AppActions from '../../actions/AppActions';
@@ -9,11 +9,17 @@ import ItemsStore from '../../stores/ItemsStore';
 import MenuStore from '../../stores/MenuStore';
 import classNames from 'classnames'
 
+import {
+  PAGES,
+} from '../../constants/AppConstants';
+
 const routes = (
-  <Route path="/">
+  <Route path={PAGES.HOME.linkTo}>
     <IndexRoute component={Home} />
-    <Route path="/events" component={Events} />
-    <Route path="/recipes" component={Recipes} />
+    <Route path={PAGES.EVENTS.linkTo} component={Events} />
+    <Route path={PAGES.RECIPES.linkTo} component={Recipes} />
+    <Route path={PAGES.TICKETS.linkTo} component={Tickets} />
+    <Route path={PAGES.BOOKING.linkTo} component={Booking} />
   </Route>
 )
 
