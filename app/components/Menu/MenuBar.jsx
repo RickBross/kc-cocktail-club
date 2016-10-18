@@ -20,7 +20,7 @@ export default class MenuBar extends Component {
 
   render() {
     return (
-      <div className={classNames(styles.bar)}>
+      <div className={classNames(styles.bar)} onClick={this.props.onclick}>
         <div className={classNames(styles.wrapper)}>
           <div className={classNames(styles.titleWrapper)}>
             <h1 className={classNames(styles.title)}>{this.props.title}</h1>
