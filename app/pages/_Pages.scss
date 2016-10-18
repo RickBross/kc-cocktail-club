@@ -1,10 +1,12 @@
 @import "toolkit";
 
-.home {
-  font-size: inherit;
-  padding: 2rem;
+.body {
   display: flex;
   height: 100vh;
+  font-size: inherit;
+}
+.home {
+  padding: 2rem;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
 }

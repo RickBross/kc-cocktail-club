@@ -5,3 +5,23 @@
   display: flex;
   min-height: 100vh;
 }
+
+.body {
+  font-size: inherit;
+  flex-grow: 1;
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .HolyGrail-content {
+    flex: 1;
+  }
+  .HolyGrail-nav, .HolyGrail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+}

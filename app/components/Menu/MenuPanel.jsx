@@ -5,6 +5,10 @@ import MenuItem from './MenuItem';
 import MenuIcon from '../Icons/MenuIcon/MenuIcon';
 import classNames from 'classnames';
 
+import {
+  MENU_ITEMS
+} from '../../constants/AppConstants';
+
 let { Component, PropTypes } = React;
 
 export default class MenuPanel extends Component {
@@ -21,6 +25,11 @@ export default class MenuPanel extends Component {
   render() {
     return (
       <div className={classNames(styles.panel)}>
+        <nav>
+          {MENU_ITEMS.map((item, i) => {
+            return (<MenuItem key={i} item={item} />);
+          }, this)}
+        </nav>
       </div>
     );
   }

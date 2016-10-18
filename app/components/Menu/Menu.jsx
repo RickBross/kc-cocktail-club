@@ -36,16 +36,27 @@ export default class Menu extends Component {
       wrapperActive = styles.active;
     }
 
+    return classNames(styles.body, wrapperActive);
+  }
+
+  getWrapperClassesTwo() {
+
+    let wrapperActive;
+
+    if (this.props.active) {
+      wrapperActive = styles.active;
+    }
+
     return classNames(styles.wrapper, wrapperActive);
   }
 
   render() {
     return (
-        <section onClick={this.onClick.bind(this)} className={this.getWrapperClasses()}>
+        <div className={this.parent} onClick={this.onClick.bind(this)} className={this.getWrapperClasses()}>
           <MenuBar title={this.props.title} active={this.props.active} />
           <MenuPanel active={this.props.active} />
           {/*<MenuList items={this.props.items} />*/}
-        </section>
+        </div>
     );
   }
 }

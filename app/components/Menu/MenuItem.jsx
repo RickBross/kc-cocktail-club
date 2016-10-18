@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
+
+import styles from './_Menu.scss';
 
 let { Component, PropTypes } = React;
 
@@ -8,17 +11,14 @@ export default class MenuItem extends Component {
     item: PropTypes.object.isRequired
   };
 
-  onItemClick = (e) => {
-    e.preventDefault();
-  }
-
   render() {
     return (
-      <li key={'menu-item-' + this.props.item.id}>
-        <a href="#" onClick={this.onItemClick}>
-          {this.props.item.label}
-        </a>
-      </li>
+      <Link to={this.props.item.linkTo}>
+        <li className={styles.menuItem} key={'menu-item-' + this.props.item.id}>
+          <span>{this.props.item.caption}</span>
+          {this.props.item.title}
+        </li>
+      </Link>
     );
   }
 }

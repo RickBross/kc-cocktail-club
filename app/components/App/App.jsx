@@ -1,12 +1,21 @@
 import styles from './_App.scss';
 
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import {Home, Recipes, Events} from '../../pages';
+
 import React from 'react';
 import AppActions from '../../actions/AppActions';
 import ItemsStore from '../../stores/ItemsStore';
 import MenuStore from '../../stores/MenuStore';
-import Body from '../Body/Body';
-import Menu from '../Menu/Menu';
 import classNames from 'classnames'
+
+const routes = (
+  <Route path="/">
+    <IndexRoute component={Home} />
+    <Route path="/events" component={Events} />
+    <Route path="/recipes" component={Recipes} />
+  </Route>
+)
 
 function getAppState() {
   return {
@@ -37,11 +46,11 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={classNames(styles.app)}>
-        <Menu
-          title={this.state.menu.title}
-          active={this.state.menu.active}
-        />
-        <Body/>
+        <div className={styles.body}>
+          <Router history={hashHistory}>
+            { routes }
+          </Router>
+        </div>
       </div>
     );
   }
