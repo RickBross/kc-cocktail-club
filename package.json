@@ -1,5 +1,6 @@
 {
   "name": "kc-cocktail-club",
+  "title": "KC Cocktail Club Webapp",
   "version": "0.0.16",
   "description": "Seed project for React apps using ES6 & webpack.",
   "repository": "https://github.com/badsyntax/react-seed",

@@ -27,6 +27,25 @@ $activeSecondaryText: #EAEAE8;
   flex-direction: row;
 }
 
+.recipesBlockText {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2rem;
+  z-index: 20;
+  text-shadow: 0 2px 3px black;
+  & > span:first-child {
+    color: $activeSecondaryText;
+    font-size: 2rem;
+  }
+  & > span:last-child {
+    color: $activeSecondaryText;
+    font-size: .6rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: .25rem;
+  }
+}
+
 .recipesBlock {
   width: 20%;
   display: flex;
@@ -91,23 +110,5 @@ $activeSecondaryText: #EAEAE8;
     &:hover {
       background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-tequila.png');
     }
-  }
-}
-
-.recipesBlockText {
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 2rem;
-  z-index: 20;
-  & > span:first-child {
-    color: $activeSecondaryText;
-    font-size: 2rem;
-  }
-  & > span:last-child {
-    color: $activeSecondaryText;
-    font-size: .6rem;
-    font-weight: bold;
-    font-style: italic;
-    letter-spacing: .25rem;
   }
 }
