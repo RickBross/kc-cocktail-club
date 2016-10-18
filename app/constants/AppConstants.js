@@ -8,30 +8,55 @@ export const ITEMS_UPDATED = 'ITEMS_UPDATED';
 
 export const MENU_UPDATED = 'MENU_UPDATED';
 
+export const PAGES = {
+  HOME: {
+    linkTo: '/'
+  },
+  RECIPES: {
+    linkTo: '/recipes'
+  },
+  EVENTS: {
+    linkTo: '/events'
+  },
+  TICKETS: {
+    linkTo: '/purchase-tickets'
+  },
+  BOOKING: {
+    linkTo: '/book-an-event'
+  },
+};
+
+export const SOCIAL_ITEMS = [
+  { title: "vimeo", href: "http://facebook.com/", img:"/images/vimeo.png"},
+  { title: "facebook", href: "http://facebook.com/", img:"/images/facebook.png"},
+  { title: "twitter", href: "http://facebook.com/", img:"/images/twitter.png"},
+  { title: "instagram", href: "http://facebook.com/", img:"/images/instagram.png"},
+];
+
 export const MENU_ITEMS = [
   {
     caption: 'Discover the',
     title: 'Club',
-    linkTo: '/'
+    linkTo: PAGES.HOME.linkTo
   },
   {
     caption: 'View the',
     title: 'Recipes',
-    linkTo: '/recipes'
+    linkTo: PAGES.RECIPES.linkTo
   },
   {
     caption: 'Previous Cocktail Club',
     title: 'Meetings',
-    linkTo: '/events'
+    linkTo: PAGES.EVENTS.linkTo
   },
   {
     caption: 'Purchase',
     title: 'Tickets',
-    linkTo: '/purchase-tickets'
+    linkTo: PAGES.TICKETS.linkTo
   },
   {
     caption: 'Book a private',
     title: 'Event',
-    linkTo: '/book-an-event'
+    linkTo: PAGES.BOOKING.linkTo
   },
 ];

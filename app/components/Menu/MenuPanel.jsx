@@ -6,7 +6,8 @@ import MenuIcon from '../Icons/MenuIcon/MenuIcon';
 import classNames from 'classnames';
 
 import {
-  MENU_ITEMS
+  MENU_ITEMS,
+  SOCIAL_ITEMS,
 } from '../../constants/AppConstants';
 
 let { Component, PropTypes } = React;
@@ -15,7 +16,6 @@ export default class MenuPanel extends Component {
 
   menuBtnClicked = (e) => {
     e.preventDefault();
-    this.toggleMenu();
   }
 
   toggleMenu = () => {
@@ -29,6 +29,18 @@ export default class MenuPanel extends Component {
           {MENU_ITEMS.map((item, i) => {
             return (<MenuItem key={i} item={item} />);
           }, this)}
+          <li className={classNames(styles.item, styles.social)}>
+            <span>Social Media</span>
+            <ul className={classNames(styles.item, styles.socialIcons)}>
+              {SOCIAL_ITEMS.map((item, i) => {
+                return (
+                  <li key={item.title}>
+                    <a href={item.href} target="_blank"><img src={item.img} /></a>
+                  </li>
+                );
+              }, this)}
+            </ul>
+          </li>
         </nav>
       </div>
     );
