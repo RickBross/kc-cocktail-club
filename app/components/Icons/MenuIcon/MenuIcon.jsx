@@ -25,9 +25,14 @@ export default class MenuItem extends Component {
       activeStyles = styles.menuIconActive;
     }
 
-    classes = classNames(styles.menuIcon, activeStyles);
+
+    classes = classNames(styles.menuIcon, styles[this.props.tone+'Tone'], activeStyles, this.tone());
 
     return classes;
+  }
+
+  tone() {
+    return this.props.tone ? styles[this.props.tone+'Tone'] : null
   }
 
   render() {

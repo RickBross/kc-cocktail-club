@@ -1,7 +1,7 @@
 import styles from './_App.scss';
 
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import { Home, Recipes, Events, Tickets, Booking } from '../../pages';
+import { Home, Recipes, Recipe, Events, Tickets, Booking } from '../../pages';
 
 import React from 'react';
 import AppActions from '../../actions/AppActions';
@@ -19,6 +19,7 @@ const routes = (
     <IndexRoute component={Home} />
     <Route path={PAGES.EVENTS.linkTo} component={Events} />
     <Route path={PAGES.RECIPES.linkTo} component={Recipes} />
+    <Route path={PAGES.RECIPES.RECIPE.linkTo} component={Recipe} />
     <Route path={PAGES.TICKETS.linkTo} component={Tickets} />
     <Route path={PAGES.BOOKING.linkTo} component={Booking} />
   </Route>
@@ -34,7 +35,11 @@ function getAppState() {
 
 export default class App extends React.Component {
 
-  state = getAppState()
+  state = getAppState();
+
+  componentWillMount() {
+    AppStore.setProps({tone:'dark'});
+  }
 
   componentDidMount() {
     ItemsStore.addChangeListener(this.onChange);
@@ -54,13 +59,10 @@ export default class App extends React.Component {
   }
 
   render() {
-
-    console.log();
-
     return (
-      <div className={classNames(styles.app)} style={{ backgroundSize: this.state.app.backgroundSize, backgroundPosition: this.state.app.backgroundPosition, backgroundImage: this.state.app.background }}>
+      <div className={classNames(styles.app, styles[AppStore.getProp('tone')+'Tone'])} style={{ backgroundSize: this.state.app.backgroundSize, backgroundPosition: this.state.app.backgroundPosition, backgroundImage: this.state.app.backgroundImage }}>
         <div className={styles.body}>
-          <Router history={hashHistory}>
+          <Router asd={this.state} history={hashHistory}>
             { routes }
           </Router>
         </div>

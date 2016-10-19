@@ -12,6 +12,14 @@
   order: 2;
 }
 
+.lightTone {
+  font-family: inherit;
+}
+
+.darkTone {
+  font-family: inherit;
+}
+
 @media (min-width: 768px) {
   .body {
     flex-direction: row;

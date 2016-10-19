@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 
 import MenuStore from '../../stores/MenuStore';
+import AppStore from '../../stores/AppStore';
 
 import styles from './_Menu.scss';
 import React from 'react';
@@ -11,14 +12,6 @@ import MenuList from './MenuList';
 let { Component, PropTypes } = React;
 
 export default class Menu extends Component {
-
-  static defaultProps = {
-    items: [],
-  };
-
-  static propTypes = {
-    items: PropTypes.array.isRequired,
-  };
 
   onClick(event) {
     this.toggleActive();
@@ -36,7 +29,7 @@ export default class Menu extends Component {
       wrapperActive = styles.active;
     }
 
-    return classNames(styles.body, wrapperActive);
+    return classNames(styles.body, styles[this.props.tone+'Tone'], wrapperActive);
   }
 
   getWrapperClassesTwo() {
@@ -53,8 +46,15 @@ export default class Menu extends Component {
   render() {
     return (
         <div className={this.parent} className={this.getWrapperClasses()}>
-          <MenuBar title={this.props.title} active={this.props.active} onclick={this.onClick.bind(this)} />
-          <MenuPanel active={this.props.active} closeMenu={this.onClick.bind(this)} />
+          <MenuBar
+            tone={this.props.tone}
+            title={this.props.title}
+            active={this.props.active}
+            onclick={this.onClick.bind(this)} />
+          <MenuPanel
+            tone={this.props.tone}
+            active={this.props.active}
+            closeMenu={this.onClick.bind(this)} />
           {/*<MenuList items={this.props.items} />*/}
         </div>
     );
