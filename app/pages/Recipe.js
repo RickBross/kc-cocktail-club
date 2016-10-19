@@ -8,9 +8,22 @@ import AppStore from '../stores/AppStore';
 
 import styles from './_Pages.scss';
 
+import {
+  RECIPES,
+} from '../constants/AppConstants';
 
-export default class Tickets extends React.Component {
+const getWidth = function(node) {
+  return React.findDOMNode(node).offsetWidth;
+}
 
+
+export default class Recipe extends React.Component {
+
+  isActive(item) {
+    if (this.props.params.recipe === item) {
+      return styles.active;
+    }
+  }
 
   componentDidMount() {
 
@@ -24,6 +37,10 @@ export default class Tickets extends React.Component {
     AppStore.setProps({backgroundPosition:'0 0'});
   }
 
+  onClick() {
+    AppStore.setProps({tone:'light'});
+  }
+
   render() {
 
     return (
@@ -33,9 +50,6 @@ export default class Tickets extends React.Component {
           tone={AppStore.getProp('tone')}
           active={MenuStore.getProp('active')}
         />
-        <div className={classNames(styles.body, styles.recipes)}>
-          <h1>Tickets Page</h1>
-        </div>
       </div>
     );
   }

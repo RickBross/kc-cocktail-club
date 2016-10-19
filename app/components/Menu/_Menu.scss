@@ -1,8 +1,4 @@
-@import "mixins";
-$activePrimaryBg: #EAEAE8;
-$activeSecondaryBg: #1A2E2E;
-$activePrimaryText: #1A2E2E;
-$activeSecondaryText: #EAEAE8;
+@import "toolkit";
 
 .body {
   width: 5rem;
@@ -14,23 +10,28 @@ $activeSecondaryText: #EAEAE8;
   margin: 0;
   height: 100%;
   position: relative;
-  border-right: 1px solid $activePrimaryBg;
+  border-right: 1px solid $darkActivePrimaryBg;
   //transition: background .25s ease-in-out;
   .title {
     transition: color .25s ease-in-out;
   }
 }
 
-.body.active {
-  .bar {
-    background: $activePrimaryBg;
-  }
+.body {
   .title {
-    color: $activePrimaryText;
+    color: $darkActivePrimaryBg;
   }
-  .panel {
-    left: 4.95rem;
-    opacity: 1;
+  &.active {
+    .bar {
+      background: $darkActivePrimaryBg;
+    }
+    .title {
+      color: $darkActivePrimaryText;
+    }
+    .panel {
+      left: 4.95rem;
+      opacity: 1;
+    }
   }
 }
 
@@ -47,13 +48,33 @@ $activeSecondaryText: #EAEAE8;
   padding: 0;
   margin: 0;
   font-size: 1rem;
-  color: $activePrimaryBg;
   position: absolute;
   z-index: 120;
   bottom: 0;
   left: 0;
   transform: rotate(-90deg);
   transform-origin: 35% -29%;
+}
+
+.darkTone {
+  .title {
+    color: $darkActivePrimaryBg;
+  }
+  .wrapper {
+    border-right: 1px solid $darkActivePrimaryBg;
+  }
+}
+
+.lightTone {
+  .wrapper {
+    border-right: 1px solid $lightActivePrimaryBg;
+  }
+  .title {
+    color: $lightActivePrimaryBg;
+  }
+  &.active .wrapper {
+    border-right: none;
+  }
 }
 
 nav {
@@ -67,7 +88,7 @@ nav {
 }
 
 .item {
-  color: $activeSecondaryText;
+  color: $darkActiveSecondaryText;
   padding: .5rem 2rem;
   transition: padding-left 20s ease-out;
   width: 100%;
@@ -80,7 +101,7 @@ nav {
   &.social:hover {
     position: absolute;
     padding-left: 2rem;
-    color: $activeSecondaryText;
+    color: $darkActiveSecondaryText;
     background: none;
   }
   &.social:hover::before, &.social:hover::after {
@@ -93,7 +114,7 @@ nav {
     margin: 0;
     &:hover {
       padding-left: 0;
-      color: $activePrimaryText;
+      color: $darkActivePrimaryText;
       background: none;
       &:hover::before, &:hover::after {
         display: none;
@@ -120,8 +141,8 @@ nav {
   }
 
   &:hover {
-    background: $activePrimaryBg;
-    color: $activePrimaryText;
+    background: $darkActivePrimaryBg;
+    color: $darkActivePrimaryText;
     position: relative;
     padding-left: 5rem;
   }
@@ -175,7 +196,7 @@ nav {
 }
 
 .panel {
-  background: $activeSecondaryBg;
+  background: $darkActiveSecondaryBg;
   position: absolute;
   top: 0;
   left: -18rem;

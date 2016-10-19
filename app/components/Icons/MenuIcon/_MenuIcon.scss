@@ -1,3 +1,4 @@
+@import "toolkit";
 
 $activeText: #1A2E2E;
 
@@ -15,16 +16,23 @@ $activeText: #1A2E2E;
 }
 
 .menuIcon span {
+  background: $darkActivePrimaryBg;
   display: block;
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #EAEAE8;
   border-radius: 9px;
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
   transition: .25s ease-in-out;
+}
+
+.menuIcon.lightTone span {
+  background: $lightActivePrimaryBg;
+}
+.menuIcon.darkTone span {
+  background: $darkActivePrimaryBg;
 }
 
 .menuIcon span:nth-child(1) {

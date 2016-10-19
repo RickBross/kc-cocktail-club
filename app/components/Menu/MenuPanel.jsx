@@ -28,7 +28,7 @@ export default class MenuPanel extends Component {
       <div className={classNames(styles.panel)}>
         <nav>
           {MENU_ITEMS.map((item, i) => {
-            return (<MenuItem onclick={this.toggleMenu.bind(this)} key={i} item={item} />);
+            return (<MenuItem onclick={this.toggleMenu.bind(this)} item={item} />);
           }, this)}
           <li className={classNames(styles.item, styles.social)}>
             <span>Social Media</span>

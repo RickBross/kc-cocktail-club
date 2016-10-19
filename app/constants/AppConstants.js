@@ -15,7 +15,10 @@ export const PAGES = {
     linkTo: '/'
   },
   RECIPES: {
-    linkTo: '/recipes'
+    linkTo: '/recipes',
+    RECIPE: {
+      linkTo: '/recipes/:recipe'
+    },
   },
   EVENTS: {
     linkTo: '/events'

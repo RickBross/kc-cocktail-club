@@ -9,7 +9,7 @@ import AppStore from '../stores/AppStore';
 import styles from './_Pages.scss';
 
 
-export default class Tickets extends React.Component {
+export default class Template extends React.Component {
 
 
   componentDidMount() {
@@ -34,7 +34,7 @@ export default class Tickets extends React.Component {
           active={MenuStore.getProp('active')}
         />
         <div className={classNames(styles.body, styles.recipes)}>
-          <h1>Tickets Page</h1>
+          <h1>Template Page</h1>
         </div>
       </div>
     );

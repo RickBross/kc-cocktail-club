@@ -1,6 +1,4 @@
 @import "toolkit";
-$filter: rgba(26, 46, 46, 0.65);
-$hoverFilter: rgba(26, 46, 46, 0);
 
 $activePrimaryBg: #EAEAE8;
 $activeSecondaryBg: #1A2E2E;
@@ -63,7 +61,7 @@ $activeSecondaryText: #EAEAE8;
 
 .recipesBlock {
   flex-grow: 1;
-  display: flex;
+  display: block;
   position: relative;
   &:hover .recipesBlockText > span:last-child {
     margin-right: 1.5rem;
@@ -90,49 +88,47 @@ $activeSecondaryText: #EAEAE8;
   }
 
   &.whiskeyBlock {
-    background-image: url('http://localhost:8000/images/recipes/banner-whiskey.png');
-    background-size: auto 100%;
+    @include block('whiskey');
     background-position: -5rem 0px;
-    transition: all .2s ease-out;
-    &:hover {
-      //background-image: linear-gradient($hoverFilter,$hoverFilter), url('http://localhost:8000/images/recipes/banner-whiskey.png');
-    }
   }
   &.vodkaBlock {
-    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-vodka.png');
-    background-size: auto 100%;
+    @include block('vodka');
     background-position: 55% 0;
-    transition: all .2s ease-out;
-    &:hover {
-      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-vodka.png');
-    }
   }
   &.ginBlock {
-    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-gin.png');
-    background-size: auto 100%;
+    @include block('gin');
     background-position: 35% 0;
-    transition: all .2s ease-out;
-    &:hover {
-      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-gin.png');
-    }
   }
   &.rumBlock {
-    -webkit-filter: grayscale;
-    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-rum.png');
-    background-size: auto 100%;
+    @include block('rum');
     background-position: 0 0;
-    transition: all .2s ease-out;
-    &:hover {
-      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-rum.png');
-    }
   }
   &.tequilaBlock {
-    background-image: linear-gradient($filter,$filter),url('http://localhost:8000/images/recipes/banner-tequila.png');
-    background-size: auto 100%;
+    @include block('tequila');
     background-position: 45% 0;
-    transition: all .2s ease-out;
-    &:hover {
-      background-image: linear-gradient($hoverFilter,$hoverFilter),url('http://localhost:8000/images/recipes/banner-tequila.png');
-    }
   }
+}
+.whiskeyFlyer {
+  @include flyer('whiskey');
+  background-position: -5rem 0;
+}
+
+.vodkaFlyer {
+  @include flyer('vodka');
+  background-position: -5rem 0;
+}
+
+.ginFlyer {
+  @include flyer('gin');
+  background-position: -5rem 0;
+}
+
+.rumFlyer {
+  @include flyer('rum');
+  background-position: -5rem 0;
+}
+
+.tequilaFlyer {
+  @include flyer('tequila');
+  background-position: -5rem 0;
 }
