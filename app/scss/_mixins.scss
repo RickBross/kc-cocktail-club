@@ -1,4 +1,4 @@
-/* _mixins.scss */
+@import '_variables.scss';
 
 @mixin my-padding-mixin($some-number) {
   padding: $some-number;
@@ -12,29 +12,25 @@
   margin: 0 auto;
 }
 
-$filter: rgba(26, 46, 46, 0.65);
-$hoverFilter: rgba(26, 46, 46, 0);
-
-@mixin block($alcohol) {
-  $url: 'http://localhost:8000/images/recipes/banner-'+$alcohol+'.png';
-  background-image: linear-gradient($filter,$filter),url($url);
-  background-size: auto 100%;
-  transition: all .2s ease-out;
-  &:hover {
-    background-image: linear-gradient($hoverFilter,$hoverFilter),url($url);
+@mixin shade($url, $colorStart, $colorEnd) {
+  background-image: url($url);
+  &::before {
+    content: '';
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient($colorStart,$colorEnd);
+    transition: 1.2s all ease-out;
   }
 }
 
-@mixin flyer($alcohol) {
-  background-image: url('http://localhost:8000/images/recipes/banner-'+$alcohol+'.png');
-  background-size: cover;
-  transition: all .2s ease-out;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  display: none;
-  z-index: 40;
-  &.active {
-    display: block;
+@mixin shadeHover() {
+  &:hover::before {
+    opacity:0;
   }
+}
+@mixin block() {
+  background-size: auto 100%;
+  transition: all .2s ease-out;
 }

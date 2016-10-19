@@ -6,7 +6,7 @@ import Menu from '../components/Menu/Menu';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
-import styles from './_Pages.scss';
+import styles from './_Recipes.scss';
 
 import {
   RECIPES,

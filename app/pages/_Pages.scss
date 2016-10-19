@@ -1,0 +1,26 @@
+@import "toolkit";
+
+.body {
+  display: flex;
+  height: 100vh;
+  font-size: inherit;
+}
+.home {
+  padding: 2rem;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.homeLogo {
+  max-width: 100%;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
