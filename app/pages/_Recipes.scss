@@ -1,4 +1,5 @@
 @import "toolkit";
+@import "./_Pages";
 
 $activePrimaryBg: #EAEAE8;
 $activeSecondaryBg: #1A2E2E;
@@ -74,61 +75,45 @@ $activeSecondaryText: #EAEAE8;
       font-weight: bold;
     }
   }
-  &::before {
-    content: '';
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-image: linear-gradient($filter,$filter);
-    transition: 1.2s all ease-out;
-  }
-  &:hover::before {
-    opacity:0;
-  }
 
   &.whiskeyBlock {
-    @include block('whiskey');
+    $alcohol: 'whiskey';
+    $url: 'http://localhost:8000/images/recipes/banner-'+$alcohol+'.png';
+    @include shade($url, $filter , $filter);
+    @include shadeHover();
+    @include block();
     background-position: -5rem 0px;
   }
   &.vodkaBlock {
-    @include block('vodka');
+    $alcohol: 'vodka';
+    $url: 'http://localhost:8000/images/recipes/banner-'+$alcohol+'.png';
+    @include shade($url, $filter , $filter);
+    @include shadeHover();
+    @include block();
     background-position: 55% 0;
   }
   &.ginBlock {
-    @include block('gin');
+    $alcohol: 'gin';
+    $url: 'http://localhost:8000/images/recipes/banner-'+$alcohol+'.png';
+    @include shade($url, $filter , $filter);
+    @include shadeHover();
+    @include block();
     background-position: 35% 0;
   }
   &.rumBlock {
-    @include block('rum');
+    $alcohol: 'rum';
+    $url: 'http://localhost:8000/images/recipes/banner-'+$alcohol+'.png';
+    @include shade($url, $filter , $filter);
+    @include shadeHover();
+    @include block();
     background-position: 0 0;
   }
   &.tequilaBlock {
-    @include block('tequila');
+    $alcohol: 'tequila';
+    $url: 'http://localhost:8000/images/recipes/banner-'+$alcohol+'.png';
+    @include shade($url, $filter , $filter);
+    @include shadeHover();
+    @include block();
     background-position: 45% 0;
   }
-}
-.whiskeyFlyer {
-  @include flyer('whiskey');
-  background-position: -5rem 0;
-}
-
-.vodkaFlyer {
-  @include flyer('vodka');
-  background-position: -5rem 0;
-}
-
-.ginFlyer {
-  @include flyer('gin');
-  background-position: -5rem 0;
-}
-
-.rumFlyer {
-  @include flyer('rum');
-  background-position: -5rem 0;
-}
-
-.tequilaFlyer {
-  @include flyer('tequila');
-  background-position: -5rem 0;
 }

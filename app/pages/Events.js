@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
+import Slideshow from '../UI/Slideshow/Slideshow';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
@@ -31,12 +32,14 @@ export default class Events extends React.Component {
         <Menu
           title={MenuStore.getProp('title')}
           tone={AppStore.getProp('tone')}
-          active={MenuStore.getProp('active')}
-        />
-        <div className={classNames(styles.body, styles.recipes)}>
-          <h1>Events Page</h1>
+          active={MenuStore.getProp('active')} />
+        <div className={classNames(styles.body, styles.events)}>
+            <div className={classNames(styles.wrapper, styles.makeBackground)}>
+              <Slideshow
+                tone={AppStore.getProp('tone')} />
+            </div>
+          </div>
         </div>
-      </div>
-    );
+      );
   }
 }
