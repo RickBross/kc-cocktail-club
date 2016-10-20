@@ -101,7 +101,7 @@ class Slider extends React.Component {
               &larr;
             </span>
               {this.state.activeIndex+1} / {this.props.slides.length}
-            <span onClick={ (event)=> this.next() }  className={styles.arrow}>
+            <span onClick={ (event)=> this.next() } className={styles.arrow}>
               &rarr;
             </span>
           </p>
