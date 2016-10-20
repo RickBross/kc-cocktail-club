@@ -27,6 +27,20 @@ a {
 }
 
 @font-face {
+  font-family: "Moonshiner Sharp";
+  src: url("http://localhost:8000/fonts/Moonshiner-Sharp.otf") format("opentype");
+  font-weight: 100;
+  font-weight: normal;
+}
+
+@font-face {
   font-family: "Moonshiner Round";
   src: url("http://localhost:8000/fonts/Moonshiner-Round.otf") format("opentype");
+  font-weight: 100;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Galano Classic Bold";
+  src: url("http://localhost:8000/fonts/Galano-Classic-Bold.otf") format("opentype");
+  font-weight: 100;
 }

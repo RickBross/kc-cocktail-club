@@ -7,7 +7,7 @@ import Slideshow from '../UI/Slideshow/Slideshow';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
-import styles from './_Pages.scss';
+import styles from './_Events.scss';
 
 
 export default class Events extends React.Component {
@@ -16,7 +16,7 @@ export default class Events extends React.Component {
   componentDidMount() {
 
     const bg = 'white'
-    AppStore.setProps({tone:'light'});
+    AppStore.setProps({tone:'dark'});
     MenuStore.setProps({title:'Discover'});
 
     AppStore.setProps({background:bg});
