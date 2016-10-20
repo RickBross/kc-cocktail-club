@@ -90,7 +90,7 @@ nav {
 .item {
   color: $darkInactiveSecondaryText;
   padding: .5rem 2rem;
-  transition: padding-left 20s ease-out;
+  transition: padding-left 1s ease-out;
   width: 100%;
 
   &.social {
@@ -145,6 +145,7 @@ nav {
     color: $darkActivePrimaryText;
     position: relative;
     padding-left: 5rem;
+    transition: padding-left 3s ease-out;
   }
 
   &:hover::before {
