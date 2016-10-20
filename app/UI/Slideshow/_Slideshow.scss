@@ -1,22 +1,129 @@
 @import "toolkit";
 
+.centerAbs {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
 .slideshow {
   width: 100%;
   height: 100%;
   position: relative;
-  &, li {
+  &, ul, li .slide {
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
   }
-  li {
+  .slide {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  &.darkTone {
+    color: $darkInactivePrimaryText;
+  }
+  .controls {
     position: absolute;
-    display: none;
-    background-size: cover;
+    z-index: 40;
+    width:100%;
+    bottom:15%;
+    text-align: center;
+    p span.arrow {
+      margin: 0 2.5rem;
+    }
+  }
+  .dragdealer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  p {
+    font-family: "Galano Classic Bold";
+    margin: 0;
+  }
+  .slide {
+    position: absolute;
+    display: inline-block;
+    .fg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 20;
+      text-align: center;
+      .layer:first-child {
+        margin-top: -10%;
+      }
+      h1 {
+        font-size: 5rem;
+        font-family: "Moonshiner Sharp";
+        font-weight: 100;
+        font-weight: 100;
+        line-height: 5rem;
+        margin: 0;
+        font-size: 6.5rem;
+        line-height: 9.5rem;
+        letter-spacing: .75rem;
+      }
+    }
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      z-index: 10;
+    }
     &.active {
       display: block;
+    }
+  }
+  .slideshowSlides {
+    li {
+      display: none;
+    }
+    li.active {
+      display: block;
+    }
+  }
+  .slideshow-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    list-style: none;
+    div {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      cursor: pointer;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background: #fff;
+      border-radius: 10px;
+      text-indent: -9990px;
+      opacity: .5;
+      transition: .3s;
+    }
+    div.active a {
+      opacity: 1;
+    }
+  }
+
+  .slide1, .slide2, .slide3, .slide4 {
+    .bg {
+      $url: 'http://localhost:8000/images/events/hero/1.jpg';
+      @include shade($url, $filterHeavy , $filterHeavy);
     }
   }
 }
