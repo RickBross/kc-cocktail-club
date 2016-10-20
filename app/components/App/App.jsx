@@ -1,7 +1,7 @@
 import styles from './_App.scss';
 
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import { Home, Recipes, Recipe, Events, Tickets, Booking } from '../../pages';
+import { Router, Route, Redirect, hashHistory, IndexRoute } from 'react-router';
+import { Home, Recipes, Recipe, Events, Tickets, Booking, Error404 } from '../../pages';
 
 import React from 'react';
 import AppActions from '../../actions/AppActions';
@@ -22,6 +22,8 @@ const routes = (
     <Route path={PAGES.RECIPES.RECIPE.linkTo} component={Recipe} />
     <Route path={PAGES.TICKETS.linkTo} component={Tickets} />
     <Route path={PAGES.BOOKING.linkTo} component={Booking} />
+    <Route path='/404' component={Error404} />
+    <Redirect from='*' to='/404' />
   </Route>
 )
 
@@ -60,7 +62,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className={classNames(styles.app, styles[AppStore.getProp('tone')+'Tone'])} style={{ backgroundSize: this.state.app.backgroundSize, backgroundPosition: this.state.app.backgroundPosition, backgroundImage: this.state.app.backgroundImage }}>
+      <div className={classNames(styles.app, styles[AppStore.getProp('tone')+'Tone'])} style={{ backgroundSize: this.state.app.backgroundSize, backgroundColor: this.state.app.backgroundColor, backgroundPosition: this.state.app.backgroundPosition, backgroundImage: this.state.app.backgroundImage }}>
         <div className={styles.body}>
           <Router asd={this.state} history={hashHistory}>
             { routes }
