@@ -18,7 +18,7 @@ export default class Tickets extends React.Component {
     AppStore.setProps({tone:'light'});
     MenuStore.setProps({title:'Discover'});
 
-    AppStore.setProps({background:bg});
+    AppStore.setProps({backgroundColor:bg});
     AppStore.setProps({backgroundImage:'none'});
     AppStore.setProps({backgroundSize:'auto 100%'});
     AppStore.setProps({backgroundPosition:'0 0'});
