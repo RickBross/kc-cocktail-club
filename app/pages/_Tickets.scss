@@ -1,0 +1,40 @@
+@import "toolkit";
+@import "./_Pages";
+
+.makeBackground {
+
+}
+
+.body.tickets {
+  padding: 5rem;
+  overflow-y: scroll;
+  .container {
+    max-width: 960px;
+  }
+  .row {
+    margin-bottom: 3.5rem;
+  }
+  .paymentOption {
+    h1 {
+      margin-bottom: 0;
+      span:first-child {
+
+      }
+      span:last-child {
+        font-family: "Galano Classic Bold";
+        font-size: .8rem;
+        letter-spacing: .35rem;
+        color: $lightInactiveSecondaryText;
+        font-style: italic;
+        font-weight: 100;
+        margin: 0 1rem;
+      }
+    }
+    h6 {
+      margin-bottom: .5rem;
+    }
+  }
+  .primaryPhoto {
+    padding: 0 0 0 3rem;
+  }
+}
