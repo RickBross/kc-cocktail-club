@@ -55,12 +55,26 @@ $total-columns: 12;
   .column12 {
      @include span(12 of 12)
   }
+  &.lightTone {
+    h1, h2, h3, h4, h5, h6, p  {
+      color: $lightInactiveSecondaryText;
+    }
+    h1,h2 {
+      color: $lightInactivePrimaryText;
+    }
+  }
+  &.darkTone {
+    h1, h2, h3, h4, h5, h6, p  {
+      color: $darkInactiveSecondaryText;
+    }
+    h1,h2 {
+      color: $darkInactivePrimaryText;
+    }
+  }
   h1, h2, h3, h4, h5, h6, p  {
-    color: $lightInactiveSecondaryText;
     margin: 0;
   }
   h1,h2 {
-    color: $lightInactivePrimaryText;
     font-family: "Moonshiner Sharp";
     font-weight: 100;
   }
