@@ -1,4 +1,7 @@
 @import "toolkit";
+@import "~susy/sass/susy";
+
+$total-columns: 12;
 
 .body {
   display: flex;
@@ -6,6 +9,91 @@
   font-size: inherit;
   &.darkTone {
     color: white;
+  }
+  .container {
+    @include container();
+    .column:last-child {
+      margin-right: 0;
+    }
+  }
+  .column {
+    float: left;
+  }
+  .column1 {
+     @include span(1 of 12)
+  }
+  .column2 {
+     @include span(2 of 12)
+  }
+  .column3 {
+     @include span(3 of 12)
+  }
+  .column4 {
+     @include span(4 of 12)
+  }
+  .column5 {
+     @include span(5 of 12)
+  }
+  .column6 {
+     @include span(6 of 12)
+  }
+  .column7 {
+     @include span(7 of 12)
+  }
+  .column8 {
+     @include span(8 of 12)
+  }
+  .column9 {
+     @include span(9 of 12)
+  }
+  .column10 {
+     @include span(10 of 12)
+  }
+  .column11 {
+     @include span(11 of 12)
+  }
+  .column12 {
+     @include span(12 of 12)
+  }
+  h1, h2, h3, h4, h5, h6, p  {
+    color: $lightInactiveSecondaryText;
+    margin: 0;
+  }
+  h1,h2 {
+    color: $lightInactivePrimaryText;
+    font-family: "Moonshiner Sharp";
+    font-weight: 100;
+  }
+  .container {
+    a {
+      color: $lightInactivePrimaryText;
+      text-decoration: underline;
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 1.2rem;
+    line-height: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+    letter-spacing: .6rem;
+  }
+  h6 {
+    font-family: "Galano Classic Bold";
+    font-size: .5rem;
+    letter-spacing: .2rem;
+    font-style: italic;
+  }
+  p {
+    font-family: "Galano Classic Medium";
+    margin-bottom: 1rem;
+    font-size: .7rem;
+    line-height: 1.7rem;
+  }
+  .row {
+    @include container($total-columns);
   }
 }
 .home {

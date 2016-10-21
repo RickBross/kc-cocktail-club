@@ -15,6 +15,7 @@ export default class Home extends React.Component {
     AppStore.setProps({tone:'dark'});
     MenuStore.setProps({title:'Discover'});
     AppStore.setProps({backgroundImage:'url(http://localhost:8000/images/hero-bg.png)'});
+    AppStore.setProps({backgroundSize:'cover'});
   }
 
   render() {

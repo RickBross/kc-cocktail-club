@@ -43,4 +43,17 @@ a {
   font-family: "Galano Classic Bold";
   src: url("http://localhost:8000/fonts/Galano-Classic-Bold.otf") format("opentype");
   font-weight: 100;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Galano Classic Medium";
+  src: url("http://localhost:8000/fonts/Galano-Classic-Medium.otf") format("opentype");
+  font-weight: 100;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Galano Classic";
+  src: url("http://localhost:8000/fonts/Galano-Classic.otf") format("opentype");
+  font-weight: 100;
+  font-weight: normal;
 }

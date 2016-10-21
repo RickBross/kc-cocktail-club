@@ -1,0 +1,17 @@
+@import "toolkit";
+@import "./_Pages";
+
+.makeBackground {
+
+}
+
+.body.tickets {
+  padding: 5rem;
+  overflow-y: scroll;
+  .container {
+    max-width: 960px;
+  }
+  .row {
+    margin-bottom: 3.5rem;
+  }
+}
