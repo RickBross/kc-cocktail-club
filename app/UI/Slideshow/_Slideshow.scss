@@ -22,8 +22,21 @@
     width: 100%;
     height: 100%;
   }
+  p {
+    font-family: "Galano Classic Medium";
+    letter-spacing: .1rem;
+  }
   &.darkTone {
     color: $darkInactivePrimaryText;
+    p {
+      font-size: 1rem;
+    }
+  }
+  &.lightTone {
+    color: $lightInactivePrimaryText;
+    p {
+      margin: 0;
+    }
   }
   .controls {
     position: absolute;
@@ -39,10 +52,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-  }
-  p {
-    font-family: "Galano Classic Bold";
-    margin: 0;
   }
   .slide {
     position: absolute;
