@@ -64,6 +64,17 @@ $total-columns: 12;
     font-family: "Moonshiner Sharp";
     font-weight: 100;
   }
+  button {
+    background: $lightInactivePrimaryBtn;
+    color: $white;
+    font-family: "Moonshiner Sharp";
+    border: none;
+    padding: .35rem 2.2rem .6rem;
+    box-shadow: 5px 5px 0px rgba(0,0,0,.1);
+    letter-spacing: .35rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
   .container {
     a {
       color: $lightInactivePrimaryText;
@@ -87,10 +98,10 @@ $total-columns: 12;
     font-style: italic;
   }
   p {
-    font-family: "Galano Classic Medium";
+    font-family: "Galano Classic";
     margin-bottom: 1rem;
     font-size: .7rem;
-    line-height: 1.7rem;
+    line-height: 1.65rem;
   }
   .row {
     @include container($total-columns);

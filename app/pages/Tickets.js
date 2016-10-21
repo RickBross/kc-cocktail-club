@@ -50,7 +50,7 @@ export default class Tickets extends React.Component {
                 <h6>Currently selling tickets for</h6>
                 <h2>January 7, 2017, 7:30pm</h2>
               </div>
-              <div className={classNames(styles.column, styles.column5, styles.right)}>
+              <div className={classNames(styles.primaryPhoto, styles.column, styles.column5, styles.right)}>
                 <Frame width="100%"
                   height="30rem"
                   backgroundImage="url(http://localhost:8000/images/pages/tickets/primary.png)"
@@ -59,9 +59,27 @@ export default class Tickets extends React.Component {
               </div>
             </div>
             <div className={classNames(styles.row)}>
-              <div className={classNames(styles.column,styles.column4)}>a</div>
-              <div className={classNames(styles.column,styles.column4)}>b</div>
-              <div className={classNames(styles.column,styles.column4)}>c</div>
+              <div className={classNames(styles.paymentOption, styles.column,styles.column4)}>
+                <h1><span>$30</span><span>Single Pass</span></h1>
+                <p>
+                  This single pass will grant you access to Meeting #7 on January 25th, 2017. Multiple passes can be purchased as long as the capacity has not been reached.
+                </p>
+                <button>Purchase</button>
+              </div>
+              <div className={classNames(styles.paymentOption, styles.column,styles.column4)}>
+                <h1><span>$25</span><span>Membership</span></h1>
+                <p>
+                  The Cocktail Club Membership gives you access to the next 5 events from January through May of 2017. You will recieive a 15% discount on each ticket, and the cost will be withdrawn on the first of each month.
+                </p>
+                <button>Purchase</button>
+              </div>
+              <div className={classNames(styles.paymentOption, styles.column,styles.column4)}>
+                  <h6>All transactions processed with</h6>
+                  <img  width="70px" src="http://localhost:8000/images/pages/tickets/stripe.png" />
+                  <br /><br /><br />
+                  <h6>Forms of payment accepted</h6>
+                  <img  width="120px" src="http://localhost:8000/images/pages/tickets/payments.png" />
+              </div>
             </div>
           </div>
         </div>
