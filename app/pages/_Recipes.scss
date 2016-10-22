@@ -23,7 +23,7 @@ $activeSecondaryText: #EAEAE8;
 
 .recipes {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .recipesBlockText {
@@ -115,5 +115,34 @@ $activeSecondaryText: #EAEAE8;
     @include shadeHover();
     @include block();
     background-position: 45% 0;
+  }
+}
+
+.recipesBlock a {
+  margin-top: 2.5rem;
+}
+
+@media(min-width:415px) {
+
+  .whiskeyBlock {
+    background-position: -5rem 0px;
+  }
+  .recipes {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media(min-width:768px) {
+  .recipes {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media(min-width:1024px) {
+  .recipes {
+    display: flex;
+    flex-direction: row;
   }
 }
