@@ -6,8 +6,8 @@ import MenuIcon from '../Icons/MenuIcon/MenuIcon';
 import classNames from 'classnames';
 
 import {
-  MENU_ITEMS,
-  SOCIAL_ITEMS,
+  MENU,
+  SOCIAL,
 } from '../../constants/AppConstants';
 
 let { Component, PropTypes } = React;
@@ -27,13 +27,13 @@ export default class MenuPanel extends Component {
     return (
       <div className={classNames(styles.panel)}>
         <nav>
-          {MENU_ITEMS.map((item, i) => {
+          {MENU.map((item, i) => {
             return (<MenuItem key={item.title} onclick={this.toggleMenu.bind(this)} item={item} />);
           }, this)}
           <li className={classNames(styles.item, styles.social)}>
             <span>Social Media</span>
             <ul className={classNames(styles.item, styles.socialIcons)}>
-              {SOCIAL_ITEMS.map((item, i) => {
+              {SOCIAL.map((item, i) => {
                 return (
                   <li key={item.title}>
                     <a href={item.href} target="_blank"><img src={item.img} /></a>

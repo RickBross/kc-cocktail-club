@@ -9,7 +9,7 @@ import AppStore from '../stores/AppStore';
 import styles from './_Recipes.scss';
 
 import {
-  RECIPES,
+  ALCOHOL,
 } from '../constants/AppConstants';
 
 const getWidth = function(node) {
@@ -67,8 +67,8 @@ export default class Recipes extends React.Component {
           active={MenuStore.getProp('active')}
         />
       <div className={classNames(styles.body, styles.recipes, styles[this.props.params.recipe+'Active'])}>
-          {Object.keys(RECIPES).map((item, i) => {
-            recipe = RECIPES[item];
+          {Object.keys(ALCOHOL).map((item, i) => {
+            recipe = ALCOHOL[item];
             title = item.toLowerCase();
             return (
               <div key={title+'Block'} className={classNames(styles.recipesBlock, this.isActive(title), styles[title+'Block'])}>
