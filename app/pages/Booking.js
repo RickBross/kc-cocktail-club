@@ -34,7 +34,7 @@ export default class Booking extends React.Component {
           tone={AppStore.getProp('tone')}
           active={MenuStore.getProp('active')}
         />
-      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.tickets)}>
+      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
@@ -50,14 +50,35 @@ export default class Booking extends React.Component {
                   We explore old and new drinks, and share the history of what makes the drink special and timeless. Show up open to new things and ready to have a good time!
                 </p>
                 <br />
-                <form></form>
+                <form>
+                  <div className={styles.row}>
+                    <div className={classNames(styles.column, styles.column12)}>
+                      <input type="text" name="name" placeholder="Name" />
+                    </div>
+                    <div className={classNames(styles.column, styles.column12)}>
+                      <input type="text" name="email" placeholder="Email" />
+                    </div>
+                    <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
+                      <input type="text" name="guests_quantity" placeholder="# of Guests" />
+                    </div>
+                    <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
+                      <input type="text" name="date" placeholder="Date of Events" />
+                    </div>
+                  </div>
+                  <br />
+                  <div className={classNames(styles.column, styles.column12)}>
+                    <button type="submit">Submit</button>
+                  </div>
+                </form>
               </div>
               <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
                 <Frame width="100%"
                   height="40rem"
                   backgroundImage="url(http://localhost:8000/images/pages/booking/primary.png)"
                   backgroundSize="cover"
-                  backgroundPosition="65% 0" />
+                  backgroundPosition="65% 0"
+                  accent="http://localhost:8000/images/pages/booking/accent.png"
+                  accentStyle={{bottom: '-3rem', right: '-4rem', zoom: '.6'}} />
               </div>
             </div>
           </div>

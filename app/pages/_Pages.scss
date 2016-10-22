@@ -5,7 +5,8 @@ $total-columns: 12;
 
 .container {
   @include container();
-  .column:last-child {
+  max-width: 960px;
+  .row .column:last-child {
     margin-right: 0;
   }
 }
@@ -57,11 +58,17 @@ $total-columns: 12;
     color: white;
   }
   &.lightTone {
+    padding: 2rem 1.5rem;
     h1, h2, h3, h4, h5, h6, p  {
       color: $lightInactiveSecondaryText;
     }
     h1,h2 {
       color: $lightInactivePrimaryText;
+    }
+    form {
+      input {
+        border-bottom: 2px solid $lightInactivePrimaryText;
+      }
     }
   }
   &.darkTone {
@@ -70,6 +77,11 @@ $total-columns: 12;
     }
     h1,h2 {
       color: $darkInactivePrimaryText;
+    }
+    form {
+      input {
+        border-bottom: 2px solid $darkInactivePrimaryText;
+      }
     }
   }
   h1, h2, h3, h4, h5, h6, p  {
@@ -85,6 +97,7 @@ $total-columns: 12;
     font-family: "Moonshiner Sharp";
     border: none;
     padding: .35rem 2.2rem .6rem;
+    margin-bottom: 2rem;
     box-shadow: 5px 5px 0px rgba(0,0,0,.1);
     letter-spacing: .35rem;
     font-size: 1.2rem;
@@ -147,6 +160,16 @@ $total-columns: 12;
   justify-content: center;
   display: flex;
   position: relative;
+}
+
+form {
+  input {
+    border: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-family: "Galano Classic Bold";
+    letter-spacing: .2rem;
+  }
 }
 
 // Phone Portrait ^^
@@ -227,6 +250,9 @@ $total-columns: 12;
   }
   .column12Tablet {
      @include span(12 of 12)
+  }
+  .body {
+    padding: 5rem;
   }
 }
 
