@@ -251,7 +251,7 @@ form {
   .column12Tablet {
      @include span(12 of 12)
   }
-  .body {
+  .body.lightTone {
     padding: 5rem;
   }
 }
