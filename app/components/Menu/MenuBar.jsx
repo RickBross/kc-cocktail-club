@@ -25,7 +25,7 @@ export default class MenuBar extends Component {
           <div className={classNames(styles.titleWrapper)}>
             <h1 className={classNames(styles.title)}>{this.props.title}</h1>
           </div>
-          <span className={classNames(styles.menuIconWrapper, rootStyles.center)}>
+          <span className={classNames(styles.menuIconWrapper)}>
             <MenuIcon
               tone={this.props.tone}
               active={this.props.active}
