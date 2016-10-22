@@ -67,9 +67,6 @@
   &.body {
     position: relative;
   }
-  .wrapper {
-    border-right: 1px solid $lightActivePrimaryBg;
-  }
   .title {
     color: $lightActivePrimaryBg;
   }
@@ -231,6 +228,9 @@ nav {
 .menuIconWrapper {
   left: 0;
   position: relative;
+}
+.wrapper {
+  border-right: 1px solid $lightActivePrimaryBg;
 }
 
   .body {
