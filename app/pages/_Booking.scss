@@ -1,0 +1,53 @@
+@import "toolkit";
+@import "./_Pages";
+
+.makeBackground {
+
+}
+
+.body.tickets {
+  padding: 2rem 1.5rem;
+  overflow-y: scroll;
+  .container {
+    max-width: 960px;
+  }
+  .primaryPhoto {
+    padding: 3rem 0;
+  }
+  .row {
+    margin-bottom: 3.5rem;
+  }
+  .paymentOption {
+    margin-bottom: 2rem;
+    h1 {
+      margin-bottom: .5rem;
+    }
+    span {
+      font-family: "Galano Classic Bold";
+      font-size: .8rem;
+      letter-spacing: .35rem;
+      color: $lightInactiveSecondaryText;
+      font-style: italic;
+      font-weight: 100;
+      margin: 0 0 1rem;
+    }
+    p {
+      margin-top: .75rem;
+    }
+    h6 {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+  .primaryPhoto {
+    padding: 0 0 0 1rem;
+  }
+}
+
+@media(min-width:768px) {
+  .body.tickets {
+    padding: 5rem;
+  }
+}

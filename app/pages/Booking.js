@@ -3,23 +3,15 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
+import Frame from '../components/Frame/Frame';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
-import styles from './_Pages.scss';
-
-const getWidth = function(node) {
-  return React.findDOMNode(node).offsetWidth;
-}
+import styles from './_Booking.scss';
 
 
 export default class Booking extends React.Component {
 
-  isActive(item) {
-    if (this.props.params.recipe === item) {
-      return styles.active;
-    }
-  }
 
   componentDidMount() {
 
@@ -27,14 +19,10 @@ export default class Booking extends React.Component {
     AppStore.setProps({tone:'light'});
     MenuStore.setProps({title:'Discover'});
 
-    AppStore.setProps({background:bg});
+    AppStore.setProps({backgroundColor:bg});
     AppStore.setProps({backgroundImage:'none'});
     AppStore.setProps({backgroundSize:'auto 100%'});
     AppStore.setProps({backgroundPosition:'0 0'});
-  }
-
-  onClick() {
-    AppStore.setProps({tone:'light'});
   }
 
   render() {
@@ -46,8 +34,33 @@ export default class Booking extends React.Component {
           tone={AppStore.getProp('tone')}
           active={MenuStore.getProp('active')}
         />
-        <div className={classNames(styles.body, styles.recipes)}>
-          <h1>Booking Page</h1>
+      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.tickets)}>
+        <div className={classNames(styles.container)}>
+            <div className={classNames(styles.row)}>
+              <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
+                <h6>Private Events</h6>
+                <h1>A happy hour the whole team can get behind</h1>
+                <p>
+                  Cocktail Club is a monthly gathering of people who love to drink and love to learn. We provide a fun atmosphere to begin crafting your very own cocktails, providing all of the fresh ingredients and bar tools you’ll need.
+                </p>
+                <p>
+                  Expert instruction from my years behind a bar will help you learn how to mix like a pro, with some tips and tricks along the way. We explore old and new drinks, and share the history of what makes the drink special and timeless. Show up open to new things and ready to have a good time!
+                </p>
+                <p>
+                  We explore old and new drinks, and share the history of what makes the drink special and timeless. Show up open to new things and ready to have a good time!
+                </p>
+                <br />
+                <form></form>
+              </div>
+              <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
+                <Frame width="100%"
+                  height="40rem"
+                  backgroundImage="url(http://localhost:8000/images/pages/booking/primary.png)"
+                  backgroundSize="cover"
+                  backgroundPosition="65% 0" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
