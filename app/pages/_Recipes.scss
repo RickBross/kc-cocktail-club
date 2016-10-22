@@ -58,6 +58,12 @@ $activeSecondaryText: #EAEAE8;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
   display: flex;
+  .recipesBlockText > span:first-child {
+    transition: margin-left 1s ease-out;
+  }
+  &:hover .recipesBlockText > span:first-child {
+    margin-left: 1rem;
+  }
   &:hover .recipesBlockText > span:last-child {
     margin-right: 1.5rem;
     &::after {
