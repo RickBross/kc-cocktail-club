@@ -6,7 +6,7 @@
 }
 
 .body.tickets {
-  padding: 5rem;
+  padding: 2rem 1.5rem;
   overflow-y: scroll;
   .container {
     max-width: 960px;
@@ -42,6 +42,7 @@
 
 @media (min-width: 992px) { // Desktop
   .primaryPhoto {
+    padding: 5rem;
     padding: 0 0 0 3rem;
   }
 }
