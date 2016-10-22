@@ -1,10 +1,12 @@
 @import "toolkit";
 
 .frame {
-  border: 10px solid white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
   position: relative;
   .accent {
     position: absolute;
+  }
+  .frameBg {
+    border: 10px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
   }
 }
