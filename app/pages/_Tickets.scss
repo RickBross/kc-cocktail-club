@@ -8,9 +8,6 @@
 .body.tickets {
   padding: 2rem 1.5rem;
   overflow-y: scroll;
-  .container {
-    max-width: 960px;
-  }
   .primaryPhoto {
     padding: 3rem 0;
   }
@@ -40,14 +37,14 @@
   }
 }
 
-@media (min-width: 992px) { // Desktop
-  .primaryPhoto {
-    padding: 0 0 0 1rem;
+@media(min-width:768px) {
+  .body.tickets {
+    padding: 3rem;
+    .primaryPhoto {
+      display: block;
+    }
   }
 }
 
-@media(min-width:768px) {
-  .body.tickets {
-    padding: 5rem;
-  }
+@media (min-width: 992px) { // Desktop
 }

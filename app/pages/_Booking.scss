@@ -5,17 +5,14 @@
 
 }
 
-.body.tickets {
-  padding: 2rem 1.5rem;
+.body.booking {
   overflow-y: scroll;
-  .container {
-    max-width: 960px;
-  }
   .primaryPhoto {
     padding: 3rem 0;
+    display: none;
   }
-  .row {
-    margin-bottom: 3.5rem;
+  form {
+    margin-bottom: 1.5rem;
   }
   .paymentOption {
     margin-bottom: 2rem;
@@ -40,14 +37,13 @@
   }
 }
 
-@media (min-width: 992px) { // Desktop
-  .primaryPhoto {
-    padding: 0 0 0 1rem;
+@media(min-width:768px) {
+  .body.booking {
+    .primaryPhoto {
+      display: block;
+    }
   }
 }
 
-@media(min-width:768px) {
-  .body.tickets {
-    padding: 5rem;
-  }
+@media (min-width: 992px) { // Desktop
 }
