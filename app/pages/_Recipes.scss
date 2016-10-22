@@ -107,6 +107,7 @@ $activeSecondaryText: #EAEAE8;
     @include shadeHover();
     @include block();
     background-position: 0 0;
+    background-size: initial;
   }
   &.tequilaBlock {
     $alcohol: 'tequila';
