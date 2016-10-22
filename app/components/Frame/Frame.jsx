@@ -12,6 +12,7 @@ export default class Frame extends Component {
   render() {
     return (
         <div style={{width: this.props.width, height: this.props.height, backgroundImage: this.props.backgroundImage, backgroundPosition: this.props.backgroundPosition, backgroundSize: this.props.backgroundSize }} className={classNames(styles.frame, this.props.classNames)}>
+          <img src={this.props.accent} className={classNames(styles.accent)} style={this.props.accentStyle} />
         </div>
     );
   }

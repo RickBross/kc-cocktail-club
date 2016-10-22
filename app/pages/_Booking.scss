@@ -5,15 +5,14 @@
 
 }
 
-.body.tickets {
-  padding: 2rem 1.5rem;
+.body.booking {
   overflow-y: scroll;
   .primaryPhoto {
-    display: none;
     padding: 3rem 0;
+    display: none;
   }
-  .row {
-    margin-bottom: 3.5rem;
+  form {
+    margin-bottom: 1.5rem;
   }
   .paymentOption {
     margin-bottom: 2rem;
@@ -39,7 +38,7 @@
 }
 
 @media(min-width:768px) {
-  .body.tickets {
+  .body.booking {
     padding: 3rem;
     .primaryPhoto {
       display: block;

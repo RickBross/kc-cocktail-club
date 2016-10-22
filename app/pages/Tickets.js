@@ -46,9 +46,6 @@ export default class Tickets extends React.Component {
                 <p>
                   We’ve created two packages that we think will serve everyone. If you have any questions, reach out to us at <a href="mailto:hi@kccocktailclub.com">hi@kccocktailclub.com</a>. Please keep in mind that we sell tickets a month in advance. This means that any tickets you buy this month will be for the event occuring in the following month. Once the event reaches its max capacity, we’ll begin selling for the next event. Tickets can go fast so get yours today! You will recieve an email confirmation with details for your event as well as your ticket. Bring a printed copy of this or have it ready on your phone, as you will need it for admission.
                 </p>
-                <br />
-                <h6>Currently selling tickets for</h6>
-                <h2>January 7, 2017, 7:30pm</h2>
               </div>
               <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
                 <Frame width="100%"
@@ -56,6 +53,12 @@ export default class Tickets extends React.Component {
                   backgroundImage="url(http://localhost:8000/images/pages/tickets/primary.png)"
                   backgroundSize="cover"
                   backgroundPosition="65% 0" />
+              </div>
+            </div>
+            <div className={classNames(styles.row)}>
+              <div className={classNames(styles.column, styles.column12)}>
+                <h6>Currently selling tickets for</h6>
+                <h2>January 7, 2017, 7:30pm</h2>
               </div>
             </div>
             <div className={classNames(styles.row)}>
