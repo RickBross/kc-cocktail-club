@@ -8,13 +8,13 @@ import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
 import {
-  RECIPES,
+  ALCOHOL,
 } from '../constants/AppConstants';
 
-import styles from './_Recipe.scss';
+import styles from './_RecipeList.scss';
 
 
-export default class Recipe extends React.Component {
+export default class RecipeList extends React.Component {
 
 
   componentDidMount() {
@@ -30,6 +30,7 @@ export default class Recipe extends React.Component {
   }
 
   render() {
+    console.log(ALCOHOL[this.props.params.recipe.toUpperCase()]);
     return (
       <div>
         <Menu
@@ -63,7 +64,7 @@ export default class Recipe extends React.Component {
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12)}>
                 <ul style={{backgroundImage:"url(http://localhost:8000/images/pages/" + this.props.params.recipe + "/list-bg.png)"}} className={classNames(styles.recipeList, styles.lsn, styles.center, styles.block)}>
-                  {RECIPES[this.props.params.recipe.toUpperCase()].map((item, i) => {
+                  {ALCOHOL[this.props.params.recipe.toUpperCase()].recipes.map((item, i) => {
                     return (<li>{item.name}</li>);
                   }, this)}
                 </ul>
