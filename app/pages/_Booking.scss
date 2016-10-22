@@ -7,12 +7,17 @@
 
 .body.booking {
   overflow-y: scroll;
+  padding-top: 5rem;
   .primaryPhoto {
     padding: 3rem 0;
     display: none;
   }
   form {
     margin-bottom: 1.5rem;
+    padding: 0 1rem;
+    button {
+      float: right;
+    }
   }
   .paymentOption {
     margin-bottom: 2rem;

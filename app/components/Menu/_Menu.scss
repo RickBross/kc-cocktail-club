@@ -2,7 +2,7 @@
 
 .body {
   height: 5rem;
-  width: 100vw;
+  width: 5rem;
   float: left;
   position: absolute;
 }
@@ -23,6 +23,7 @@
     display: none;
   }
   &.active {
+    width: 100vw;
     .bar {
       background: $darkActivePrimaryBg;
     }
@@ -65,9 +66,6 @@
 }
 
 .lightTone {
-  &.body {
-    position: relative;
-  }
   .title {
     color: $lightActivePrimaryBg;
   }
@@ -214,7 +212,7 @@ li.item {
 .panel {
   background: $darkActiveSecondaryBg;
   position: absolute;
-  left: -100%;
+  left: -100vw;
   top: 0;
   z-index: 110;
   padding-top: 5rem;
@@ -254,6 +252,7 @@ li.item {
     height: 100vh;
     position: relative;
     &.active {
+      width: auto;
       .panel {
         left: 4.95rem;
         opacity: 1;
@@ -262,6 +261,9 @@ li.item {
     .title {
       display: block;
     }
+  }
+  .bar {
+    width: 5rem;
   }
   .panel {
     background: $darkActiveSecondaryBg;
