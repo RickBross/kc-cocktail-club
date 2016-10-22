@@ -13,8 +13,32 @@ let { Component, PropTypes } = React;
 
 export default class Menu extends Component {
 
+  constructor() {
+    super();
+    this._downListener = this.downListener.bind(this);
+  }
+
+  componentWillMount() {
+    console.log('add');
+    document.addEventListener("keydown", this._downListener, true);
+  }
+  componentWillUnmount() {
+    console.log('remove');
+    document.removeEventListener("keydown", this._downListener, true);
+  }
+  downListener(e) {
+    console.log(123123);
+    const escKey = 27;
+    if (e.keyCode === escKey) {
+      this.closeStore();
+    }
+  }
   onClick(event) {
     this.toggleActive();
+  }
+
+  closeStore() {
+    MenuStore.setProps({active: false});
   }
 
   toggleActive() {
