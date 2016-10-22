@@ -4,3 +4,13 @@
 @import "mixins";
 @import "variables";
 @import "grid";
+
+.lsn {
+  list-style: none;
+}
+.center {
+  margin: 0 auto;
+}
+.block {
+  display: block;
+}

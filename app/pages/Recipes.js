@@ -56,6 +56,8 @@ export default class Recipes extends React.Component {
   }
 
   render() {
+    let recipe;
+    let title;
 
     return (
       <div>
@@ -65,12 +67,14 @@ export default class Recipes extends React.Component {
           active={MenuStore.getProp('active')}
         />
       <div className={classNames(styles.body, styles.recipes, styles[this.props.params.recipe+'Active'])}>
-          {RECIPES.map((item, i) => {
+          {Object.keys(RECIPES).map((item, i) => {
+            recipe = RECIPES[item];
+            title = item.toLowerCase();
             return (
-              <div key={item.title+'Block'} className={classNames(styles.recipesBlock, this.isActive(item.title), styles[item.title+'Block'])}>
-                <Link onClick={this.onClick.bind(this)} to={'recipes/'+item.title} className={classNames(styles.fill, styles.link)}>
+              <div key={title+'Block'} className={classNames(styles.recipesBlock, this.isActive(title), styles[title+'Block'])}>
+                <Link onClick={this.onClick.bind(this)} to={'recipes/'+title} className={classNames(styles.fill, styles.link)}>
                   <div className={classNames(styles.recipesBlockText)}>
-                      <span>{item.title}</span><br />
+                      <span>{title}</span><br />
                       <span>View Recipes</span>
                   </div>
                 </Link>

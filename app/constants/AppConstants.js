@@ -10,6 +10,8 @@ export const APP_UPDATED = 'APP_UPDATED';
 
 export const MENU_UPDATED = 'MENU_UPDATED';
 
+export {default as RECIPES} from './Recipes.js'
+
 export const PAGES = {
   HOME: {
     linkTo: '/'
@@ -30,24 +32,6 @@ export const PAGES = {
     linkTo: '/book-an-event'
   },
 };
-
-export const RECIPES = [
-  {
-    title: 'whiskey',
-  },
-  {
-    title: 'vodka',
-  },
-  {
-    title: 'gin',
-  },
-  {
-    title: 'rum',
-  },
-  {
-    title: 'tequila',
-  }
-];
 
 export const SOCIAL_ITEMS = [
   { title: "vimeo", href: "http://facebook.com/", img:"/images/vimeo.png"},
