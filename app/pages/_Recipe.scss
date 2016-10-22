@@ -1,0 +1,58 @@
+@import "toolkit";
+@import "./_Pages";
+
+.makeBackground {
+
+}
+
+.body.recipe {
+  padding: 2rem 1.5rem;
+  padding-top: 5rem;
+  overflow-y: scroll;
+  a {
+    text-decoration-color: $lightInactivePrimaryLink;
+    h6 {
+      color: $lightInactivePrimaryLink;
+    }
+  }
+  .primaryPhoto {
+    display: none;
+    padding: 3rem 0;
+    margin-bottom: 5rem;
+  }
+  .row {
+    margin-bottom: 2rem;
+  }
+  .recipeList {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 22rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 3rem;
+    li {
+      color: $lightInactiveSecondaryLink;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-family: "Moonshiner Sharp";
+      &:hover {
+        color: $lightActiveSecondaryLink;
+      }
+    }
+  }
+}
+
+@media(min-width:768px) {
+  .body.recipe {
+    padding: 3rem;
+    .primaryPhoto {
+      display: block;
+      padding: 0 2rem;
+    }
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+}
