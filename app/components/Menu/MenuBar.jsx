@@ -23,7 +23,7 @@ export default class MenuBar extends Component {
       <div className={classNames(styles.bar)} onClick={this.props.onclick}>
         <div className={classNames(styles.wrapper)}>
           <div className={classNames(styles.titleWrapper)}>
-            <h1 className={classNames(styles.title)}>{this.props.title}</h1>
+            <span className={classNames(styles.title)}>{this.props.title}</span>
           </div>
           <span className={classNames(styles.menuIconWrapper)}>
             <MenuIcon
