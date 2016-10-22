@@ -85,11 +85,21 @@ nav {
   }
 }
 
-.item {
+li.item {
   color: $darkInactiveSecondaryText;
   padding: .5rem 2rem;
-  transition: padding-left 1s ease-out;
   width: 100%;
+
+
+  &:not(.social) span:first-child {
+    margin-left: 0;
+    transition: margin-left 5s ease-out;
+  }
+
+  &:not(.social) span:last-child {
+    margin-left: 0;
+    transition: margin-left 4s ease-out;
+  }
 
   &.social {
     position: absolute;
@@ -138,12 +148,18 @@ nav {
     }
   }
 
-  &:hover {
+  &:not(.social):hover {
     background: $darkActivePrimaryBg;
     color: $darkActivePrimaryText;
     position: relative;
-    padding-left: 5rem;
-    transition: padding-left 3s ease-out;
+    span:first-child {
+      margin-left: 3.5rem;
+      transition: margin-left 8s ease-out;
+    }
+    span:last-child {
+      margin-left: 3.5rem;
+      transition: margin-left 6s ease-out;
+    }
   }
 
   &:hover::before {
