@@ -119,7 +119,6 @@ $total-columns: 12;
   h1 {
     font-size: 3rem;
     letter-spacing: 0.2rem;
-    line-height: 3.5rem;
     margin-bottom: 2.5rem;
   }
   h2 {
@@ -310,9 +309,9 @@ form {
   .column12Desktop {
      @include span(12 of 12)
   }
-  h1 {
+  .body h1 {
     letter-spacing: .8rem;
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
 }
 
@@ -352,5 +351,9 @@ form {
   }
   .column12Large {
     @include span(12 of 12)
+  }
+  .body h1 {
+    letter-spacing: .8rem;
+    font-size: 4rem;
   }
 }
