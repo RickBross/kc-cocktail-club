@@ -89,6 +89,13 @@ $total-columns: 12;
     letter-spacing: .35rem;
     font-size: 1.2rem;
     font-weight: 100;
+    transition: all .2s linear;
+    height: 2.5rem;
+    &:hover {
+      background: $lightHoverPrimaryBtn;
+      margin: 2px 2px 0 0;
+      box-shadow: 0 0 0px rgba(0,0,0,.1);
+    }
   }
   .container {
     a {
