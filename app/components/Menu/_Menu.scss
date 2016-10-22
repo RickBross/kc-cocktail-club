@@ -228,6 +228,10 @@ nav {
 }
 
 @media (min-width: 768px) {
+.menuIconWrapper {
+  left: 0;
+  position: relative;
+}
 
   .body {
     width: 5rem;
@@ -269,8 +273,6 @@ nav {
     transform-origin: 35% -29%;
   }
   .menuIconWrapper {
-
-    left: 50%;
     right: auto;
     @include center();
   }

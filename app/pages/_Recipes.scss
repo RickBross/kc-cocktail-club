@@ -123,13 +123,26 @@ $activeSecondaryText: #EAEAE8;
 }
 
 @media(min-width:415px) {
-  .recipes {
-    display: flex;
-    flex-direction: column;
-    flex-direction: row;
-  }
 
   .whiskeyBlock {
     background-position: -5rem 0px;
+  }
+  .recipes {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media(min-width:768px) {
+  .recipes {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media(min-width:1024px) {
+  .recipes {
+    display: flex;
+    flex-direction: row;
   }
 }
