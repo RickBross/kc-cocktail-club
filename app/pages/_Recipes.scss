@@ -23,7 +23,7 @@ $activeSecondaryText: #EAEAE8;
 
 .recipes {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .recipesBlockText {
@@ -115,5 +115,21 @@ $activeSecondaryText: #EAEAE8;
     @include shadeHover();
     @include block();
     background-position: 45% 0;
+  }
+}
+
+.recipesBlock a {
+  margin-top: 2.5rem;
+}
+
+@media(min-width:415px) {
+  .recipes {
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+  }
+
+  .whiskeyBlock {
+    background-position: -5rem 0px;
   }
 }
