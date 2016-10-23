@@ -5,7 +5,10 @@ export default {
   RECIPES: {
     linkTo: '/recipes',
     RECIPELIST: {
-      linkTo: '/recipes/:recipe'
+      linkTo: '/recipes/:alcohol',
+      RECIPE: {
+        linkTo: '/recipes/:alcohol/:recipe'
+      },
     },
   },
   EVENTS: {

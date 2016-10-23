@@ -6,19 +6,17 @@
 }
 
 .body.recipe {
-  padding: 0;
-  padding-top: 0;
+  padding: 2rem 1.5rem;
+  padding-top: 5rem;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
   a {
     text-decoration-color: $lightInactivePrimaryLink;
     h6 {
       color: $lightInactivePrimaryLink;
     }
   }
-  .container {
-    padding: 2.25rem 1rem;
+  .banner {
+    background: #f00;
   }
   .primaryPhoto {
     display: none;
@@ -47,21 +45,6 @@
       }
     }
   }
-}
-
-.recipe.rumAlcohol {
-  .banner {
-    .accent {
-      width: 65%;
-      left: 50%;
-      z-index: 10;
-      bottom: -20%;
-    }
-  }
-}
-
-@media(min-width:415px) {
-
 }
 
 @media(min-width:768px) {

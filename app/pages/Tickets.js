@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
-import Frame from '../components/Frame/Frame';
+import Frame from '../UI/Frame/Frame';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 

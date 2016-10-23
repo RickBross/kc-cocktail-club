@@ -6,7 +6,10 @@
 @import "grid";
 
 .lsn {
-  list-style: none;
+  list-style: none !important;
+}
+.tdn {
+  text-decoration: none !important;
 }
 .center {
   margin: 0 auto;
