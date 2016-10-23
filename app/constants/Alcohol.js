@@ -21,8 +21,8 @@ export default {
         linkTo: '/acapulco'
       },
       {
-        name: 'ATLATIC BREEZE',
-        linkTo: '/atlatic-breeze'
+        name: 'ATLANTIC BREEZE',
+        linkTo: '/atlantic-breeze'
       },
       {
         name: 'DEATH IN THE GULF STREAM',
