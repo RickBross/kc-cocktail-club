@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
-import Frame from '../UI/Frame/Frame';
+import Drink from '../UI/Drink/Drink';
 import Banner from '../UI/Banner/Banner';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
@@ -41,7 +41,7 @@ export default class Recipe extends React.Component {
           tone={AppStore.getProp('tone')}
           active={MenuStore.getProp('active')}
         />
-      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.recipe)}>
+      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.recipe, styles[alcohol+'Alcohol'])}>
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
@@ -55,23 +55,28 @@ export default class Recipe extends React.Component {
                 </p>
               </div>
               <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.right)}>
-                <Frame width="100%"
-                  height="26rem"
-                  backgroundImage={"url(http://localhost:8000/images/pages/" + alcohol + "/primary.png)"}
-                  backgroundSize="cover"
-                  backgroundPosition="65% 0"
+                <Drink
+                  backgroundImage={"url(http://localhost:8000/images/pages/" + alcohol + "/" + recipe + ".png)"}
+                  backgroundSize="contain"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
                   z="20"
-                  accent={"http://localhost:8000/images/pages/" + alcohol + "/accent.png"}
-                  accentStyle={{width: '100%', top: '90%', right:'80%', zIndex:'10'}} />
+                  accentStyle={{
+                    width: '100%',
+                    height: '100%',
+                    top: '0',
+                    right:'0',
+                    zIndex:'10',
+                    backgroundImage: "url(http://localhost:8000/images/pages/" + alcohol + "/banner.png)",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center"
+                  }} />
               </div>
             </div>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12)}>
-                <ul style={{backgroundImage:"url(http://localhost:8000/images/pages/" + alcohol + "/banner.png)"}} className={classNames(styles.recipeList, styles.lsn, styles.center, styles.block)}>
-                  {ALCOHOL[alcohol.toUpperCase()].recipes.map((item, i) => {
-                    return (<Link key={item.linkTo} className={styles.tdn} to={PAGES.RECIPES.linkTo + "/" + alcohol + item.linkTo}><li>{item.name}</li></Link>);
-                  }, this)}
-                </ul>
+                
               </div>
             </div>
           </div>

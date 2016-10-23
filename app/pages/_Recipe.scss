@@ -52,7 +52,12 @@
     padding: 3rem;
     .primaryPhoto {
       display: block;
-      padding: 0 2rem;
+      padding: 0;
+    }
+  }
+  .rumAlcohol {
+    .primaryPhoto {
+      height: 500px;
     }
   }
 }
