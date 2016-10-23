@@ -20,6 +20,11 @@ export default class Recipe extends React.Component {
 
 
   componentDidMount() {
+    let recipeName = ALCOHOL[this.props.params.alcohol.toUpperCase()].recipes.filter(function(item) {
+      return item.linkTo === "/"+this.props.params.recipe;
+    }.bind(this))[0].name;
+
+    document.title = recipeName + " Recipe - Kansas City Cocktail Club";
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});
@@ -76,7 +81,7 @@ export default class Recipe extends React.Component {
             </div>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12)}>
-                
+
               </div>
             </div>
           </div>

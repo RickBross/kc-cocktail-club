@@ -5,27 +5,27 @@ export default {
   RUM: {
     recipes: [
       {
-        name: 'CAIPIRINHA',
+        name: 'Caipirinha',
         linkTo: '/caipirinha'
       },
       {
-        name: 'DARK AND STORMY',
+        name: 'Dark and Story',
         linkTo: '/dark-and-stormy'
       },
       {
-        name: 'CENTENARIO',
+        name: 'Centenario',
         linkTo: '/centenario'
       },
       {
-        name: 'ACAPULCO',
+        name: 'Acapulco',
         linkTo: '/acapulco'
       },
       {
-        name: 'ATLANTIC BREEZE',
+        name: 'Atlantic Breeze',
         linkTo: '/atlantic-breeze'
       },
       {
-        name: 'DEATH IN THE GULF STREAM',
+        name: 'Death In The Gulf Stream',
         linkTo: '/death-in-the-gulf-stream'
       }
     ]

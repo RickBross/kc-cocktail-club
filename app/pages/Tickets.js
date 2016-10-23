@@ -14,6 +14,7 @@ export default class Tickets extends React.Component {
 
 
   componentDidMount() {
+    document.title = "Pricing Options - Kansas City Cocktail Club";
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});

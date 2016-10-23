@@ -14,6 +14,7 @@ export default class Booking extends React.Component {
 
 
   componentDidMount() {
+    document.title = "Private Events - Kansas City Cocktail Club";
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});

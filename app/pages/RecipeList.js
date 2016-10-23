@@ -20,6 +20,7 @@ export default class RecipeList extends React.Component {
 
 
   componentDidMount() {
+    document.title = this.props.params.alcohol.capitalizeFirstLetter() + " Recipes - Kansas City Cocktail Club";
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});

@@ -51,6 +51,10 @@ export default class Recipes extends React.Component {
     MenuStore.setProps({title:'Discover'});
   }
 
+  componentDidMount() {
+    document.title = "Recipes - Kansas City Cocktail Club";
+  }
+
   onClick() {
     AppStore.setProps({tone:'light'});
   }

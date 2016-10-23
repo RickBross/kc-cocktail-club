@@ -12,6 +12,7 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
+    document.title = "Kansas City Cocktail Club";
     AppStore.setProps({tone:'dark'});
     MenuStore.setProps({title:'Discover'});
     AppStore.setProps({backgroundImage:'url(http://localhost:8000/images/hero-bg.png)'});
