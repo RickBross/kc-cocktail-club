@@ -6,7 +6,33 @@ export default {
     recipes: [
       {
         name: 'Caipirinha',
-        linkTo: '/caipirinha'
+        linkTo: '/caipirinha',
+        ingredients: [
+          {
+            quantity: '.5oz',
+            title: 'Fresh Lemon Juice'
+          },
+          {
+            quantity: '3ds',
+            title: 'Angonstura Bitters'
+          },
+          {
+            quantity: '2oz',
+            title: 'Bourbon'
+          },
+          {
+            quantity: '.5oz',
+            title: 'Elderflower Liqueur'
+          },
+          {
+            quantity: 'Splash',
+            title: 'Club Soda'
+          },
+          {
+            quantity: 'Garnish',
+            title: 'Lemon Wheel'
+          }
+        ],
       },
       {
         name: 'Dark and Story',

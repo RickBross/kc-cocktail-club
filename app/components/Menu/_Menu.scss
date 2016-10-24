@@ -229,17 +229,17 @@ li.item {
 }
 
 @media (min-width: 415px) {
-  .darkTone {
-    .wrapper {
-      border-right: 1px solid $darkActivePrimaryBg;
-    }
-  }
   .title {
     display: block;
   }
 }
 
 @media (min-width: 768px) {
+  .darkTone, .lightTone {
+    .wrapper {
+      border-right: 1px solid $darkActivePrimaryBg;
+    }
+  }
   .menuIconWrapper {
     left: 0;
     position: relative;

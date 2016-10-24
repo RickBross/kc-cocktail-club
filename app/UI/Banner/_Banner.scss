@@ -5,22 +5,12 @@
   height: 40vh;
   .accent {
     position: absolute;
-    width: 60%;
-    bottom: -10%;
-    left:50%;
-    right: auto;
-    z-index:10;
   }
 }
 
 @media(min-width:415px) {
   .banner {
     height: 65vh;
-    .accent {
-      width: 40%;
-      right: -4%;
-      left: auto;
-    }
   }
 }
 

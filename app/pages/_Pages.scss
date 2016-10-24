@@ -3,6 +3,7 @@
 .body {
   display: flex;
   height: 100vh;
+  overflow-x: hidden;
   font-size: inherit;
   &.darkTone {
     color: white;

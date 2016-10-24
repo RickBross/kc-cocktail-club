@@ -5,7 +5,7 @@
 
 }
 
-.body.recipe {
+.body.recipeList {
   padding: 0;
   padding-top: 0;
   overflow-y: scroll;
@@ -17,18 +17,15 @@
       color: $lightInactivePrimaryLink;
     }
   }
-  .container {
-    padding: 2.25rem 1rem;
-  }
   .primaryPhoto {
     display: none;
     padding: 3rem 0;
     margin-bottom: 5rem;
   }
   .row {
-    margin-bottom: 2rem;
+    padding: 2rem 1.5rem;
   }
-  .recipeList {
+  .list {
     padding: 0;
     text-align: center;
     width: 100%;
@@ -49,13 +46,14 @@
   }
 }
 
-.recipe.rumAlcohol {
+.rumAlcohol {
   .banner {
     .accent {
-      width: 65%;
-      left: 50%;
-      z-index: 10;
-      bottom: -20%;
+      width: 60%;
+      bottom: -10%;
+      left:50%;
+      right: auto;
+      z-index:10;
     }
   }
 }
@@ -65,7 +63,7 @@
 }
 
 @media(min-width:768px) {
-  .body.recipe {
+  .body.recipeList {
     padding: 3rem;
     .primaryPhoto {
       display: block;

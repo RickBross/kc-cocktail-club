@@ -6,8 +6,13 @@
 }
 
 .body.recipe {
-  padding: 2rem 1.5rem;
-  padding-top: 5rem;
+  padding: 0;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  .row {
+    padding: 2rem 1.5rem;
+  }
   overflow-y: scroll;
   a {
     text-decoration-color: $lightInactivePrimaryLink;
@@ -15,8 +20,10 @@
       color: $lightInactivePrimaryLink;
     }
   }
+  p {
+    font-size: .9rem;
+  }
   .banner {
-    background: #f00;
   }
   .primaryPhoto {
     display: none;
@@ -45,14 +52,44 @@
       }
     }
   }
+  .instructions {
+    padding: 0;
+    span, p {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+    p {
+      padding: 2rem;
+    }
+  }
+}
+
+.recipe.rumAlcohol {
+  .banner {
+    overflow: hidden;
+    .accent {
+      height: 100%;
+      left: 55%;
+      z-index: 10;
+      bottom: -20%;
+    }
+  }
 }
 
 @media(min-width:768px) {
   .body.recipe {
     padding: 3rem;
+    p {
+      font-size: .85rem;
+    }
     .primaryPhoto {
       display: block;
       padding: 0;
+    }
+    .instructions {
+      span, p {
+        font-size: .9rem;
+      }
     }
   }
   .rumAlcohol {

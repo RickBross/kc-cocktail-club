@@ -1,0 +1,43 @@
+@import "toolkit";
+
+.ingredientList {
+  padding: 2rem 0;
+  display: block;
+  overflow: hidden;
+  ul {
+    margin: 0;
+  }
+  li {
+    line-height: 1.6rem;
+    font-family: "Galano Classic Medium";
+    // font-weight: bold;
+    span {
+      display: block;
+      float: left;
+      letter-spacing: .12rem;
+    }
+    span:first-child {
+      width: 30%;
+      padding-right: .75rem;
+      text-align: right;
+    }
+    span:last-child {
+      width: 70%;
+    }
+  }
+
+  &.rumIngredients {
+    background: $rumRecipeBg;
+    color: $white;
+  }
+}
+
+@media(min-width:415px) {
+}
+
+@media(min-width:768px) {
+  .ingredientList.rumIngredients {
+    background: none;
+    color: $black;
+  }
+}
