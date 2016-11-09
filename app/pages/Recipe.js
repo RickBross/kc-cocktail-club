@@ -102,6 +102,14 @@ export default class Recipe extends React.Component {
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.</p>
               </div>
             </div>
+            <div className={classNames(styles.videoWrapper, styles.row)}>
+              <div className={classNames(styles.video)}>
+                <video controls>
+                  Your browser does not support the video tag.
+                </video>
+                <div className={classNames(styles.accent)}></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

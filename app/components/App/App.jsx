@@ -18,7 +18,7 @@ const routes = (
   <Route path={PAGES.HOME.linkTo}>
     <IndexRoute component={Home} />
     <Route path={PAGES.EVENTS.linkTo} component={Events} />
-    <Route path='/recipes' component={Recipes} />
+    <Route path={PAGES.RECIPES.linkTo} component={Recipes} />
       <Route path='/recipes/:alcohol' component={RecipeList} />
       <Route path='/recipes/:alcohol/:recipe' component={Recipe} />
     <Route path={PAGES.TICKETS.linkTo} component={Tickets} />

@@ -4,7 +4,7 @@ export default {
   },
   RECIPES: {
     linkTo: '/recipes',
-    RECIPELIST: {
+    LIST: {
       linkTo: '/recipes/:alcohol',
       RECIPE: {
         linkTo: '/recipes/:alcohol/:recipe'

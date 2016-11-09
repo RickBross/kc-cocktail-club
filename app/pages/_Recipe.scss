@@ -62,6 +62,21 @@
       padding: 2rem;
     }
   }
+  .videoWrapper {
+    text-align: center;
+    max-width: 756px;
+    .video {
+      z-index: 20;
+      position: relative;
+    }
+    video {
+      height: auto;
+      width: 100%;
+      background: #333;
+      z-index: 20;
+      position: inherit;
+    }
+  }
 }
 
 .recipe.rumAlcohol {
@@ -91,6 +106,19 @@
         font-size: .9rem;
       }
     }
+    .videoWrapper {
+      .accent {
+        content: ' ';
+        position: absolute;
+        height: 70%;
+        width: 300%;
+        display: block;
+        top: 15%;
+        left: -2rem;
+        background: $lightActiveSecondaryBg;
+        z-index: 10;
+      }
+    }
   }
   .rumAlcohol {
     .primaryPhoto {
@@ -100,4 +128,9 @@
 }
 
 @media (min-width: 992px) { // Desktop
+  .body.recipe .videoWrapper {
+    .accent {
+      left: -4rem;
+    }
+  }
 }
