@@ -4,12 +4,15 @@ export default {
   },
   RECIPES: {
     linkTo: '/recipes',
-    RECIPELIST: {
+    LIST: {
       linkTo: '/recipes/:recipe'
     },
   },
   EVENTS: {
-    linkTo: '/events'
+    linkTo: '/events',
+    DETAIL: {
+      linkTo: '/events/:event'
+    }
   },
   TICKETS: {
     linkTo: '/purchase-tickets'

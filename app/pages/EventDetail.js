@@ -7,13 +7,14 @@ import Slideshow from '../UI/Slideshow/Slideshow';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
-import styles from './_EventDetail.scss';
+import styles from './_Events.scss';
 
 
-export default class EventDetail extends React.Component {
+export default class Events extends React.Component {
 
 
   componentDidMount() {
+    
     document.title = "EventDetail - Kansas City Cocktail Club";
 
     const bg = 'white'

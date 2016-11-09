@@ -14,6 +14,7 @@ export default class Events extends React.Component {
 
 
   componentDidMount() {
+    document.title = "Events - Kansas City Cocktail Club";
 
     const bg = 'white'
     AppStore.setProps({tone:'dark'});
