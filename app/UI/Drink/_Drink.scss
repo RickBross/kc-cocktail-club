@@ -1,0 +1,27 @@
+@import "toolkit";
+
+.drink {
+  display: none;
+}
+
+@media(min-width:415px) {
+}
+
+@media(min-width:768px) {
+  .drink {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+    .accent {
+      position: absolute;
+      width: 60%;
+      top: 0;
+      left:0;
+      right: auto;
+      z-index:10;
+    }
+  }
+}

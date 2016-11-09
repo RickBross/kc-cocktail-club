@@ -1,0 +1,136 @@
+@import "toolkit";
+@import "./_Pages";
+
+.makeBackground {
+
+}
+
+.body.recipe {
+  padding: 0;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  .row {
+    padding: 2rem 1.5rem;
+  }
+  overflow-y: scroll;
+  a {
+    text-decoration-color: $lightInactivePrimaryLink;
+    h6 {
+      color: $lightInactivePrimaryLink;
+    }
+  }
+  p {
+    font-size: .9rem;
+  }
+  .banner {
+  }
+  .primaryPhoto {
+    display: none;
+    padding: 3rem 0;
+    margin-bottom: 5rem;
+  }
+  .row {
+    margin-bottom: 2rem;
+  }
+  .recipeList {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 22rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 3rem;
+    li {
+      color: $lightInactiveSecondaryLink;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-family: "Moonshiner Sharp";
+      &:hover {
+        color: $lightActiveSecondaryLink;
+      }
+    }
+  }
+  .instructions {
+    padding: 0;
+    span, p {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+    p {
+      padding: 2rem;
+    }
+  }
+  .videoWrapper {
+    text-align: center;
+    max-width: 756px;
+    .video {
+      z-index: 20;
+      position: relative;
+    }
+    video {
+      height: auto;
+      width: 100%;
+      background: #333;
+      z-index: 20;
+      position: inherit;
+    }
+  }
+}
+
+.recipe.rumAlcohol {
+  .banner {
+    overflow: hidden;
+    .accent {
+      height: 100%;
+      left: 55%;
+      z-index: 10;
+      bottom: -20%;
+    }
+  }
+}
+
+@media(min-width:768px) {
+  .body.recipe {
+    padding: 3rem;
+    p {
+      font-size: .85rem;
+    }
+    .primaryPhoto {
+      display: block;
+      padding: 0;
+    }
+    .instructions {
+      span, p {
+        font-size: .9rem;
+      }
+    }
+    .videoWrapper {
+      .accent {
+        content: ' ';
+        position: absolute;
+        height: 70%;
+        width: 300%;
+        display: block;
+        top: 15%;
+        left: -2rem;
+        background: $lightActiveSecondaryBg;
+        z-index: 10;
+      }
+    }
+  }
+  .rumAlcohol {
+    .primaryPhoto {
+      height: 500px;
+    }
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+  .body.recipe .videoWrapper {
+    .accent {
+      left: -4rem;
+    }
+  }
+}

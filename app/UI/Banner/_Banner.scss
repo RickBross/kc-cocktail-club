@@ -1,0 +1,21 @@
+@import "toolkit";
+
+.banner {
+  position: relative;
+  height: 40vh;
+  .accent {
+    position: absolute;
+  }
+}
+
+@media(min-width:415px) {
+  .banner {
+    height: 65vh;
+  }
+}
+
+@media(min-width:768px) {
+  .banner {
+    display: none;
+  }
+}

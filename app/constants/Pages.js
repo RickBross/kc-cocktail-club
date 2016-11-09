@@ -4,8 +4,11 @@ export default {
   },
   RECIPES: {
     linkTo: '/recipes',
-    RECIPELIST: {
-      linkTo: '/recipes/:recipe'
+    LIST: {
+      linkTo: '/recipes/:alcohol',
+      RECIPE: {
+        linkTo: '/recipes/:alcohol/:recipe'
+      },
     },
   },
   EVENTS: {

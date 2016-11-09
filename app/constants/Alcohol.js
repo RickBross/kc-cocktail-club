@@ -5,27 +5,53 @@ export default {
   RUM: {
     recipes: [
       {
-        name: 'CAIPIRINHA',
-        linkTo: '/caipirinha'
+        name: 'Caipirinha',
+        linkTo: '/caipirinha',
+        ingredients: [
+          {
+            quantity: '.5oz',
+            title: 'Fresh Lemon Juice'
+          },
+          {
+            quantity: '3ds',
+            title: 'Angonstura Bitters'
+          },
+          {
+            quantity: '2oz',
+            title: 'Bourbon'
+          },
+          {
+            quantity: '.5oz',
+            title: 'Elderflower Liqueur'
+          },
+          {
+            quantity: 'Splash',
+            title: 'Club Soda'
+          },
+          {
+            quantity: 'Garnish',
+            title: 'Lemon Wheel'
+          }
+        ],
       },
       {
-        name: 'DARK AND STORMY',
+        name: 'Dark and Story',
         linkTo: '/dark-and-stormy'
       },
       {
-        name: 'CENTENARIO',
+        name: 'Centenario',
         linkTo: '/centenario'
       },
       {
-        name: 'ACAPULCO',
+        name: 'Acapulco',
         linkTo: '/acapulco'
       },
       {
-        name: 'ATLATIC BREEZE',
-        linkTo: '/atlatic-breeze'
+        name: 'Atlantic Breeze',
+        linkTo: '/atlantic-breeze'
       },
       {
-        name: 'DEATH IN THE GULF STREAM',
+        name: 'Death In The Gulf Stream',
         linkTo: '/death-in-the-gulf-stream'
       }
     ]

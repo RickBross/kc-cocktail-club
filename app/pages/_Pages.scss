@@ -3,6 +3,7 @@
 .body {
   display: flex;
   height: 100vh;
+  overflow-x: hidden;
   font-size: inherit;
   &.darkTone {
     color: white;
@@ -84,7 +85,7 @@
   p {
     font-family: "Galano Classic";
     margin-bottom: 1rem;
-    font-size: .7rem;
+    font-size: .85rem;
     line-height: 1.65rem;
   }
   .row {

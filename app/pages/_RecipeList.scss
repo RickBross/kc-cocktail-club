@@ -5,10 +5,12 @@
 
 }
 
-.body.recipe {
-  padding: 2rem 1.5rem;
-  padding-top: 5rem;
+.body.recipeList {
+  padding: 0;
+  padding-top: 0;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
   a {
     text-decoration-color: $lightInactivePrimaryLink;
     h6 {
@@ -21,9 +23,9 @@
     margin-bottom: 5rem;
   }
   .row {
-    margin-bottom: 2rem;
+    padding: 2rem 1.5rem;
   }
-  .recipeList {
+  .list {
     padding: 0;
     text-align: center;
     width: 100%;
@@ -44,8 +46,24 @@
   }
 }
 
+.rumAlcohol {
+  .banner {
+    .accent {
+      width: 60%;
+      bottom: -10%;
+      left:50%;
+      right: auto;
+      z-index:10;
+    }
+  }
+}
+
+@media(min-width:415px) {
+
+}
+
 @media(min-width:768px) {
-  .body.recipe {
+  .body.recipeList {
     padding: 3rem;
     .primaryPhoto {
       display: block;
