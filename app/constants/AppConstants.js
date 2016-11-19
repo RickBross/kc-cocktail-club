@@ -1,9 +1,10 @@
 import pkg from '../../package';
 
-export {default as ALCOHOL} from './Alcohol.js';
-export {default as PAGES} from './Pages.js';
-export {default as SOCIAL} from './Social.js';
-export {default as MENU} from './Menu.js';
+export {default as ALCOHOL} from './Alcohol';
+export {default as ROUTES} from './Routes';
+export {default as SOCIAL} from './Social';
+export {default as MENU} from './Menu';
+export {default as EVENTS} from './Events';
 
 export const DEBUG = (process.env.NODE_ENV !== 'production');
 export const APP_TITLE = 'KC Cocktail Club';

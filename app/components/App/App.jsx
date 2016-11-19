@@ -21,19 +21,19 @@ import AppStore from '../../stores/AppStore';
 import classNames from 'classnames'
 
 import {
-  PAGES,
+  ROUTES,
 } from '../../constants/AppConstants';
 
 const routes = (
-  <Route path={PAGES.HOME.linkTo}>
+  <Route path={ROUTES.HOME.linkTo}>
     <IndexRoute component={Home} />
-    <Route path={PAGES.EVENTS.linkTo} component={Events} />
-      <Route path={PAGES.EVENT.linkTo} component={EventDetail} />
-    <Route path={PAGES.RECIPES.linkTo} component={Recipes} />
+    <Route path={ROUTES.EVENTS.linkTo} component={Events} />
+      <Route path={ROUTES.EVENT.linkTo} component={EventDetail} />
+    <Route path={ROUTES.RECIPES.linkTo} component={Recipes} />
       <Route path='/recipes/:alcohol' component={RecipeList} />
       <Route path='/recipes/:alcohol/:recipe' component={Recipe} />
-    <Route path={PAGES.TICKETS.linkTo} component={Tickets} />
-    <Route path={PAGES.BOOKING.linkTo} component={Booking} />
+    <Route path={ROUTES.TICKETS.linkTo} component={Tickets} />
+    <Route path={ROUTES.BOOKING.linkTo} component={Booking} />
     <Route path='/404' component={Error404} />
     <Redirect from='*' to='/404' />
   </Route>
