@@ -5,6 +5,9 @@
   height: 100vh;
   overflow-x: hidden;
   font-size: inherit;
+  .row {
+    padding: 2rem 1.5rem;
+  }
   &.darkTone {
     color: white;
   }
@@ -15,6 +18,12 @@
     }
     h1,h2 {
       color: $lightInactivePrimaryText;
+    }
+    a {
+      text-decoration-color: $lightInactivePrimaryLink;
+      h6 {
+        color: $lightInactivePrimaryLink;
+      }
     }
     form {
       input {
@@ -67,10 +76,12 @@
       text-decoration: underline;
     }
   }
+  .pageHeading {
+    margin-bottom: 2.5rem;
+  }
   h1 {
     font-size: 3rem;
     letter-spacing: 0.2rem;
-    margin-bottom: 2.5rem;
   }
   h2 {
     font-size: 2rem;

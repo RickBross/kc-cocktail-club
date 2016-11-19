@@ -39,8 +39,10 @@ export default class Booking extends React.Component {
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
-                <h6>Private Events</h6>
-                <h1>A happy hour the whole team can get behind</h1>
+                <div className={classNames(styles.pageHeading)}>
+                  <h6>Private Events</h6>
+                  <h1>A happy hour the whole team can get behind</h1>
+                </div>
                 <p>
                   Cocktail Club is a monthly gathering of people who love to drink and love to learn. We provide a fun atmosphere to begin crafting your very own cocktails, providing all of the fresh ingredients and bar tools you’ll need.
                 </p>
@@ -52,17 +54,17 @@ export default class Booking extends React.Component {
                 </p>
                 <br />
                 <form>
-                  <div className={styles.row}>
+                  <div>
                     <div className={classNames(styles.column, styles.column12)}>
                       <input type="text" name="name" placeholder="Name" />
                     </div>
                     <div className={classNames(styles.column, styles.column12)}>
                       <input type="text" name="email" placeholder="Email" />
                     </div>
-                    <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
+                    <div className={classNames(styles.column, styles.column12, styles.column6Desktop)}>
                       <input type="text" name="guests_quantity" placeholder="# of Guests" />
                     </div>
-                    <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
+                    <div className={classNames(styles.column, styles.column12, styles.column6Desktop)}>
                       <input type="text" name="date" placeholder="Date of Events" />
                     </div>
                   </div>

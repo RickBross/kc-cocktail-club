@@ -39,8 +39,10 @@ export default class Tickets extends React.Component {
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
-                <h6>How much does it cost...</h6>
-                <h1>Pricing Options</h1>
+                <div className={classNames(styles.pageHeading)}>  
+                  <h6>How much does it cost...</h6>
+                  <h1>Pricing Options</h1>
+                </div>
                 <p>
                   We try to put on the best event possible for you, from the recipe cards to the locations we have our events at. Everything you will need, from glassware to alcohol and garnishes, will be prepared and ready for you to use. We want everyone to enjoy the pleasures of crafting your own cocktail so to keep the costs down we do not run this event for a profit. All the money goes back into the event to continue to make this a great event all can attend and enjoy.
                 </p>
@@ -78,6 +80,7 @@ export default class Tickets extends React.Component {
                 <button>Purchase</button>
               </div>
               <div className={classNames(styles.paymentOption, styles.column,styles.column12,styles.column4Tablet)}>
+                  <br/>
                   <h6>All transactions processed with</h6>
                   <img  width="70px" src="http://localhost:8000/images/pages/tickets/stripe.png" />
                   <br /><br /><br />
