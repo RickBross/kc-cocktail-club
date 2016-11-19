@@ -3,6 +3,10 @@ import React from 'react'
 import { Link } from 'react-router'
 import classNames from 'classnames'
 
+import {
+  EVENTS
+} from '../../constants/AppConstants'
+
 let { Component, PropTypes } = React;
 
 
@@ -124,24 +128,7 @@ export default class Slideshow extends Component {
   }
   componentWillMount() {
     this.activeIndex = 0;
-    this.slides = [
-      {
-        date: 'August 24, 2016 | 7:30pm',
-        address: '2101 Broadway 64108'
-      },
-      {
-        date: 'August 31, 2016 | 7:00pm',
-        address: '2101 Broadway 64108'
-      },
-      {
-        date: 'August 31, 2016 | 7:00pm',
-        address: '2101 Broadway 64108'
-      },
-      {
-        date: 'August 31, 2016 | 7:00pm',
-        address: '2101 Broadway 64108'
-      }
-    ];
+    this.slides = EVENTS;
   }
 
   render() {
