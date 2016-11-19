@@ -21,6 +21,9 @@
     display: inline-block;
     width: 100%;
     height: 100%;
+    a {
+      color: inherit;
+    }
   }
   p {
     font-family: "Galano Classic Medium";

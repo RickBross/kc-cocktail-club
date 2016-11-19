@@ -1,5 +1,6 @@
 import styles from './_Slideshow.scss'
 import React from 'react'
+import { Link } from 'react-router'
 import classNames from 'classnames'
 
 let { Component, PropTypes } = React;
@@ -83,12 +84,14 @@ class Slider extends React.Component {
                 <div className={this.slideClasses(index)} onClick={this.props.onclick}>
                   <div className={classNames(styles.bg)}></div>
                   <div className={classNames(styles.fg,styles.centerAbs)}>
-                    <div className={classNames(styles.layer)}>
-                      <img src="http://localhost:8000/images/events/hero/drop.png" />
-                      <h1>Meeting #{index+1}</h1>
-                      <p>{slide.date}</p>
-                      <p>{slide.address}</p>
-                    </div>
+                    <Link to={'/events/' + (parseInt(index+1))}>
+                      <div className={classNames(styles.layer)}>
+                        <img src="http://localhost:8000/images/events/hero/drop.png" />
+                        <h1>Meeting #{index+1}</h1>
+                        <p>{slide.date}</p>
+                        <p>{slide.address}</p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </li>

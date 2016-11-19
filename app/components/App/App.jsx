@@ -1,7 +1,17 @@
 import styles from './_App.scss';
 
 import { Router, Route, Redirect, hashHistory, IndexRoute } from 'react-router';
-import { Home, Recipes, RecipeList, Recipe, Events, Tickets, Booking, Error404 } from '../../pages';
+
+import {
+  Home,
+  Recipes,
+  RecipeList,
+  Recipe,
+  Events,
+  EventDetail,
+  Tickets,
+  Booking,
+  Error404 } from '../../pages';
 
 import React from 'react';
 import AppActions from '../../actions/AppActions';
@@ -18,6 +28,7 @@ const routes = (
   <Route path={PAGES.HOME.linkTo}>
     <IndexRoute component={Home} />
     <Route path={PAGES.EVENTS.linkTo} component={Events} />
+      <Route path={PAGES.EVENT.linkTo} component={EventDetail} />
     <Route path={PAGES.RECIPES.linkTo} component={Recipes} />
       <Route path='/recipes/:alcohol' component={RecipeList} />
       <Route path='/recipes/:alcohol/:recipe' component={Recipe} />

@@ -14,6 +14,9 @@ export default {
   EVENTS: {
     linkTo: '/events'
   },
+  EVENT: {
+    linkTo: '/events/:event'
+  },
   TICKETS: {
     linkTo: '/purchase-tickets'
   },
