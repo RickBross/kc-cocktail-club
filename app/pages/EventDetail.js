@@ -4,17 +4,30 @@ import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
 import Frame from '../UI/Frame/Frame';
+import Video from '../UI/Video/Video';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
+import {
+  ROUTES,
+  ALCOHOL,
+  EVENTS,
+} from '../constants/AppConstants';
+
 import styles from './_EventDetail.scss';
 
+let eventNumber, eventIndex, eventData;
 
 export default class EventDetail extends React.Component {
 
 
-  componentDidMount() {
-    document.title = "Private Events - Kansas City Cocktail Club";
+  componentWillMount() {
+    eventNumber = this.props.params.event;
+    eventIndex = parseInt(eventNumber)-1;
+    eventData = EVENTS[eventIndex];
+    console.log(eventData);
+
+    document.title = "Meeting #" + eventNumber;
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});
@@ -27,8 +40,6 @@ export default class EventDetail extends React.Component {
   }
 
   render() {
-    let eventNumber = this.props.params.event;
-    let eventIndex = parseInt(eventIndex)-1;
     return (
       <div>
         <Menu
@@ -40,8 +51,14 @@ export default class EventDetail extends React.Component {
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
-                <h6>Meeting #{eventNumber}</h6>
-                <h1>A happy hour the whole team can get behind</h1>
+                <Link to={ROUTES.EVENTS.linkTo}><h6>&laquo; Back to Meetings</h6></Link>
+                <div className={classNames(styles.pageHeading)}>
+                  <h1>Meeting #{eventNumber}</h1>
+                  <h4>
+                    {eventData.address}<br/>
+                    {eventData.date}
+                  </h4>
+                </div>
                 <p>
                   Cocktail Club is a monthly gathering of people who love to drink and love to learn. We provide a fun atmosphere to begin crafting your very own cocktails, providing all of the fresh ingredients and bar tools you’ll need.
                 </p>
@@ -61,6 +78,9 @@ export default class EventDetail extends React.Component {
                   accent="http://localhost:8000/images/pages/booking/accent.png"
                   accentStyle={{bottom: '-3rem', right: '-4rem', zoom: '.6'}} />
               </div>
+            </div>
+            <div className={classNames(styles.row)}>
+              <Video></Video>
             </div>
           </div>
         </div>
