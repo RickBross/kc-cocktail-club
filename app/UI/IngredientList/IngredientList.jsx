@@ -22,7 +22,7 @@ export default class IngredientList extends Component {
         <ul className={classNames(styles.lsn)}>
             {this.ingredients.map((item, i) => {
               return (
-                <li>
+                <li key={i}>
                   <span>{item.quantity}</span>
                   <span>{item.title}</span>
                 </li>

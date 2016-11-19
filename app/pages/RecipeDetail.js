@@ -15,16 +15,16 @@ import {
   ROUTES,
 } from '../constants/AppConstants';
 
-import styles from './_Recipe.scss';
+import styles from './_RecipeDetail.scss';
 
 
-export default class Recipe extends React.Component {
+export default class RecipeDetail extends React.Component {
 
 
   componentWillMount() {
     let recipeName = this.getRecipe().name;
 
-    document.title = recipeName + " Recipe - Kansas City Cocktail Club";
+    document.title = recipeName + " RecipeDetail - Kansas City Cocktail Club";
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});
