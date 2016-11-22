@@ -88,6 +88,40 @@ export default class EventDetail extends React.Component {
                   />
                 </div>
               </div>
+              <div className={classNames(styles.collageTwo, styles.row)}>
+                  <Frame width="45%"
+                  height="50%"
+                  backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-3.png)"}
+                  backgroundSize="cover"
+                  position="absolute"
+                  left="27.5%"
+                  top="0"
+                  margin='0 auto'
+                  z='30'
+                />
+              <Frame width="31%"
+                  height="75%"
+                  backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-4.png)"}
+                  backgroundSize="cover"
+                  position="absolute"
+                  right="0"
+                  bottom="0"
+                  margin='0 auto'
+                  z='40'
+                />
+                <Frame width="45%"
+                  height="55%"
+                  top="30%"
+                  left="0"
+                  backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-5.png)"}
+                  backgroundSize="cover"
+                  position="absolute"
+                  margin='0 auto'
+                  z='20'
+                  accent={"http://localhost:8000/images/pages/events/" + eventNumber + "/frame-5-accent.png"}
+                  accentStyle={{bottom: '-4rem', right: '-7rem', zIndex: '50'}}
+                />
+              </div>
               <div className={classNames(styles.video, styles.row)}>
                 <div className={classNames(styles.column, styles.column12)}>
                   <Video/>
