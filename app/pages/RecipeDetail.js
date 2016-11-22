@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import Menu from '../components/Menu/Menu';
 import Drink from '../UI/Drink/Drink';
 import Banner from '../UI/Banner/Banner';
+import GhostHeader from '../UI/GhostHeader/GhostHeader';
 import IngredientList from '../UI/IngredientList/IngredientList';
 import Video from '../UI/Video/Video';
 import MenuStore from '../stores/MenuStore';
@@ -66,6 +67,13 @@ export default class RecipeDetail extends React.Component {
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.history, styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
+                <GhostHeader
+                  styles={{
+                    top:"80%",
+                    left:"10%"
+                  }}
+                  text="HISTORY"
+                />
                 <Link to={"/recipes/"+alcoholKey}><h6>&laquo; Back to {alcoholKey.capitalizeFirstLetter()} Cocktails</h6></Link>
                 <div className={classNames(styles.pageHeading)}>
                   <h1>{recipeKey}</h1>

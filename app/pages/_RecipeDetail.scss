@@ -71,11 +71,13 @@
   .body.recipe {
     padding: 3rem;
     p {
-      font-size: .85rem;
+      font-size: .6rem;
+      line-height: 1.3rem;
     }
     .primaryPhoto {
       display: block;
       padding: 0;
+      margin: 0;
     }
     .instructions {
       span, p {

@@ -7,6 +7,7 @@
   font-size: inherit;
   .row {
     padding: 2rem 1.5rem;
+    position: relative;
   }
   &.darkTone {
     color: white;
@@ -18,6 +19,9 @@
     }
     h1,h2 {
       color: $lightInactivePrimaryText;
+    }
+    .ghost {
+      color: $lightGhost;
     }
     a {
       text-decoration-color: $lightInactivePrimaryLink;

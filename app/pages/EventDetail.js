@@ -6,7 +6,6 @@ import Menu from '../components/Menu/Menu';
 import Frame from '../UI/Frame/Frame';
 import Video from '../UI/Video/Video';
 import List from '../UI/List/List';
-import PageAccent from '../UI/PageAccent/PageAccent';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
@@ -107,19 +106,6 @@ export default class EventDetail extends React.Component {
                     margin='0 auto'
                   />
                 </div>
-              </div>
-              <div className={classNames(styles.row)}>
-                <PageAccent position="bottom"
-                  styles={{
-                    "background-image": "url(http://localhost:8000/images/pages/events/page-accent.png)",
-                    "background-repeat": "no-repeat",
-                    "background-size": "contain",
-                    "height": "20rem",
-                    "background-position-y": "100%",
-                    "background-position-x": "center",
-                    "margin-top": "4rem"
-                  }}
-                />
               </div>
             </div>
           </div>
