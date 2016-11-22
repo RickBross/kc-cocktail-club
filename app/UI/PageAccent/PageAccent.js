@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames'
 
-import styles from './_BlankComponent.scss';
+import styles from './_PageAccent.scss';
 
-export default class BlankComponent extends React.Component {
+export default class PageAccent extends React.Component {
 
 
   componentWillMount() {
@@ -15,7 +15,8 @@ export default class BlankComponent extends React.Component {
 
   render() {
     return (
-      <div style={this.props.styles} className={classNames(styles.row)}>
+      <div style={this.props.styles} className={classNames(styles.pageAccent, styles.row)}>\
+        
       </div>
     );
   }
