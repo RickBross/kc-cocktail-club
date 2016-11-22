@@ -5,6 +5,8 @@ import classNames from 'classnames'
 import Menu from '../components/Menu/Menu';
 import Frame from '../UI/Frame/Frame';
 import Video from '../UI/Video/Video';
+import GhostHeader from '../UI/GhostHeader/GhostHeader';
+import PageAccent from '../UI/PageAccent/PageAccent';
 import List from '../UI/List/List';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
@@ -86,15 +88,33 @@ export default class EventDetail extends React.Component {
                   />
                 </div>
               </div>
-              <div className={classNames(styles.row)}>
-                <Video></Video>
+              <div className={classNames(styles.video, styles.row)}>
+                <div className={classNames(styles.column, styles.column12)}>
+                  <Video/>
+                  <GhostHeader
+                    styles={{
+                      top:"-3.5rem",
+                      left:"-3rem",
+                      zIndex: "0"
+                    }}
+                    text="THE VIDEO"
+                  />
+                </div>
               </div>
-              <div className={classNames(styles.row)}>
-                <div className={classNames(styles.attendees, styles.column, styles.column12, styles.column6Tablet)}>
+              <div className={classNames(styles.attendees, styles.row)}>
+                <div className={classNames( styles.column, styles.column12, styles.column6Tablet)}>
                   <List
                     data={eventAttendees}
                     classNames={[styles.column]}
                     width="50%"
+                  />
+                  <GhostHeader
+                    styles={{
+                      top:"94%",
+                      left:"-3rem",
+                      zIndex: "0"
+                    }}
+                    text="THE ATTENDEES"
                   />
                 </div>
                 <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
@@ -107,6 +127,13 @@ export default class EventDetail extends React.Component {
                   />
                 </div>
               </div>
+              <PageAccent
+                styles={{
+                  backgroundImage: "url(http://localhost:8000/images/pages/events/page-accent.png)",
+                  backgroundPosition: "center 100%",
+                  height: "15rem"
+                }}
+              />
             </div>
           </div>
         </div>

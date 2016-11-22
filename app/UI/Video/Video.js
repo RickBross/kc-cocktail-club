@@ -19,7 +19,7 @@ export default class Video extends React.Component {
 
   render() {
     return (
-      <div className={classNames(styles.videoWrapper, styles.row)}>
+      <div style={this.props.styles} className={classNames(styles.videoWrapper, styles.row)}>
         <div className={classNames(styles.video)}>
           <video>
             Your browser does not support the video tag.
