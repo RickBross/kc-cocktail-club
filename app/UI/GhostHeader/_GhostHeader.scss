@@ -4,6 +4,7 @@
   font-family: 'Galano Classic Bold';
   position: absolute;
   letter-spacing: 1.3rem;
+  display: none;
   h3 {
     color: $lightGhost !important;
     font-size:4rem;
@@ -15,7 +16,9 @@
 }
 
 @media (min-width: 992px) { // Desktop
-
+  .ghostHeader {
+    display: block;
+  }
 }
 
 @media (min-width: 992px) { // Large Desktop

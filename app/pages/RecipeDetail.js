@@ -121,7 +121,17 @@ export default class RecipeDetail extends React.Component {
                 text="RECIPE"
               />
             </div>
-            <Video></Video>
+            <div className={classNames(styles.video, styles.row)}>
+              <GhostHeader
+                styles={{
+                  top:"-1rem",
+                  left:"-1rem",
+                  zIndex: "0"
+                }}
+                text="HOW TO"
+              />
+              <Video></Video>
+            </div>
           </div>
         </div>
       </div>
