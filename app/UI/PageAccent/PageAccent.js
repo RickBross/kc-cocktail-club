@@ -15,8 +15,8 @@ export default class PageAccent extends React.Component {
 
   render() {
     return (
-      <div style={this.props.styles} className={classNames(styles.pageAccent, styles.row)}>\
-        
+      <div style={this.props.styles} className={classNames(styles.pageAccent, styles.row)}>
+
       </div>
     );
   }
