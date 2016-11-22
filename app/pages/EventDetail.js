@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import Menu from '../components/Menu/Menu';
 import Frame from '../UI/Frame/Frame';
 import Video from '../UI/Video/Video';
+import List from '../UI/List/List';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
@@ -16,18 +17,12 @@ import {
 
 import styles from './_EventDetail.scss';
 
-let eventNumber, eventIndex, eventData;
+let eventNumber, eventIndex, eventData, eventDate, eventAddress, eventAttendees;
 
 export default class EventDetail extends React.Component {
 
 
-  componentWillMount() {
-    eventNumber = this.props.params.event;
-    eventIndex = parseInt(eventNumber)-1;
-    eventData = EVENTS[eventIndex];
-    console.log(eventData);
-
-    document.title = "Meeting #" + eventNumber;
+    componentWillMount() {
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});
@@ -37,50 +32,81 @@ export default class EventDetail extends React.Component {
     AppStore.setProps({backgroundImage:'none'});
     AppStore.setProps({backgroundSize:'auto 100%'});
     AppStore.setProps({backgroundPosition:'0 0'});
+
+    eventNumber = this.props.params.event;
+    eventIndex = parseInt(eventNumber)-1;
+    eventData = EVENTS[eventIndex];
+    eventDate = eventData.date;
+    eventAddress = eventData.address;
+    eventAttendees = eventData.attendees;
+
+    document.title = "Meeting #" + eventNumber;
   }
 
   render() {
     return (
       <div>
-        <Menu
-          title={MenuStore.getProp('title')}
-          tone={AppStore.getProp('tone')}
-          active={MenuStore.getProp('active')}
-        />
-      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
-        <div className={classNames(styles.container)}>
-            <div className={classNames(styles.row)}>
-              <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
-                <Link to={ROUTES.EVENTS.linkTo}><h6>&laquo; Back to Meetings</h6></Link>
-                <div className={classNames(styles.pageHeading)}>
-                  <h1>Meeting #{eventNumber}</h1>
-                  <h4>
-                    {eventData.address}<br/>
-                    {eventData.date}
-                  </h4>
+        <div>
+          <Menu
+            title={MenuStore.getProp('title')}
+            tone={AppStore.getProp('tone')}
+            active={MenuStore.getProp('active')}
+          />
+          <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
+            <div className={classNames(styles.container)}>
+              <div className={classNames(styles.row)}>
+                <div className={classNames(styles.eventDescription, styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
+                  <Link to={ROUTES.EVENTS.linkTo}><h6>&laquo; Back to Meetings</h6></Link>
+                  <div className={classNames(styles.pageHeading)}>
+                    <h1>Meeting #{eventNumber}</h1>
+                    <h4>
+                      {eventDate}<br/>
+                      {eventAddress}
+                    </h4>
+                  </div>
+                  <p className={classNames(styles.mediumParagraph)}>
+                    Cocktail Club was born out of a desire to pull some of my greatest passions together in one fun event for my friends. I had bartended through school before I started designing full time. After a few years with an “adult job” I was missing the fun I had with mixing drinks every weekend. Cocktail Club came about from me trying to have some fun with friends and has grown from there.
+                  </p>
+                  <div className={classNames(styles.floatRow, styles.collage)} style={{height: '15rem'}}>
+                    <Frame width="80%"
+                      height="15rem"
+                      backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-1.png)"}
+                      backgroundSize="cover"
+                      backgroundPosition="65% 0"
+                      accent={"http://localhost:8000/images/pages/events/" + eventNumber + "/frame-1-accent.png"}
+                      accentStyle={{bottom: '1.5rem', right: '-6.25rem', zIndex: '0'}}
+                    />
+                  </div>
                 </div>
-                <p>
-                  Cocktail Club is a monthly gathering of people who love to drink and love to learn. We provide a fun atmosphere to begin crafting your very own cocktails, providing all of the fresh ingredients and bar tools you’ll need.
-                </p>
-                <p>
-                  Expert instruction from my years behind a bar will help you learn how to mix like a pro, with some tips and tricks along the way. We explore old and new drinks, and share the history of what makes the drink special and timeless. Show up open to new things and ready to have a good time!
-                </p>
-                <p>
-                  We explore old and new drinks, and share the history of what makes the drink special and timeless. Show up open to new things and ready to have a good time!
-                </p>
+                <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
+                  <Frame width="100%"
+                    height="27rem"
+                    backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-2.png)"}
+                    backgroundSize="cover"
+                  />
+                </div>
               </div>
-              <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
-                <Frame width="100%"
-                  height="40rem"
-                  backgroundImage="url(http://localhost:8000/images/pages/booking/primary.png)"
-                  backgroundSize="cover"
-                  backgroundPosition="65% 0"
-                  accent="http://localhost:8000/images/pages/booking/accent.png"
-                  accentStyle={{bottom: '-3rem', right: '-4rem', zoom: '.6'}} />
+              <div className={classNames(styles.row)}>
+                <Video></Video>
               </div>
-            </div>
-            <div className={classNames(styles.row)}>
-              <Video></Video>
+              <div className={classNames(styles.row)}>
+                <div className={classNames(styles.attendees, styles.column, styles.column12, styles.column6Tablet)}>
+                  <List
+                    data={eventAttendees}
+                    classNames={[styles.column]}
+                    width="50%"
+                  />
+                </div>
+                <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
+                  <Frame width="70%"
+                    height="25rem"
+                    backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-2.png)"}
+                    backgroundSize="cover"
+                    backgroundPosition="65% 0"
+                    margin='0 auto'
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

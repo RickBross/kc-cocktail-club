@@ -1,55 +1,22 @@
 @import "toolkit";
 @import "./_Pages";
 
-.makeBackground {
-
-}
-
-.body.booking {
-  overflow-y: scroll;
-  padding-top: 5rem;
-  .primaryPhoto {
-    padding: 3rem 0;
-    display: none;
-  }
-  form {
-    margin-bottom: 1.5rem;
-    padding: 0 1rem;
-    button {
-      float: right;
-    }
-  }
-  .paymentOption {
-    margin-bottom: 2rem;
-    h1 {
-      margin-bottom: .5rem;
-    }
-    span {
-      font-family: "Galano Classic Bold";
-      font-size: .8rem;
-      letter-spacing: .35rem;
-      color: $lightInactiveSecondaryText;
-      font-style: italic;
-      font-weight: 100;
-      margin: 0 0 1rem;
-    }
-    p {
-      margin-top: .75rem;
-    }
-    h6 {
-      margin-bottom: .5rem;
-    }
-  }
+.body {
 }
 
 @media(min-width:768px) {
-  .body.booking {
-    padding: 3rem;
-    .primaryPhoto {
-      display: block;
-    }
-  }
 }
 
 @media (min-width: 992px) { // Desktop
+  .eventDescription {
+    margin-bottom: 2rem;
+  }
+  .body {
+    .row {
+      padding: 0;
+    }
+    .mediumParagraph {
+      margin-bottom: 4rem;
+    }
+  }
 }

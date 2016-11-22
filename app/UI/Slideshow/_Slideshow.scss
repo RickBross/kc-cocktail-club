@@ -134,7 +134,7 @@
 
   .slide1, .slide2, .slide3, .slide4 {
     .bg {
-      $url: 'http://localhost:8000/images/events/hero/1.jpg';
+      $url: 'http://localhost:8000/images/pages/events/hero/1.jpg';
       @include shade($url, $filterHeavy , $filterHeavy);
     }
   }

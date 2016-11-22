@@ -1,0 +1,25 @@
+@import "toolkit";
+
+.listitem {
+  width: 100%;
+  font-family: 'Moonshiner';
+  letter-spacing: .25rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+  font-family: 'Moonshiner';
+  line-height: 1.8rem;
+}
+
+@media(min-width:768px) { // Tablet
+  .listitem {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+
+}
+
+@media (min-width: 992px) { // Large Desktop
+
+}

@@ -25,6 +25,9 @@
         color: $lightInactivePrimaryLink;
       }
     }
+    li {
+      color: $black;
+    }
     form {
       input {
         border-bottom: 2px solid $lightInactivePrimaryText;
@@ -48,8 +51,12 @@
     margin: 0;
   }
   h1,h2 {
-    font-family: "Moonshiner Sharp";
+    font-family: "Moonshiner";
     font-weight: 100;
+  }
+  .mediumParagraph {
+    font-size:.625rem;
+    line-height: 1.3rem;
   }
   button {
     background: $lightInactivePrimaryBtn;
@@ -78,6 +85,14 @@
   }
   .pageHeading {
     margin-bottom: 2.5rem;
+    h4 {
+      font-family: 'Galano Classic';
+      font-weight: normal;
+      line-height: 1.5rem;
+      margin-top: 1.5rem;
+      letter-spacing: .02rem;
+      font-size: 1rem;
+    }
   }
   h1 {
     font-size: 3rem;
@@ -99,8 +114,15 @@
     font-size: .85rem;
     line-height: 1.65rem;
   }
-  .row {
+  .row, .floatRow {
     @include container($total-columns);
+  }
+  .floatRow {
+    position: relative;
+    * {
+      position: absolute;
+      z-index:100;
+    }
   }
 }
 .home {
@@ -200,7 +222,10 @@ form {
      @include span(5 of 12)
   }
   .column6Tablet {
-     @include span(6 of 12)
+    &:eq(2) {
+      margin-right: 0;
+    }
+    @include span(6 of 12)
   }
   .column7Tablet {
      @include span(7 of 12)
@@ -315,7 +340,6 @@ form {
     @include span(12 of 12)
   }
   .body h1 {
-    letter-spacing: .8rem;
-    font-size: 3.5rem;
+    letter-spacing: 1rem;
   }
 }

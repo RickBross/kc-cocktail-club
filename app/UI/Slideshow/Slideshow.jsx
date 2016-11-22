@@ -90,7 +90,7 @@ class Slider extends React.Component {
                   <div className={classNames(styles.fg,styles.centerAbs)}>
                     <Link to={'/events/' + (parseInt(index+1))}>
                       <div className={classNames(styles.layer)}>
-                        <img src="http://localhost:8000/images/events/hero/drop.png" />
+                        <img src="http://localhost:8000/images/pages/events/hero/drop.png" />
                         <h1>Meeting #{index+1}</h1>
                         <p>{slide.date}</p>
                         <p>{slide.address}</p>
