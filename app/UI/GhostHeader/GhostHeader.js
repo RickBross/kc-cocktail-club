@@ -4,10 +4,15 @@ import classNames from 'classnames'
 
 import styles from './_GhostHeader.scss';
 
+let zIndex;
+
 export default class GhostHeader extends React.Component {
 
 
   componentWillMount() {
+    zIndex = {
+      zIndex: this.props.styles.zIndex
+    };
   }
 
   componentDidMount() {
@@ -16,7 +21,7 @@ export default class GhostHeader extends React.Component {
   render() {
     return (
       <div style={this.props.styles} className={classNames(styles.ghostHeader)}>
-        <h3 className={classNames(styles.ghost)}>{this.props.text}</h3>
+        <h3 style={zIndex} className={classNames(styles.ghost)}>{this.props.text}</h3>
       </div>
     );
   }

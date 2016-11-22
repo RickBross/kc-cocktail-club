@@ -66,14 +66,14 @@ export default class RecipeDetail extends React.Component {
         </div>
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.history, styles.row)}>
+              <GhostHeader
+                styles={{
+                  top:"80%",
+                  left:"10%"
+                }}
+                text="HISTORY"
+              />
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
-                <GhostHeader
-                  styles={{
-                    top:"80%",
-                    left:"10%"
-                  }}
-                  text="HISTORY"
-                />
                 <Link to={"/recipes/"+alcoholKey}><h6>&laquo; Back to {alcoholKey.capitalizeFirstLetter()} Cocktails</h6></Link>
                 <div className={classNames(styles.pageHeading)}>
                   <h1>{recipeKey}</h1>
@@ -112,6 +112,14 @@ export default class RecipeDetail extends React.Component {
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.</p>
               </div>
+              <GhostHeader
+                styles={{
+                  top:"0",
+                  left:"20%",
+                  zIndex: "0"
+                }}
+                text="RECIPE"
+              />
             </div>
             <Video></Video>
           </div>
