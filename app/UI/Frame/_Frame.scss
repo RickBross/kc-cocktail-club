@@ -11,3 +11,12 @@
     background-color: $white;
   }
 }
+.frame {
+  display: none;
+}
+
+@media(min-width:992px) {
+  .frame {
+    display: block;
+  }
+}

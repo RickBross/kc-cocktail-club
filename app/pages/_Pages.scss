@@ -165,7 +165,7 @@ form {
 
 // Phone Portrait ^^
 
-@media (min-width: 321px) { // Phone Landscape
+@media (min-width: 415px) { // Phone Landscape
 
   .column1phoneLandscape {
      @include span(1 of 12)

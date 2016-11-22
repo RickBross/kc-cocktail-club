@@ -57,7 +57,7 @@ export default class EventDetail extends React.Component {
           <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
             <div className={classNames(styles.container)}>
               <div className={classNames(styles.row)}>
-                <div className={classNames(styles.eventDescription, styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
+                <div className={classNames(styles.eventDescription, styles.column, styles.column12, styles.column7Desktop)}>
                   <Link to={ROUTES.EVENTS.linkTo}><h6>&laquo; Back to Meetings</h6></Link>
                   <div className={classNames(styles.pageHeading)}>
                     <h1>Meeting #{eventNumber}</h1>
@@ -80,7 +80,7 @@ export default class EventDetail extends React.Component {
                     />
                   </div>
                 </div>
-                <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
+                <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column5Desktop, styles.right)}>
                   <Frame width="100%"
                     height="27rem"
                     backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-2.png)"}
@@ -111,7 +111,7 @@ export default class EventDetail extends React.Component {
                 />
                 <Frame width="45%"
                   height="55%"
-                  top="30%"
+                  top="20%"
                   left="0"
                   backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-5.png)"}
                   backgroundSize="cover"
@@ -126,38 +126,30 @@ export default class EventDetail extends React.Component {
                 <div className={classNames(styles.column, styles.column12)}>
                   <Video/>
                   <GhostHeader
-                    styles={{
-                      top:"-3.5rem",
-                      left:"-3rem",
-                      zIndex: "0"
-                    }}
+                    classNames={[styles.videoHeader]}
                     text="THE VIDEO"
                   />
                 </div>
               </div>
               <div className={classNames(styles.attendees, styles.row)}>
-                <div className={classNames( styles.column, styles.column12, styles.column6Tablet)}>
+                <div className={classNames(styles.column, styles.column12, styles.column6phoneLandscape)}>
                   <List
                     data={eventAttendees}
                     classNames={[styles.column]}
                     width="50%"
                   />
                   <GhostHeader
-                    styles={{
-                      top:"94%",
-                      left:"-3rem",
-                      zIndex: "0"
-                    }}
                     text="THE ATTENDEES"
+                    classNames={[styles.attendeesHeader]}
                   />
                 </div>
-                <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
-                  <Frame width="70%"
-                    height="25rem"
+                <div className={classNames(styles.column, styles.column12, styles.column6phoneLandscape)}>
+                  <Frame
                     backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-6.png)"}
                     backgroundSize="cover"
                     backgroundPosition="65% 0"
                     margin='0 auto'
+                    classNames={[styles.frame, styles.listFrame]}
                   />
                 </div>
               </div>
@@ -165,7 +157,9 @@ export default class EventDetail extends React.Component {
                 styles={{
                   backgroundImage: "url(http://localhost:8000/images/pages/events/page-accent.png)",
                   backgroundPosition: "center 100%",
-                  height: "15rem"
+                  height: "15rem",
+                  backgroundSize: "contain",
+                  backgroundRepeat: 'no-repeat'
                 }}
               />
             </div>

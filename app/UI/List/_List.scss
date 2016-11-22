@@ -8,14 +8,8 @@
   font-weight: 100;
   font-family: 'Moonshiner';
   line-height: 1.8rem;
+  width: 50%;
 }
-
-@media(min-width:768px) { // Tablet
-  .listitem {
-    width: 50%;
-  }
-}
-
 @media (min-width: 992px) { // Desktop
 
 }

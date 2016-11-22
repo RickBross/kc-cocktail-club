@@ -3,8 +3,38 @@
 
 .body {
 }
+.collageTwo, .collage {
+  display: none;
+}
 
-@media(min-width:768px) {
+.listFrame {
+  width: 100%;
+  height: 30rem;
+}
+
+
+.videoHeader, .attendeesHeader {
+  top: -1.5rem;
+  left: -3rem;
+  z-index: 0;
+}
+
+@media (min-width: 415px) { // Desktop
+  .frame {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .listFrame {
+    height: 25rem;
+    width: 70%;
+  }
+  .videoHeader, .attendeesHeader {
+    h3 {
+      font-size: 2rem;
+    }
+  }
 }
 
 @media (min-width: 992px) { // Desktop
@@ -27,6 +57,25 @@
     .collageTwo {
       height: 30rem;
       margin-bottom: 6rem;
+      display: block;
+    }
+    .collage {
+      display: block;
+    }
+    .videoHeader, .attendeesHeader {
+      z-index: 0;
+      h3 {
+        font-size:3rem;
+        letter-spacing: 1.3rem;
+      }
+    }
+    .videoHeader {
+      top: -3.5rem;
+      left: -3rem;
+    }
+    .attendeesHeader {
+      top: 94%;
+      left: -3rem;
     }
   }
 }
