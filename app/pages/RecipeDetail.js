@@ -106,31 +106,35 @@ export default class RecipeDetail extends React.Component {
               </div>
             </div>
             <div className={classNames(styles.instructions, styles.row)}>
+              <div className={classNames(styles.column, styles.column12)}>
+                <GhostHeader
+                  styles={{
+                    top:"0",
+                    left:"20%",
+                    zIndex: "0"
+                  }}
+                  text="RECIPE"
+                />
+              </div>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
                 <IngredientList alcohol={alcoholKey} recipe={this.getRecipe()} />
               </div>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.</p>
               </div>
-              <GhostHeader
-                styles={{
-                  top:"0",
-                  left:"20%",
-                  zIndex: "0"
-                }}
-                text="RECIPE"
-              />
             </div>
             <div className={classNames(styles.video, styles.row)}>
-              <GhostHeader
-                styles={{
-                  top:"-1rem",
-                  left:"-1rem",
-                  zIndex: "0"
-                }}
-                text="HOW TO"
-              />
-              <Video></Video>
+              <div className={classNames(styles.column, styles.column12)}>
+                <GhostHeader
+                  styles={{
+                    top:"-1rem",
+                    left:"-1rem",
+                    zIndex: "0"
+                  }}
+                  text="HOW TO"
+                />
+                <Video></Video>
+              </div>
             </div>
           </div>
         </div>
