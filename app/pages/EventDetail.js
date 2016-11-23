@@ -6,6 +6,7 @@ import Menu from '../components/Menu/Menu';
 import Frame from '../UI/Frame/Frame';
 import Video from '../UI/Video/Video';
 import GhostHeader from '../UI/GhostHeader/GhostHeader';
+import DrinkSlideshow from '../UI/DrinkSlideshow/DrinkSlideshow';
 import PageAccent from '../UI/PageAccent/PageAccent';
 import List from '../UI/List/List';
 import MenuStore from '../stores/MenuStore';
@@ -19,7 +20,7 @@ import {
 
 import styles from './_EventDetail.scss';
 
-let eventNumber, eventIndex, eventData, eventDate, eventAddress, eventAttendees;
+let eventNumber, eventIndex, eventData, eventDate, eventAddress, eventAttendees, eventDrinks;
 
 export default class EventDetail extends React.Component {
 
@@ -41,6 +42,7 @@ export default class EventDetail extends React.Component {
     eventDate = eventData.date;
     eventAddress = eventData.address;
     eventAttendees = eventData.attendees;
+    eventDrinks = eventData.drinks;
 
     document.title = "Meeting #" + eventNumber;
   }
@@ -87,6 +89,12 @@ export default class EventDetail extends React.Component {
                     backgroundSize="cover"
                   />
                 </div>
+              </div>
+              <div className={classNames(styles.drinkSlideshow, styles.row)}>
+                <DrinkSlideshow
+                  className={styles.center}
+                  drinks={eventDrinks}
+                ></DrinkSlideshow>
               </div>
               <div className={classNames(styles.collageTwo, styles.row)}>
                   <Frame width="45%"
