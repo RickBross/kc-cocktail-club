@@ -13,7 +13,7 @@
 }
 
 
-.videoHeader, .attendeesHeader {
+.videoHeader, .attendeesHeader, .drinksHeader {
   top: -1.5rem;
   left: -3rem;
   z-index: 0;
@@ -34,7 +34,7 @@
     height: 25rem;
     width: 70%;
   }
-  .videoHeader, .attendeesHeader {
+  .videoHeader, .attendeesHeader, .drinksHeader {
     h3 {
       font-size: 2rem;
     }
@@ -66,7 +66,7 @@
     .collage {
       display: block;
     }
-    .videoHeader, .attendeesHeader {
+    .videoHeader, .attendeesHeader, .drinksHeader {
       z-index: 0;
       h3 {
         font-size:3rem;
@@ -80,6 +80,10 @@
     .attendeesHeader {
       top: 94%;
       left: -3rem;
+    }
+    .drinksHeader {
+      top: 13%;
+      left: 12rem !important;
     }
     .drinkSlideshow {
 

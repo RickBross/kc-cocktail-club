@@ -95,9 +95,11 @@
   }
   .frame {
     height: 40rem;
+    display: block;
   }
 }
 .slideshow {
+  padding: 12rem 0 5rem;
   .slide {
     .fg {
       h1 {
@@ -107,22 +109,33 @@
   }
 }
 
+.drinkDescription {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 115%;
+  p {
+    line-height: 1.3rem;
+    font-size: .8rem;
+    letter-spacing: 0;
+  }
+}
+  .slideshow {
+    width:100%;
+    position: relative;
+  }
+
 @media (min-width: 321px) {
   .slideshow {
-    .slide {
-      .fg {
-        h1 {
-        }
-      }
-    }
+    zoom: 0.6;
   }
 }
 
 @media (min-width: 768px) {
   .slideshow {
     zoom: 0.8;
-    .slideshowSlides {
-      padding: 12rem 0 2rem;
+    .controls {
+      padding-top: 1rem;
     }
     .slide {
       .fg {

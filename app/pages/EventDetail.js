@@ -95,6 +95,10 @@ export default class EventDetail extends React.Component {
                   className={styles.frame, styles.center}
                   drinks={eventDrinks}
                 ></DrinkSlideshow>
+                <GhostHeader
+                  classNames={[styles.drinksHeader]}
+                  text="THE DRINKS"
+                />
               </div>
               <div className={classNames(styles.collageTwo, styles.row)}>
                   <Frame width="45%"

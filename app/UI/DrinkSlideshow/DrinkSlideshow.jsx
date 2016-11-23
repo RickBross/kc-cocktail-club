@@ -62,10 +62,13 @@ class Slider extends React.Component {
           {
             drinks.map((drink, index) => (
               <li key={index} className={ classNames(this.activeClass(index)) }>
+                <div className={classNames(styles.drinkDescription)}>
+                  <p classNames={styles.right}>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                </div>
                 <div className={this.slideClasses(index)} onClick={this.props.onclick}>
                   <div className={classNames(styles.row)}>
                     <div className={classNames(styles.bg)}></div>
-                    <div className={classNames(styles.fg,styles.centerAbs)}>
+                    <div className={classNames(styles.fg,styles.centerAbs,styles.column,styles.column12)}>
                       <Link to={'/recipe' + drink.linkTo}>
                         <div className={classNames(styles.layer, styles.centerAbs)}>
                           <Frame
@@ -75,7 +78,7 @@ class Slider extends React.Component {
                             backgroundImage={"url(http://localhost:8000/images/recipes" + drink.linkTo + "/banner.png)"}
                             backgroundSize="cover"
                             accent={"http://localhost:8000/images/recipes" + drink.linkTo + "/drink.png"}
-                            accentStyle={{bottom: '4.5rem', left: '-10.25rem', zIndex: '-1'}}
+                            accentStyle={{bottom: '7rem', left: '-10.25rem', zIndex: '-1'}}
                             border={false}
                             z="0"
                           />
