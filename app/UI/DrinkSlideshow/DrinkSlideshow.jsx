@@ -27,12 +27,10 @@ class Slider extends React.Component {
     this.jumpToSlide(this.state.activeIndex-1);
   }
   componentWillMount() {
-    console.log(111, recipes);
     let recipes = [];
     _.each(this.props.drinks, function(drink){
-      recipes.push(getRecipesByName(drink, ALCOHOL));
+      recipes.push(getRecipesByName(drink, ALCOHOL)[0]);
     }.bind(this));
-    console.log(222, recipes);
   }
   componentWillUnmount() {
   }
