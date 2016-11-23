@@ -83,6 +83,22 @@ nav {
     text-decoration: none;
   }
 }
+.itemLink:hover .item,
+.itemLink:focus .item,
+.itemLink:active .item {
+  background: $darkActivePrimaryBg;
+  color: $darkActivePrimaryText;
+  position: relative;
+  span:first-child {
+    margin-left: 3.5rem;
+    transition: margin-left 8s ease-out;
+  }
+  span:last-child {
+    margin-left: 3.5rem;
+    transition: margin-left 6s ease-out;
+  }
+}
+
 
 li.item {
   color: $darkInactiveSecondaryText;
@@ -147,7 +163,7 @@ li.item {
     }
   }
 
-  &:not(.social):hover {
+  &:not(.social):hover, &:not(.social):focus, &:not(.social):active {
     background: $darkActivePrimaryBg;
     color: $darkActivePrimaryText;
     position: relative;
