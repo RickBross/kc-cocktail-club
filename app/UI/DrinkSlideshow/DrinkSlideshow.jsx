@@ -27,15 +27,14 @@ class Slider extends React.Component {
     this.jumpToSlide(this.state.activeIndex-1);
   }
   componentWillMount() {
-    let recipes = [];
     _.each(this.props.drinks, function(drink){
-      recipes.push(getRecipesByName(drink, ALCOHOL)[0]);
+      drinks.push(getRecipesByName(drink, ALCOHOL)[0]);
     }.bind(this));
   }
   componentWillUnmount() {
   }
   iCanJump(index) {
-    return index >= 0 && index <= this.props.slides.length-1;
+    return index >= 0 && index <= drinks.length-1;
   }
   jumpToSlide(index) {
     if (this.iCanJump(index)) {
@@ -59,7 +58,7 @@ class Slider extends React.Component {
       <div className="slideshow">
         <ul className={classNames("slideshow-slides", styles.slideshowSlides)}>
           {
-            this.props.drinks.map((drink, index) => (
+            drinks.map((drink, index) => (
               <li key={index} className={ classNames(this.activeClass(index)) }>
                 <div className={this.slideClasses(index)} onClick={this.props.onclick}>
                   <div className={classNames(styles.bg)}></div>
@@ -87,7 +86,7 @@ class Slider extends React.Component {
             <span onClick={ (event)=> this.previous() } className={styles.arrow}>
               &larr;
             </span>
-              {this.state.activeIndex+1} / {this.props.slides.length}
+              {this.state.activeIndex+1} / {drinks.length}
             <span onClick={ (event)=> this.next() } className={styles.arrow}>
               &rarr;
             </span>

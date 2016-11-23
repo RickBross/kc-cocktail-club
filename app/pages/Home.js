@@ -9,14 +9,14 @@ import AppStore from '../stores/AppStore';
 export default class Home extends React.Component {
 
   componentWillMount() {
-  }
-
-  componentDidMount() {
     document.title = "Kansas City Cocktail Club";
     AppStore.setProps({tone:'dark'});
     MenuStore.setProps({title:'Discover'});
     AppStore.setProps({backgroundImage:'url(http://localhost:8000/images/hero-bg.png)'});
     AppStore.setProps({backgroundSize:'cover'});
+  }
+
+  componentDidMount() {
   }
 
   render() {
