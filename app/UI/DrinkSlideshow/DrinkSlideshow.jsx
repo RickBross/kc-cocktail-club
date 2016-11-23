@@ -27,8 +27,10 @@ class Slider extends React.Component {
     this.jumpToSlide(this.state.activeIndex-1);
   }
   componentWillMount() {
+    let recipe;
     _.each(this.props.drinks, function(drink){
-      drinks.push(getRecipesByName(drink, ALCOHOL)[0]);
+      recipe = getRecipesByName(drink, ALCOHOL)[0];
+      drinks.push(recipe);
     }.bind(this));
   }
   componentWillUnmount() {
@@ -55,8 +57,8 @@ class Slider extends React.Component {
   }
   render() {
     return (
-      <div className="slideshow">
-        <ul className={classNames("slideshow-slides", styles.slideshowSlides)}>
+      <div className={styles.slideshowSlides}>
+        <ul className={classNames(styles.slideshowSlides)}>
           {
             drinks.map((drink, index) => (
               <li key={index} className={ classNames(this.activeClass(index)) }>
@@ -67,10 +69,9 @@ class Slider extends React.Component {
                       <div className={classNames(styles.layer)}>
                         <Frame width="70%"
                           height="15rem"
-                          backgroundImage={"url(http://localhost:8000/images/pages/events/banner.png)"}
+                          backgroundImage={"url(http://localhost:8000/images/recipes" + drink.linkTo + "/banner.png)"}
                           backgroundSize="cover"
-                          backgroundPosition="65% 0"
-                          accent={"http://localhost:8000/images/recipes/drink.png"}
+                          accent={"http://localhost:8000/images/recipes" + drink.linkTo + "/drink.png"}
                           accentStyle={{bottom: '1.5rem', right: '-6.25rem', zIndex: '0'}}
                         />
                       </div>

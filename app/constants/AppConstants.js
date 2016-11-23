@@ -32,5 +32,5 @@ export const getRecipesFromAlcohol = function(alcohol) {
 export const getRecipesByName = function(name, alcohol) {
   let recipes = getRecipesFromAlcohol(alcohol);
   let recipe = _.filter(recipes, function(recipe){ return recipe.name === name });
-  return recipe[0];
+  return recipe;
 };
