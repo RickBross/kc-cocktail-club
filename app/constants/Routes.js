@@ -2,14 +2,14 @@ export default {
   HOME: {
     linkTo: '/'
   },
+  RECIPE: {
+    linkTo: '/recipe',
+  },
   RECIPES: {
     linkTo: '/recipes',
     LIST: {
-      linkTo: '/recipes/:alcohol',
-      RECIPE: {
-        linkTo: '/recipes/:alcohol/:recipe'
-      },
-    },
+      linkTo: '/recipes/:alcohol'
+    }
   },
   EVENTS: {
     linkTo: '/events'

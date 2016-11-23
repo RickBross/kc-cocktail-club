@@ -79,7 +79,7 @@ export default class RecipeList extends React.Component {
               <div className={classNames(styles.column, styles.column12)}>
                 <ul style={{backgroundImage:"url(http://localhost:8000/images/pages/" + alcoholKey + "/banner.png)"}} className={classNames(styles.list, styles.lsn, styles.center, styles.block)}>
                   {ALCOHOL[alcoholKey.toUpperCase()].recipes.map((item, i) => {
-                    return (<Link key={item.linkTo} className={styles.tdn} to={ROUTES.RECIPES.linkTo + "/" + alcoholKey + item.linkTo}><li>{item.name}</li></Link>);
+                    return (<Link key={item.linkTo} className={styles.tdn} to={ROUTES.RECIPE.linkTo + item.linkTo}><li>{item.name}</li></Link>);
                   }, this)}
                 </ul>
               </div>

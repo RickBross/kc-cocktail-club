@@ -29,8 +29,12 @@ export const getRecipesFromAlcohol = function(alcohol) {
   return recipes;
 };
 
-export const getRecipesByName = function(name, alcohol) {
+export const getRecipeByName = function(name, alcohol) {
   let recipes = getRecipesFromAlcohol(alcohol);
-  let recipe = _.filter(recipes, function(recipe){ return recipe.name === name });
+  let recipe = _.filter(recipes, function(recipe){ return recipe.name.toUpperCase() === name.toUpperCase() });
+
+  if( Object.prototype.toString.call( recipe ) === '[object Array]' ) {
+    return recipe[0];
+  }
   return recipe;
 };

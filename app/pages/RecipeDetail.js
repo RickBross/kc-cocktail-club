@@ -14,6 +14,7 @@ import AppStore from '../stores/AppStore';
 import {
   ALCOHOL,
   ROUTES,
+  getRecipeByName,
 } from '../constants/AppConstants';
 
 import styles from './_RecipeDetail.scss';
@@ -38,14 +39,19 @@ export default class RecipeDetail extends React.Component {
   }
 
   getRecipe() {
-    let recipe = ALCOHOL[this.props.params.alcohol.toUpperCase()].recipes.filter(function(item) {
-      return item.linkTo === "/"+this.props.params.recipe;
-    }.bind(this))[0];
-    return recipe;
+    return getRecipeByName(this.props.params.recipe, ALCOHOL);
+  }
+
+  getAlcohol() {
+    return getRecipeByName(this.props.params.recipe, ALCOHOL).alcohol;
+  }
+
+  capitalizeFirstLetter(name) {
+    return name;
   }
 
   render() {
-      let alcoholKey = this.props.params.alcohol;
+      let alcoholKey = this.getAlcohol();
       let recipeKey = this.props.params.recipe;
     return (
       <div>
@@ -74,7 +80,7 @@ export default class RecipeDetail extends React.Component {
                 text="HISTORY"
               />
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
-                <Link to={"/recipes/"+alcoholKey}><h6>&laquo; Back to {alcoholKey.capitalizeFirstLetter()} Cocktails</h6></Link>
+                <Link to={"/recipes/"+alcoholKey}><h6>&laquo; Back to {this.capitalizeFirstLetter(alcoholKey)} Cocktails</h6></Link>
                 <div className={classNames(styles.pageHeading)}>
                   <h1>{recipeKey}</h1>
                 </div>

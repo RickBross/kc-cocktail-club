@@ -6,10 +6,37 @@
   align-items: center; /* align vertical */
 }
 
-.slideshow {
+.drinkSlideshow {
   width: 100%;
   height: 100%;
-  position: relative;
+  .layer {
+    position: relative;
+  }
+  .layerText {
+    position: absolute !important;
+    text-align: center;
+    color: $black;
+    width: 100%;
+    h4 {
+      font-family: 'Moonshiner';
+      font-size: 5rem;
+      letter-spacing: .5rem;
+      font-weight: 100;
+      &, span {
+        text-decoration: none;
+      }
+    }
+    hr {
+      border: 2px solid black;
+      width: 50%;
+      border-color: $black;
+    }
+    span {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
   &, ul, li .slide {
     list-style: none;
     margin: 0;
@@ -42,60 +69,20 @@
     }
   }
   .controls {
-    position: absolute;
-    z-index: 40;
     width:100%;
-    bottom: -2rem;
     text-align: center;
     p span.arrow {
       margin: 0 2.5rem;
     }
   }
-  .dragdealer {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
   .slide {
-    position: absolute;
     display: inline-block;
-    .fg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 20;
-      text-align: center;
-      .layer:first-child {
-        margin-top: -10%;
-      }
-      h1 {
-        font-size: 5rem;
-        font-family: "Moonshiner Sharp";
-        font-weight: 100;
-        font-weight: 100;
-        line-height: 5rem;
-        margin: 0;
-        font-size: 4rem;
-        line-height: 8rem;
-        letter-spacing: .75rem;
-      }
-    }
-    .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: auto 100%;
-      z-index: 10;
-    }
     &.active {
       display: block;
     }
   }
   .slideshowSlides {
+    position: relative;
     li {
       display: none;
     }
@@ -103,40 +90,11 @@
       display: block;
     }
   }
-  .slideshow-dots {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    list-style: none;
-    div {
-      display: inline;
-      margin: 0;
-      padding: 0;
-    }
-    a {
-      cursor: pointer;
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
-      background: #fff;
-      border-radius: 10px;
-      text-indent: -9990px;
-      opacity: .5;
-      transition: .3s;
-    }
-    div.active a {
-      opacity: 1;
-    }
+  div.active a {
+    opacity: 1;
   }
-
-  .slide1, .slide2, .slide3, .slide4 {
-    .bg {
-      $url: 'http://localhost:8000/images/pages/events/hero/1.jpg';
-      @include shade($url, $filterHeavy , $filterHeavy);
-    }
+  .frame {
+    height: 40rem;
   }
 }
 .slideshow {
@@ -162,6 +120,10 @@
 
 @media (min-width: 768px) {
   .slideshow {
+    zoom: 0.8;
+    .slideshowSlides {
+      padding: 12rem 0 2rem;
+    }
     .slide {
       .fg {
         h1 {

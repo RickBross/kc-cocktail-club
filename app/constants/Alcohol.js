@@ -6,6 +6,7 @@ export default {
     recipes: [
       {
         name: 'Caipirinha',
+        alcohol: 'rum',
         linkTo: '/caipirinha',
         ingredients: [
           {
@@ -66,18 +67,22 @@ export default {
       },
       {
         name: 'Centenario',
+        alcohol: 'rum',
         linkTo: '/centenario'
       },
       {
         name: 'Acapulco',
+        alcohol: 'rum',
         linkTo: '/acapulco'
       },
       {
         name: 'Atlantic Breeze',
+        alcohol: 'rum',
         linkTo: '/atlantic-breeze'
       },
       {
         name: 'Death In The Gulf Stream',
+        alcohol: 'rum',
         linkTo: '/death-in-the-gulf-stream'
       }
     ]

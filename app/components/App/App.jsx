@@ -31,7 +31,7 @@ const routes = (
       <Route path={ROUTES.EVENT.linkTo} component={EventDetail} />
     <Route path={ROUTES.RECIPES.linkTo} component={Recipes} />
       <Route path='/recipes/:alcohol' component={RecipeList} />
-      <Route path='/recipes/:alcohol/:recipe' component={RecipeDetail} />
+      <Route path='/recipe/:recipe' component={RecipeDetail} />
     <Route path={ROUTES.TICKETS.linkTo} component={Tickets} />
     <Route path={ROUTES.BOOKING.linkTo} component={Booking} />
     <Route path='/404' component={Error404} />

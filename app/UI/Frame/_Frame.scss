@@ -11,6 +11,9 @@
     background-color: $white;
   }
 }
+.frame.noBorder .frameBg {
+  border: none;
+}
 .frame {
   display: none;
 }

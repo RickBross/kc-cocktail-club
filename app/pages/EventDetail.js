@@ -92,7 +92,7 @@ export default class EventDetail extends React.Component {
               </div>
               <div className={classNames(styles.drinkSlideshow, styles.row)}>
                 <DrinkSlideshow
-                  className={styles.center}
+                  className={styles.frame, styles.center}
                   drinks={eventDrinks}
                 ></DrinkSlideshow>
               </div>
