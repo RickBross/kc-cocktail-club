@@ -44,7 +44,7 @@ export default class EventDetail extends React.Component {
     eventAttendees = eventData.attendees;
     eventDrinks = eventData.drinks;
 
-    document.title = "Meeting #" + eventNumber;
+    document.title = "Meeting #" + eventNumber + " - Kansas City Cocktail Club";
   }
 
   render() {

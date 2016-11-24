@@ -26,7 +26,7 @@ export default class RecipeDetail extends React.Component {
   componentWillMount() {
     let recipeName = this.getRecipe().name;
 
-    document.title = recipeName + " RecipeDetail - Kansas City Cocktail Club";
+    document.title = recipeName + " Recipe - Kansas City Cocktail Club";
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});
@@ -47,7 +47,7 @@ export default class RecipeDetail extends React.Component {
   }
 
   capitalizeFirstLetter(name) {
-    return name;
+    return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
   render() {
