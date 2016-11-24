@@ -75,7 +75,7 @@ export default class RecipeDetail extends React.Component {
               <GhostHeader
                 styles={{
                   top:"80%",
-                  left:"10%"
+                  left:"-1rem !important",
                 }}
                 text="HISTORY"
               />
@@ -116,7 +116,7 @@ export default class RecipeDetail extends React.Component {
                 <GhostHeader
                   styles={{
                     top:"0",
-                    left:"20%",
+                    left:"-1rem !important",
                     zIndex: "0"
                   }}
                   text="RECIPE"
@@ -134,7 +134,7 @@ export default class RecipeDetail extends React.Component {
                 <GhostHeader
                   styles={{
                     top:"-1rem",
-                    left:"-1rem",
+                    left:"-1rem !important",
                     zIndex: "0"
                   }}
                   text="HOW TO"
