@@ -63,8 +63,8 @@
     font-weight: 100;
   }
   .mediumParagraph {
-    font-size:.625rem;
-    line-height: 1.3rem;
+    font-size:1.2rem;
+    line-height: 1.75rem;
   }
   button {
     background: $lightInactivePrimaryBtn;
@@ -214,6 +214,10 @@ form {
 }
 
 @media (min-width: 768px) { // Tablet
+  .mediumParagraph {
+    font-size:.625rem;
+    line-height: 1.3rem;
+  }
   .column1Tablet {
      @include span(1 of 12)
   }
@@ -268,7 +272,11 @@ form {
 }
 
 @media (min-width: 992px) { // Desktop
-    .column1Desktop {
+  .body .mediumParagraph {
+    font-size:.625rem;
+    line-height: 1.3rem;
+  }
+  .column1Desktop {
      @include span(1 of 12)
   }
   .column2Desktop {

@@ -65,10 +65,10 @@ export default class RecipeDetail extends React.Component {
           <Banner
             classNames={classNames(styles.banner)}
             accentClassNames={classNames(styles.accent)}
-            backgroundImage={"url(http://localhost:8000/images/pages/" + alcoholKey + "/banner.png)"}
+            backgroundImage={"url(http://localhost:8000/images/recipes/" + recipeKey + "/banner.png)"}
             backgroundSize="cover"
             backgroundPosition="65% 0"
-            accent={"http://localhost:8000/images/pages/" + alcoholKey + "/" + recipeKey + ".png"} />
+            accent={"http://localhost:8000/images/recipes/" + recipeKey + "/drink.png"} />
         </div>
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.history, styles.row)}>
@@ -93,7 +93,7 @@ export default class RecipeDetail extends React.Component {
               </div>
               <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet)}>
                 <Drink
-                  backgroundImage={"url(http://localhost:8000/images/pages/" + alcoholKey + "/" + recipeKey + ".png)"}
+                  backgroundImage={"url(http://localhost:8000/images/recipes/" + recipeKey + "/drink.png)"}
                   backgroundSize="contain"
                   backgroundPosition="center"
                   backgroundRepeat="no-repeat"
@@ -104,7 +104,7 @@ export default class RecipeDetail extends React.Component {
                     top: '0',
                     right:'0',
                     zIndex:'10',
-                    backgroundImage: "url(http://localhost:8000/images/pages/" + alcoholKey + "/banner.png)",
+                    backgroundImage: "url(http://localhost:8000/images/recipes/" + recipeKey + "/banner.png)",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center"

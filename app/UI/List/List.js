@@ -13,7 +13,7 @@ export default class List extends React.Component {
   render() {
 
     return (
-      <ul className={classNames(styles.row, styles.lsn)}>
+      <ul className={classNames(styles.row, styles.list)}>
         {this.props.data.map((item, i) => {
           return (
             <li className={classNames(styles.listitem, this.props.classNames)} key={i}>{item}</li>

@@ -2,7 +2,7 @@ import styles from './_DrinkSlideshow.scss'
 import React from 'react'
 import { Link } from 'react-router'
 import classNames from 'classnames'
-import Frame from '../Frame/Frame';
+import Banner from '../Banner/Banner';
 
 import {
   EVENTS,
@@ -34,6 +34,7 @@ class Slider extends React.Component {
     }.bind(this));
   }
   componentWillUnmount() {
+    drinks = [];
   }
   iCanJump(index) {
     return index >= 0 && index <= drinks.length-1;
@@ -63,15 +64,15 @@ class Slider extends React.Component {
             drinks.map((drink, index) => (
               <li key={index} className={ classNames(this.activeClass(index)) }>
                 <div className={classNames(styles.drinkDescription)}>
-                  <p classNames={styles.right}>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                  <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
                 </div>
                 <div className={this.slideClasses(index)} onClick={this.props.onclick}>
                   <div className={classNames(styles.row)}>
                     <div className={classNames(styles.bg)}></div>
                     <div className={classNames(styles.fg,styles.centerAbs,styles.column,styles.column12)}>
-                      <Link to={'/recipe' + drink.linkTo}>
+                      <Link to={'/recipe' + drink.linkTo} style={{width:'100%'}}>
                         <div className={classNames(styles.layer, styles.centerAbs)}>
-                          <Frame
+                          <Banner
                             classNames={styles.frame}
                             width="40rem"
                             height="25rem"
@@ -79,7 +80,6 @@ class Slider extends React.Component {
                             backgroundSize="cover"
                             accent={"http://localhost:8000/images/recipes" + drink.linkTo + "/drink.png"}
                             accentStyle={{bottom: '7rem', left: '-10.25rem', zIndex: '-1'}}
-                            border={false}
                             z="0"
                           />
                           <div className={classNames(styles.layerText)}>

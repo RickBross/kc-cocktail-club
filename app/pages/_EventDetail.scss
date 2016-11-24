@@ -82,11 +82,18 @@
       left: -3rem;
     }
     .drinksHeader {
-      top: 13%;
-      left: 12rem !important;
-    }
-    .drinkSlideshow {
-
+      top: 3%;
+      left: 0rem !important;
     }
   }
+}
+
+@media (min-width: 991px) {
+  .body {
+    .drinksHeader {
+      top: 3%;
+      left: 15rem !important;
+    }
+  }
+
 }

@@ -10,6 +10,14 @@
   line-height: 1.8rem;
   width: 50%;
 }
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  overflow: hidden;
+}
+
 @media (min-width: 992px) { // Desktop
 
 }
