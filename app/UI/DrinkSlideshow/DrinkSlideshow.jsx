@@ -82,7 +82,7 @@ class Slider extends React.Component {
                             border={false}
                             z="0"
                           />
-                        <div className={classNames(styles.layerText)}>
+                          <div className={classNames(styles.layerText)}>
                             <h4>{drink.name}</h4>
                             <hr></hr>
                             <span>
