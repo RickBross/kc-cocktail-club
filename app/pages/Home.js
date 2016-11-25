@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames'
 
-import styles from './_Pages.scss';
+import styles from './_Home.scss';
 import Menu from '../components/Menu/Menu';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
@@ -28,7 +28,9 @@ export default class Home extends React.Component {
           active={MenuStore.getProp('active')}
         />
         <div className={classNames(styles.body, styles.home)}>
-          <img className={styles.homeLogo} src="./images/home-logo.png" />
+          <div className={classNames(styles.logoWrapper)}>
+            <img className={styles.homeLogo} src="./images/home-logo.png" />
+          </div>
         </div>
       </div>
     );

@@ -1,0 +1,17 @@
+@import "./_Pages";
+
+.body.home {
+  display: flex;
+  .logoWrapper {
+    padding: 2rem;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+}
+
+.homeLogo {
+  max-width: 100%;
+}

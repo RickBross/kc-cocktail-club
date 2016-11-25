@@ -2,6 +2,7 @@
 @import "./_Pages";
 
 .body {
+  height: 100%;
 }
 .collageTwo, .collage {
   display: none;
@@ -13,7 +14,7 @@
 }
 
 
-.videoHeader, .attendeesHeader, .drinksHeader {
+.videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
   top: -1.5rem;
   left: -3rem;
   z-index: 0;
@@ -23,7 +24,43 @@
   display: block;
 }
 
-@media (min-width: 415px) { // Desktop
+.mainLayer {
+  margin-bottom: 15rem;
+  position: relative;
+  overflow: hidden;
+}
+footer {
+  z-index: -1;
+  height:15rem;
+	position:fixed;
+	bottom:0;
+  background: $black;
+  width: 100%;
+  .footerText {
+    position: relative;
+    z-index: 70;
+    text-shadow: 0 2px 2px $black;
+  }
+  img {
+    display: none;
+  }
+}
+.footerHeader {
+  top: initial;
+  bottom: 0;
+  left: -1rem !important;
+  h3 {
+    margin: 0;
+  }
+}
+.footerImage {
+  position: absolute;
+  bottom: -3rem;
+  right: 10%;
+  z-index:50;
+}
+
+@media (min-width: 415px) {
   .frame {
     display: block;
   }
@@ -34,9 +71,14 @@
     height: 25rem;
     width: 70%;
   }
-  .videoHeader, .attendeesHeader, .drinksHeader {
+  .videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
     h3 {
       font-size: 2rem;
+    }
+  }
+  footer {
+    img {
+      display: block;
     }
   }
 }
@@ -66,34 +108,24 @@
     .collage {
       display: block;
     }
-    .videoHeader, .attendeesHeader, .drinksHeader {
-      z-index: 0;
-      h3 {
-        font-size:3rem;
-        letter-spacing: 1.3rem;
-      }
-    }
-    .videoHeader {
-      top: -3.5rem;
-      left: -3rem;
-    }
-    .attendeesHeader {
-      top: 94%;
-      left: -3rem;
-    }
-    .drinksHeader {
-      top: 3%;
-      left: 0rem !important;
+  }
+  .videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
+    z-index: 0;
+    h3 {
+      font-size:3rem;
+      letter-spacing: 1.3rem;
     }
   }
-}
-
-@media (min-width: 991px) {
-  .body {
-    .drinksHeader {
-      top: 3%;
-      left: 15rem !important;
-    }
+  .attendeesHeader {
+    top: 94%;
+    left: -3rem;
   }
-
+  .drinksHeader {
+    top: 3%;
+    left: 0rem !important;
+  }
+  .videoHeader {
+    top: -3.5rem;
+    left: -3rem;
+  }
 }

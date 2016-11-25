@@ -1,9 +1,7 @@
 @import "toolkit";
 
 .body {
-  display: flex;
   height: 100vh;
-  overflow-x: hidden;
   font-size: inherit;
   .row {
     padding: 2rem 1.5rem;
@@ -17,7 +15,7 @@
     color: white;
   }
   &.lightTone {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 0;
     h1, h2, h3, h4, h5, h6, p  {
       color: $lightInactiveSecondaryText;
     }
@@ -132,15 +130,6 @@
       z-index:100;
     }
   }
-}
-.home {
-  padding: 2rem;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
-}
-
-.homeLogo {
-  max-width: 100%;
 }
 
 .fill {
@@ -266,7 +255,7 @@ form {
       letter-spacing: .6rem;
     }
     &.lightTone {
-      padding: 5rem;
+      padding: 5rem 5rem 0;
     }
   }
 }

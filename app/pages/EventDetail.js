@@ -7,6 +7,7 @@ import Frame from '../UI/Frame/Frame';
 import Video from '../UI/Video/Video';
 import GhostHeader from '../UI/GhostHeader/GhostHeader';
 import DrinkSlideshow from '../UI/DrinkSlideshow/DrinkSlideshow';
+import RevealFooter from '../UI/RevealFooter/RevealFooter';
 import PageAccent from '../UI/PageAccent/PageAccent';
 import List from '../UI/List/List';
 import MenuStore from '../stores/MenuStore';
@@ -50,7 +51,7 @@ export default class EventDetail extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className={classNames(styles.mainLayer)}>
           <Menu
             title={MenuStore.getProp('title')}
             tone={AppStore.getProp('tone')}
@@ -97,6 +98,7 @@ export default class EventDetail extends React.Component {
                 ></DrinkSlideshow>
                 <GhostHeader
                   classNames={[styles.drinksHeader]}
+                  tone="light"
                   text="THE DRINKS"
                 />
               </div>
@@ -139,6 +141,7 @@ export default class EventDetail extends React.Component {
                   <Video/>
                   <GhostHeader
                     classNames={[styles.videoHeader]}
+                    tone="light"
                     text="THE VIDEO"
                   />
                 </div>
@@ -153,6 +156,7 @@ export default class EventDetail extends React.Component {
                   <GhostHeader
                     text="THE ATTENDEES"
                     classNames={[styles.attendeesHeader]}
+                    tone="light"
                   />
                 </div>
                 <div className={classNames(styles.column, styles.column12, styles.column6phoneLandscape)}>
@@ -166,17 +170,23 @@ export default class EventDetail extends React.Component {
                 </div>
               </div>
               <PageAccent
-                styles={{
-                  backgroundImage: "url(http://localhost:8000/images/pages/events/page-accent.png)",
-                  backgroundPosition: "center 100%",
-                  height: "15rem",
-                  backgroundSize: "contain",
-                  backgroundRepeat: 'no-repeat'
-                }}
+                img="http://localhost:8000/images/pages/events/page-accent.png"
               />
             </div>
           </div>
         </div>
+        <RevealFooter classNames={classNames(styles.tac, styles.darkTone)}>
+          <div className={classNames(styles.footerText)}>
+            <span>Make the Drinks</span>
+            <h5>Rum Recipes</h5>
+          </div>
+          <GhostHeader
+            classNames={[styles.footerHeader]}
+            tone="dark"
+            text="HANDCRAFTED"
+          />
+        <img className={classNames(styles.footerImage)} src="http://localhost:8000/images/footer-drink.png" />
+        </RevealFooter>
       </div>
     );
   }

@@ -1,0 +1,35 @@
+@import "toolkit";
+
+footer {
+  color: $white;
+  font-family: 'Galano Classic';
+  padding: 2rem;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  text-transform: uppercase;
+  span {
+    font-size: .5rem;
+    letter-spacing: .4rem;
+    font-style: italic;
+  }
+
+  h5 {
+    font-family: 'Galano Classic Medium';
+    font-size: 2.8rem;
+    letter-spacing: .5rem;
+    margin: 0;
+  }
+}
+
+@media(min-width:768px) { // Tablet
+
+}
+
+@media (min-width: 992px) { // Desktop
+
+}
+
+@media (min-width: 992px) { // Large Desktop
+
+}
