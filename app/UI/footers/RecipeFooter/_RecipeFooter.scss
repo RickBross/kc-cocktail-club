@@ -1,0 +1,48 @@
+@import "toolkit";
+
+
+footer {
+  z-index: -1;
+  height:15rem;
+	position:fixed;
+	bottom:0;
+  background: $black;
+  width: 100%;
+  .footerText {
+    position: relative;
+    z-index: 70;
+    text-shadow: 0 2px 2px $black;
+  }
+  &, a {
+    color: $white;
+  }
+  img {
+    display: none;
+  }
+}
+.footerHeader {
+  top: initial;
+  bottom: 0;
+  left: -1rem !important;
+  h3 {
+    margin: 0;
+  }
+}
+.footerImage {
+  position: absolute;
+  bottom: -3rem;
+  right: 10%;
+  z-index:50;
+}
+
+@media(min-width:768px) { // Tablet
+
+}
+
+@media (min-width: 992px) { // Desktop
+
+}
+
+@media (min-width: 992px) { // Large Desktop
+
+}
