@@ -2,28 +2,31 @@ import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames'
 
-import styles from './_RecipeFooter.scss';
+import styles from './_AlcoholFooter.scss';
 
 import GhostHeader from '../../GhostHeader/GhostHeader';
 import RevealFooter from '../../RevealFooter/RevealFooter';
 
-export default class RecipeFooter extends React.Component {
+export default class AlcoholFooter extends React.Component {
 
 
   componentWillMount() {
-    console.log(this.props.classNames);
   }
 
   componentDidMount() {
   }
 
+  alcoholHeader() {
+    return this.props.alcohol + ' Recipes';
+  }
+
   render() {
     return (
       <RevealFooter style={this.props.styles} classNames={classNames(this.props.classNames, styles.row)}>
-        <Link to="/recipes/rum">
+        <Link to={"/recipes/" + this.props.alcohol}>
           <div className={classNames(styles.footerText)}>
             <span>Make the Drinks</span>
-            <h5>Rum Recipes</h5>
+            <h5>{this.alcoholHeader()}</h5>
           </div>
           <GhostHeader
             classNames={[styles.footerHeader, styles.ghostHeader]}

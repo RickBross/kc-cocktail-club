@@ -73,6 +73,7 @@ export default class RecipeDetail extends React.Component {
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.history, styles.row)}>
               <GhostHeader
+                tone="light"
                 styles={{
                   top:"80%",
                   left:"-1rem !important",
@@ -114,6 +115,7 @@ export default class RecipeDetail extends React.Component {
             <div className={classNames(styles.instructions, styles.row)}>
               <div className={classNames(styles.column, styles.column12)}>
                 <GhostHeader
+                  tone="light"
                   styles={{
                     top:"0",
                     left:"-1rem !important",
@@ -132,6 +134,7 @@ export default class RecipeDetail extends React.Component {
             <div className={classNames(styles.video, styles.row)}>
               <div className={classNames(styles.column, styles.column12)}>
                 <GhostHeader
+                  tone="light"
                   styles={{
                     top:"-1rem",
                     left:"-1rem !important",

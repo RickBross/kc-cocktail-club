@@ -8,7 +8,7 @@ import Video from '../UI/Video/Video';
 import GhostHeader from '../UI/GhostHeader/GhostHeader';
 import DrinkSlideshow from '../UI/DrinkSlideshow/DrinkSlideshow';
 import RevealFooter from '../UI/RevealFooter/RevealFooter';
-import RecipeFooter from '../UI/footers/RecipeFooter/RecipeFooter';
+import AlcoholFooter from '../UI/footers/AlcoholFooter/AlcoholFooter';
 import PageAccent from '../UI/PageAccent/PageAccent';
 import List from '../UI/List/List';
 import MenuStore from '../stores/MenuStore';
@@ -176,7 +176,7 @@ export default class EventDetail extends React.Component {
             </div>
           </div>
         </div>
-        <RecipeFooter classNames={classNames(styles.tac, styles.darkTone)} />
+        <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)} />
       </div>
     );
   }
