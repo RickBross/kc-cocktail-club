@@ -41,6 +41,9 @@ footer {
     z-index: 70;
     text-shadow: 0 2px 2px $black;
   }
+  &, a {
+    color: $white;
+  }
   img {
     display: none;
   }

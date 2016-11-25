@@ -176,16 +176,18 @@ export default class EventDetail extends React.Component {
           </div>
         </div>
         <RevealFooter classNames={classNames(styles.tac, styles.darkTone)}>
-          <div className={classNames(styles.footerText)}>
-            <span>Make the Drinks</span>
-            <h5>Rum Recipes</h5>
-          </div>
-          <GhostHeader
-            classNames={[styles.footerHeader]}
-            tone="dark"
-            text="HANDCRAFTED"
-          />
-        <img className={classNames(styles.footerImage)} src="http://localhost:8000/images/footer-drink.png" />
+          <Link to="/recipes/rum">
+            <div className={classNames(styles.footerText)}>
+              <span>Make the Drinks</span>
+              <h5>Rum Recipes</h5>
+            </div>
+            <GhostHeader
+              classNames={[styles.footerHeader, styles.ghostHeader]}
+              tone="dark"
+              text="HANDCRAFTED"
+            />
+            <img className={classNames(styles.footerImage)} src="http://localhost:8000/images/footer-drink.png" />
+          </Link>
         </RevealFooter>
       </div>
     );
