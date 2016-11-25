@@ -39,7 +39,7 @@ export default class Tickets extends React.Component {
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
-                <div className={classNames(styles.pageHeading)}>  
+                <div className={classNames(styles.pageHeading)}>
                   <h6>How much does it cost...</h6>
                   <h1>Pricing Options</h1>
                 </div>
@@ -51,7 +51,9 @@ export default class Tickets extends React.Component {
                 </p>
               </div>
               <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
-                <Frame width="100%"
+                <Frame
+                  classNames={[styles.primaryFrame]}
+                  width="100%"
                   height="30rem"
                   backgroundImage="url(http://localhost:8000/images/pages/tickets/primary.png)"
                   backgroundSize="cover"

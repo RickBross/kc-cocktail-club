@@ -76,6 +76,7 @@ export default class Booking extends React.Component {
               </div>
               <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet, styles.column5Desktop, styles.right)}>
                 <Frame width="100%"
+                  classNames={[styles.primaryFrame]}
                   height="40rem"
                   backgroundImage="url(http://localhost:8000/images/pages/booking/primary.png)"
                   backgroundSize="cover"

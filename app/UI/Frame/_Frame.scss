@@ -14,11 +14,8 @@
 .frame.noBorder .frameBg {
   border: none;
 }
-.frame {
-  display: none;
-}
 
-@media(min-width:992px) {
+@media(min-width:768px) {
   .frame {
     display: block;
   }
