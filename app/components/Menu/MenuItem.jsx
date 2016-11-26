@@ -15,7 +15,7 @@ export default class MenuItem extends Component {
 
   render() {
     return (
-      <Link to={this.props.item.linkTo} onClick={this.props.onclick} key={'menu-item-' + this.props.item.title.toLowerCase()}>
+      <Link className={classNames(styles.itemLink)} to={this.props.item.linkTo} onClick={this.props.onclick} key={'menu-item-' + this.props.item.title.toLowerCase()}>
         <li className={classNames(styles.item)}>
           <span>{this.props.item.caption}</span><br />
           <span>{this.props.item.title}</span>

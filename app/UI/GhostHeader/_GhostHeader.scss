@@ -1,0 +1,44 @@
+@import "toolkit";
+
+.ghostHeader {
+  font-family: 'Galano Classic Bold';
+  position: absolute;
+  letter-spacing: .6rem;
+  left:0 !important;
+  h3 {
+    font-size:2rem;
+  }
+}
+
+.darkTone {
+  h3 {
+    color: $darkGhost !important;
+  }
+}
+.lightTone {
+  h3 {
+    color: $lightGhost !important;
+  }
+}
+
+@media(min-width:768px) { // Tablet
+  .ghostHeader {
+    left:inherit !important;
+    h3 {
+      font-size:4rem;
+      letter-spacing: 1rem;
+    }
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+  .ghostHeader {
+    h3 {
+      letter-spacing: 1.3rem;
+    }
+  }
+}
+
+@media (min-width: 992px) { // Large Desktop
+
+}

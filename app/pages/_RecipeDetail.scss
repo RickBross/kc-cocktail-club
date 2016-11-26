@@ -7,19 +7,8 @@
 
 .body.recipe {
   padding: 0;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  .row {
-    padding: 2rem 1.5rem;
-  }
-  overflow-y: scroll;
-  a {
-    text-decoration-color: $lightInactivePrimaryLink;
-    h6 {
-      color: $lightInactivePrimaryLink;
-    }
-  }
+  overflow: scroll;
+  overflow-x: hidden;
   p {
     font-size: .9rem;
   }
@@ -62,21 +51,6 @@
       padding: 2rem;
     }
   }
-  .videoWrapper {
-    text-align: center;
-    max-width: 756px;
-    .video {
-      z-index: 20;
-      position: relative;
-    }
-    video {
-      height: auto;
-      width: 100%;
-      background: #333;
-      z-index: 20;
-      position: inherit;
-    }
-  }
 }
 
 .recipe.rumAlcohol {
@@ -95,42 +69,23 @@
   .body.recipe {
     padding: 3rem;
     p {
-      font-size: .85rem;
+      font-size: .6rem;
+      line-height: 1.3rem;
     }
     .primaryPhoto {
       display: block;
       padding: 0;
+      margin: 0;
     }
     .instructions {
       span, p {
         font-size: .9rem;
       }
     }
-    .videoWrapper {
-      .accent {
-        content: ' ';
-        position: absolute;
-        height: 70%;
-        width: 300%;
-        display: block;
-        top: 15%;
-        left: -2rem;
-        background: $lightActiveSecondaryBg;
-        z-index: 10;
-      }
-    }
   }
   .rumAlcohol {
     .primaryPhoto {
       height: 500px;
-    }
-  }
-}
-
-@media (min-width: 992px) { // Desktop
-  .body.recipe .videoWrapper {
-    .accent {
-      left: -4rem;
     }
   }
 }

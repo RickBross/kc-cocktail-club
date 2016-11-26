@@ -1,0 +1,23 @@
+@import "toolkit";
+
+.pageAccent {
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media(min-width:768px) { // Tablet
+
+}
+
+@media (min-width: 992px) { // Desktop
+
+}
+
+@media (min-width: 992px) { // Large Desktop
+  .pageAccent {
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

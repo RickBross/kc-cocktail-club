@@ -2,14 +2,11 @@
 
 .app {
   font-size: inherit;
-  display: flex;
   min-height: 100vh;
 }
 
 .body {
   font-size: inherit;
-  flex-grow: 1;
-  order: 2;
 }
 
 .lightTone {

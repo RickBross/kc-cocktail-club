@@ -1,29 +1,29 @@
-import PAGES from './Pages';
+import ROUTES from './Routes';
 
 export default [
   {
     caption: 'Discover the',
     title: 'Club',
-    linkTo: PAGES.HOME.linkTo
+    linkTo: ROUTES.HOME.linkTo
   },
   {
     caption: 'View the',
     title: 'Recipes',
-    linkTo: PAGES.RECIPES.linkTo
+    linkTo: ROUTES.RECIPES.linkTo
   },
   {
     caption: 'Previous Cocktail Club',
     title: 'Meetings',
-    linkTo: PAGES.EVENTS.linkTo
+    linkTo: ROUTES.EVENTS.linkTo
   },
   {
     caption: 'Purchase',
     title: 'Tickets',
-    linkTo: PAGES.TICKETS.linkTo
+    linkTo: ROUTES.TICKETS.linkTo
   },
   {
     caption: 'Book a private',
     title: 'Event',
-    linkTo: PAGES.BOOKING.linkTo
+    linkTo: ROUTES.BOOKING.linkTo
   },
 ];

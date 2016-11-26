@@ -5,22 +5,25 @@ import classNames from 'classnames'
 import Menu from '../components/Menu/Menu';
 import Drink from '../UI/Drink/Drink';
 import Banner from '../UI/Banner/Banner';
+import GhostHeader from '../UI/GhostHeader/GhostHeader';
 import IngredientList from '../UI/IngredientList/IngredientList';
+import Video from '../UI/Video/Video';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
 import {
   ALCOHOL,
-  PAGES,
+  ROUTES,
+  getRecipeByName,
 } from '../constants/AppConstants';
 
-import styles from './_Recipe.scss';
+import styles from './_RecipeDetail.scss';
 
 
-export default class Recipe extends React.Component {
+export default class RecipeDetail extends React.Component {
 
 
-  componentDidMount() {
+  componentWillMount() {
     let recipeName = this.getRecipe().name;
 
     document.title = recipeName + " Recipe - Kansas City Cocktail Club";
@@ -36,14 +39,19 @@ export default class Recipe extends React.Component {
   }
 
   getRecipe() {
-    let recipe = ALCOHOL[this.props.params.alcohol.toUpperCase()].recipes.filter(function(item) {
-      return item.linkTo === "/"+this.props.params.recipe;
-    }.bind(this))[0];
-    return recipe;
+    return getRecipeByName(this.props.params.recipe, ALCOHOL);
+  }
+
+  getAlcohol() {
+    return getRecipeByName(this.props.params.recipe, ALCOHOL).alcohol;
+  }
+
+  capitalizeFirstLetter(name) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
   render() {
-      let alcoholKey = this.props.params.alcohol;
+      let alcoholKey = this.getAlcohol();
       let recipeKey = this.props.params.recipe;
     return (
       <div>
@@ -57,16 +65,26 @@ export default class Recipe extends React.Component {
           <Banner
             classNames={classNames(styles.banner)}
             accentClassNames={classNames(styles.accent)}
-            backgroundImage={"url(http://localhost:8000/images/pages/" + alcoholKey + "/banner.png)"}
+            backgroundImage={"url(http://localhost:8000/images/recipes/" + recipeKey + "/banner.png)"}
             backgroundSize="cover"
             backgroundPosition="65% 0"
-            accent={"http://localhost:8000/images/pages/" + alcoholKey + "/" + recipeKey + ".png"} />
+            accent={"http://localhost:8000/images/recipes/" + recipeKey + "/drink.png"} />
         </div>
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.history, styles.row)}>
+              <GhostHeader
+                tone="light"
+                styles={{
+                  top:"80%",
+                  left:"-1rem !important",
+                }}
+                text="HISTORY"
+              />
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
-                <Link to={"/recipes/"+alcoholKey}><h6>&laquo; Back to {alcoholKey.capitalizeFirstLetter()} Cocktails</h6></Link>
-                <h1>{recipeKey}</h1>
+                <Link to={"/recipes/"+alcoholKey}><h6>&laquo; Back to {this.capitalizeFirstLetter(alcoholKey)} Cocktails</h6></Link>
+                <div className={classNames(styles.pageHeading)}>
+                  <h1>{recipeKey}</h1>
+                </div>
                 <p>
                   Although the real origins of caipirinha, as it is known today, are unknown, according to one account it began around 1918 in the state of São Paulo with a popular recipe made with lime, garlic and honey, indicated for patients with the Spanish flu. Today it is still being used as a remedy for the common cold. As it was quite common to add some distilled spirits to home remedies, in order to expedite the therapeutic effect, rum was commonly used. "Until one day someone decided to remove the garlic and honey. Then added a few tablespoons sugar to reduce the acidity of lime. The ice came next, to ward off the heat."
                 </p>
@@ -76,7 +94,7 @@ export default class Recipe extends React.Component {
               </div>
               <div className={classNames(styles.primaryPhoto, styles.column, styles.column12, styles.column6Tablet)}>
                 <Drink
-                  backgroundImage={"url(http://localhost:8000/images/pages/" + alcoholKey + "/" + recipeKey + ".png)"}
+                  backgroundImage={"url(http://localhost:8000/images/recipes/" + recipeKey + "/drink.png)"}
                   backgroundSize="contain"
                   backgroundPosition="center"
                   backgroundRepeat="no-repeat"
@@ -87,7 +105,7 @@ export default class Recipe extends React.Component {
                     top: '0',
                     right:'0',
                     zIndex:'10',
-                    backgroundImage: "url(http://localhost:8000/images/pages/" + alcoholKey + "/banner.png)",
+                    backgroundImage: "url(http://localhost:8000/images/recipes/" + recipeKey + "/banner.png)",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center"
@@ -95,6 +113,17 @@ export default class Recipe extends React.Component {
               </div>
             </div>
             <div className={classNames(styles.instructions, styles.row)}>
+              <div className={classNames(styles.column, styles.column12)}>
+                <GhostHeader
+                  tone="light"
+                  styles={{
+                    top:"0",
+                    left:"-1rem !important",
+                    zIndex: "0"
+                  }}
+                  text="RECIPE"
+                />
+              </div>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet)}>
                 <IngredientList alcohol={alcoholKey} recipe={this.getRecipe()} />
               </div>
@@ -102,12 +131,18 @@ export default class Recipe extends React.Component {
                 <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue.</p>
               </div>
             </div>
-            <div className={classNames(styles.videoWrapper, styles.row)}>
-              <div className={classNames(styles.video)}>
-                <video>
-                  Your browser does not support the video tag.
-                </video>
-                <div className={classNames(styles.accent)}></div>
+            <div className={classNames(styles.video, styles.row)}>
+              <div className={classNames(styles.column, styles.column12)}>
+                <GhostHeader
+                  tone="light"
+                  styles={{
+                    top:"-1rem",
+                    left:"-1rem !important",
+                    zIndex: "0"
+                  }}
+                  text="HOW TO"
+                />
+                <Video></Video>
               </div>
             </div>
           </div>

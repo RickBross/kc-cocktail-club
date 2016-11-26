@@ -10,7 +10,7 @@ import AppStore from '../stores/AppStore';
 
 import {
   ALCOHOL,
-  PAGES,
+  ROUTES,
 } from '../constants/AppConstants';
 
 import styles from './_RecipeList.scss';
@@ -54,8 +54,10 @@ export default class RecipeList extends React.Component {
         <div className={classNames(styles.container)}>
             <div className={classNames(styles.row, styles.description)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
-                <Link to="/recipes"><h6>&laquo; Back to Base Liqours</h6></Link>
-                <h1>{alcoholKey} Recipes</h1>
+                <div className={classNames(styles.pageHeading)}>
+                  <Link to="/recipes"><h6>&laquo; Back to Base Liqours</h6></Link>
+                  <h1>{alcoholKey} Recipes</h1>
+                </div>
                 <p>
                   Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 
@@ -77,7 +79,7 @@ export default class RecipeList extends React.Component {
               <div className={classNames(styles.column, styles.column12)}>
                 <ul style={{backgroundImage:"url(http://localhost:8000/images/pages/" + alcoholKey + "/banner.png)"}} className={classNames(styles.list, styles.lsn, styles.center, styles.block)}>
                   {ALCOHOL[alcoholKey.toUpperCase()].recipes.map((item, i) => {
-                    return (<Link key={item.linkTo} className={styles.tdn} to={PAGES.RECIPES.linkTo + "/" + alcoholKey + item.linkTo}><li>{item.name}</li></Link>);
+                    return (<Link key={item.linkTo} className={styles.tdn} to={ROUTES.RECIPE.linkTo + item.linkTo}><li>{item.name}</li></Link>);
                   }, this)}
                 </ul>
               </div>

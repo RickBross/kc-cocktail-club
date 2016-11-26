@@ -11,11 +11,12 @@ let { Component, PropTypes } = React;
 export default class Banner extends Component {
   render() {
     return (
-        <div style={{width: this.props.width, overflow: this.props.overflow}} className={classNames(styles.banner, this.props.classNames)}>
+        <div style={{width: '100%', maxWidth: this.props.width, overflow: this.props.overflow}} className={classNames(styles.banner, this.props.classNames)}>
           <div
             style={{
               zIndex: this.props.z,
-              width:'100%',
+              width: '100%',
+              maxWidth: this.props.width,
               height: '100%',
               position: 'absolute',
               top: 0,

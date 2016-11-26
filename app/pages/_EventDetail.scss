@@ -1,0 +1,102 @@
+@import "toolkit";
+@import "./_Pages";
+
+.body {
+  height: 100%;
+}
+.collageTwo, .collage {
+  display: none;
+}
+
+.listFrame {
+  width: 100%;
+  height: 30rem;
+}
+
+
+.videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
+  top: -1.5rem;
+  left: -3rem;
+  z-index: 0;
+}
+
+.frame {
+  display: block;
+}
+
+.mainLayer {
+  margin-bottom: 15rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0px 3rem black;
+}
+
+@media (min-width: 415px) {
+  .frame {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .listFrame {
+    height: 25rem;
+    width: 70%;
+  }
+  .videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  footer {
+    img {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+  .eventDescription {
+    margin-bottom: 2rem;
+  }
+  .body {
+    .row {
+      padding: 0;
+    }
+    .video {
+      margin-top:4rem;
+    }
+    .attendees {
+      margin-bottom:4rem;
+    }
+    .mediumParagraph {
+      margin-bottom: 4rem;
+    }
+    .collageTwo {
+      height: 30rem;
+      margin-bottom: 6rem;
+      display: block;
+    }
+    .collage {
+      display: block;
+    }
+  }
+  .videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
+    z-index: 0;
+    h3 {
+      font-size:3rem;
+      letter-spacing: 1.3rem;
+    }
+  }
+  .attendeesHeader {
+    top: 94%;
+    left: -3rem;
+  }
+  .drinksHeader {
+    top: 3%;
+    left: 15rem !important;
+  }
+  .videoHeader {
+    top: -3.5rem;
+    left: -3rem;
+  }
+}

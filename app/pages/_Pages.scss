@@ -1,20 +1,38 @@
 @import "toolkit";
 
 .body {
-  display: flex;
   height: 100vh;
-  overflow-x: hidden;
   font-size: inherit;
+  .row {
+    padding: 2rem 1.5rem;
+    position: relative;
+    h1, h2, h3, h4, h5, h6, p, ul, li, span  {
+      z-index: 100;
+      position:relative
+    }
+  }
   &.darkTone {
     color: white;
   }
   &.lightTone {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 0;
     h1, h2, h3, h4, h5, h6, p  {
       color: $lightInactiveSecondaryText;
     }
     h1,h2 {
       color: $lightInactivePrimaryText;
+    }
+    .ghost {
+      color: $lightGhost;
+    }
+    a {
+      text-decoration-color: $lightInactivePrimaryLink;
+      h6 {
+        color: $lightInactivePrimaryLink;
+      }
+    }
+    li {
+      color: $black;
     }
     form {
       input {
@@ -39,8 +57,12 @@
     margin: 0;
   }
   h1,h2 {
-    font-family: "Moonshiner Sharp";
+    font-family: "Moonshiner";
     font-weight: 100;
+  }
+  .mediumParagraph {
+    font-size:1.2rem;
+    line-height: 1.75rem;
   }
   button {
     background: $lightInactivePrimaryBtn;
@@ -67,10 +89,20 @@
       text-decoration: underline;
     }
   }
+  .pageHeading {
+    margin-bottom: 2.5rem;
+    h4 {
+      font-family: 'Galano Classic';
+      font-weight: normal;
+      line-height: 1.5rem;
+      margin-top: 1.5rem;
+      letter-spacing: .02rem;
+      font-size: 1rem;
+    }
+  }
   h1 {
     font-size: 3rem;
     letter-spacing: 0.2rem;
-    margin-bottom: 2.5rem;
   }
   h2 {
     font-size: 2rem;
@@ -88,18 +120,16 @@
     font-size: .85rem;
     line-height: 1.65rem;
   }
-  .row {
+  .row, .floatRow {
     @include container($total-columns);
   }
-}
-.home {
-  padding: 2rem;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
-}
-
-.homeLogo {
-  max-width: 100%;
+  .floatRow {
+    position: relative;
+    * {
+      position: absolute;
+      z-index:100;
+    }
+  }
 }
 
 .fill {
@@ -124,7 +154,7 @@ form {
 
 // Phone Portrait ^^
 
-@media (min-width: 321px) { // Phone Landscape
+@media (min-width: 415px) { // Phone Landscape
 
   .column1phoneLandscape {
      @include span(1 of 12)
@@ -173,6 +203,10 @@ form {
 }
 
 @media (min-width: 768px) { // Tablet
+  .mediumParagraph {
+    font-size:.625rem;
+    line-height: 1.3rem;
+  }
   .column1Tablet {
      @include span(1 of 12)
   }
@@ -189,7 +223,10 @@ form {
      @include span(5 of 12)
   }
   .column6Tablet {
-     @include span(6 of 12)
+    &:eq(2) {
+      margin-right: 0;
+    }
+    @include span(6 of 12)
   }
   .column7Tablet {
      @include span(7 of 12)
@@ -218,13 +255,17 @@ form {
       letter-spacing: .6rem;
     }
     &.lightTone {
-      padding: 5rem;
+      padding: 5rem 5rem 0;
     }
   }
 }
 
 @media (min-width: 992px) { // Desktop
-    .column1Desktop {
+  .body .mediumParagraph {
+    font-size:.625rem;
+    line-height: 1.3rem;
+  }
+  .column1Desktop {
      @include span(1 of 12)
   }
   .column2Desktop {
@@ -304,7 +345,6 @@ form {
     @include span(12 of 12)
   }
   .body h1 {
-    letter-spacing: .8rem;
-    font-size: 3.5rem;
+    letter-spacing: 1rem;
   }
 }

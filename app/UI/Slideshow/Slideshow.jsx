@@ -1,6 +1,11 @@
 import styles from './_Slideshow.scss'
 import React from 'react'
+import { Link } from 'react-router'
 import classNames from 'classnames'
+
+import {
+  EVENTS
+} from '../../constants/AppConstants'
 
 let { Component, PropTypes } = React;
 
@@ -83,12 +88,14 @@ class Slider extends React.Component {
                 <div className={this.slideClasses(index)} onClick={this.props.onclick}>
                   <div className={classNames(styles.bg)}></div>
                   <div className={classNames(styles.fg,styles.centerAbs)}>
-                    <div className={classNames(styles.layer)}>
-                      <img src="http://localhost:8000/images/events/hero/drop.png" />
-                      <h1>Meeting #{index+1}</h1>
-                      <p>{slide.date}</p>
-                      <p>{slide.address}</p>
-                    </div>
+                    <Link to={'/events/' + (parseInt(index+1))}>
+                      <div className={classNames(styles.layer)}>
+                        <img src="http://localhost:8000/images/pages/events/hero/drop.png" />
+                        <h1>Meeting #{index+1}</h1>
+                        <p>{slide.date}</p>
+                        <p>{slide.address}</p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -121,24 +128,7 @@ export default class Slideshow extends Component {
   }
   componentWillMount() {
     this.activeIndex = 0;
-    this.slides = [
-      {
-        date: 'August 24, 2016 | 7:30pm',
-        address: '2101 Broadway 64108'
-      },
-      {
-        date: 'August 31, 2016 | 7:00pm',
-        address: '2101 Broadway 64108'
-      },
-      {
-        date: 'August 31, 2016 | 7:00pm',
-        address: '2101 Broadway 64108'
-      },
-      {
-        date: 'August 31, 2016 | 7:00pm',
-        address: '2101 Broadway 64108'
-      }
-    ];
+    this.slides = EVENTS;
   }
 
   render() {

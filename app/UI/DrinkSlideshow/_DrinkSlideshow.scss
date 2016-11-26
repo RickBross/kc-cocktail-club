@@ -1,0 +1,185 @@
+@import "toolkit";
+
+.centerAbs {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.right {
+  float: right;
+}
+
+.drinkSlideshow {
+  width: 100%;
+  height: 100%;
+  .layer {
+    position: relative;
+  }
+  .layerText {
+    position: absolute !important;
+    text-align: center;
+    color: $black;
+    width: 100%;
+    h4 {
+      font-family: 'Moonshiner';
+      font-size: 5rem;
+      letter-spacing: .5rem;
+      font-weight: 100;
+      &, span {
+        text-decoration: none;
+      }
+    }
+    hr {
+      border: 2px solid black;
+      width: 50%;
+      border-color: $black;
+    }
+    span {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+  &, ul, li .slide {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .slide {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    a {
+      color: inherit;
+    }
+  }
+  p {
+    font-family: "Galano Classic Medium";
+    letter-spacing: .1rem;
+  }
+  &.darkTone {
+    color: $darkInactivePrimaryText;
+    p {
+      font-size: 1rem;
+    }
+  }
+  &.lightTone {
+    color: $lightInactivePrimaryText;
+    p {
+      margin: 0;
+    }
+  }
+  .controls {
+    width:100%;
+    text-align: center;
+    overflow: hidden;
+    p span.arrow {
+      margin: 0 2.5rem;
+    }
+  }
+  .slide {
+    display: inline-block;
+    &.active {
+      display: block;
+    }
+  }
+  .slideshowSlides {
+    position: relative;
+    li {
+      display: none;
+    }
+    li.active {
+      display: block;
+    }
+  }
+  div.active a {
+    opacity: 1;
+  }
+  .frame {
+    height: 25rem;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    img {
+      bottom: -7rem;
+      right: 3rem;
+      zoom: .5;
+    }
+  }
+}
+.slideshow {
+  .slide {
+    .fg {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+.drinkDescription {
+  p {
+    line-height: 1.75rem !important;
+    font-size: 1.75rem !important;
+    letter-spacing: 0 !important;
+  }
+}
+  .slideshow {
+    width:100%;
+    position: relative;
+  }
+
+@media (min-width: 321px) {
+  .slideshow {
+    zoom: 0.6;
+  }
+  .drinkSlideshow .frame {
+    img {
+      bottom: -4rem;
+      right: 3rem;
+      zoom: .75;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .drinkDescription {
+    width: 50%;
+    float: right;
+    p {
+      line-height: 1.3rem !important;
+      font-size: .8rem !important;
+    }
+  }
+  .drinkSlideshow {
+    padding-top: 1.5rem;
+    .frame {
+      height: 25rem;
+      width: 100%;
+      overflow: visible;
+      img {
+        bottom: 0;
+        top: -7rem;
+        left: -8rem;
+        zoom: 1;
+      }
+    }
+  }
+  .slideshow {
+    zoom: 0.8;
+    .controls {
+      padding-top: 1rem;
+    }
+    .slide {
+      .fg {
+        h1 {
+          font-size: 6.5rem;
+          line-height: 9.5rem;
+        }
+      }
+    }
+  }
+}

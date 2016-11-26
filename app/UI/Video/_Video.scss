@@ -1,0 +1,42 @@
+@import "toolkit";
+
+.videoWrapper {
+  margin: 0 auto 4rem;
+  max-width: 700px;
+  .video {
+    z-index: 20;
+    position: relative;
+  }
+  video {
+    height: auto;
+    width: 100%;
+    background: #333;
+    z-index: 20;
+    position: inherit;
+  }
+}
+
+
+@media(min-width:768px) {
+  .videoWrapper {
+    .accent {
+      content: ' ';
+      position: absolute;
+      height: 70%;
+      width: 300%;
+      display: block;
+      top: 15%;
+      left: -2rem;
+      background: $lightActiveSecondaryBg;
+      z-index: 10;
+    }
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+  .videoWrapper {
+    .accent {
+      left: -4rem;
+    }
+  }
+}

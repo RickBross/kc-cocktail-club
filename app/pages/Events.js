@@ -36,8 +36,7 @@ export default class Events extends React.Component {
           active={MenuStore.getProp('active')} />
         <div className={classNames(styles.body, styles.events)}>
             <div className={classNames(styles.wrapper, styles.makeBackground)}>
-              <Slideshow
-                tone={AppStore.getProp('tone')} />
+              <Slideshow tone={AppStore.getProp('tone')} />
             </div>
           </div>
         </div>

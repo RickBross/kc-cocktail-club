@@ -2,11 +2,21 @@
 
 .frame {
   position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
   .accent {
     position: absolute;
   }
   .frameBg {
-    border: 10px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    border: 10px solid $white;
+    background-color: $white;
+  }
+}
+.frame.noBorder .frameBg {
+  border: none;
+}
+
+@media(min-width:768px) {
+  .frame {
+    display: block;
   }
 }

@@ -7,12 +7,17 @@
 
 .lsn {
   list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .tdn {
   text-decoration: none !important;
 }
 .center {
-  margin: 0 auto;
+  margin: 0 auto !important;
+}
+.tac {
+  text-align: center !important;
 }
 .block {
   display: block;

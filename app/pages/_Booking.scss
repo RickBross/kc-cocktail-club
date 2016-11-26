@@ -4,7 +4,6 @@
 .makeBackground {
 
 }
-
 .body.booking {
   overflow-y: scroll;
   padding-top: 5rem;
@@ -48,6 +47,9 @@
     .primaryPhoto {
       display: block;
     }
+  }
+  .primaryFrame {
+    display: block;
   }
 }
 
