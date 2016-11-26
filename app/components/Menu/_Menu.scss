@@ -234,7 +234,7 @@ li.item {
   padding-top: 5rem;
   margin: 0;
   height: 100vh;
-  width: 100vw;
+  width: 85vw;
   opacity: 0;
   -webkit-transition: left .5s ease-in-out;
   transition: left .5s ease-in-out;
@@ -247,6 +247,14 @@ li.item {
 @media (min-width: 415px) {
   .title {
     display: block;
+  }
+
+  li.item.social {
+    height: 5.5rem;
+    text-align: right;
+    display: inline;
+    width: auto;
+    right: 0;
   }
 }
 
@@ -324,6 +332,14 @@ li.item {
     span:last-child {
       font-size: 1.25rem;
     }
+  }
+
+  li.item.social {
+    height: 6.5rem;
+    text-align: normal;
+    display: block;
+    width: auto;
+    right: initial;
   }
 }
 
