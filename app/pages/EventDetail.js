@@ -7,7 +7,6 @@ import Frame from '../UI/Frame/Frame';
 import Video from '../UI/Video/Video';
 import GhostHeader from '../UI/GhostHeader/GhostHeader';
 import DrinkSlideshow from '../UI/DrinkSlideshow/DrinkSlideshow';
-import RevealFooter from '../UI/RevealFooter/RevealFooter';
 import AlcoholFooter from '../UI/footers/AlcoholFooter/AlcoholFooter';
 import PageAccent from '../UI/PageAccent/PageAccent';
 import List from '../UI/List/List';
@@ -26,8 +25,17 @@ let eventNumber, eventIndex, eventData, eventDate, eventAddress, eventAttendees,
 
 export default class EventDetail extends React.Component {
 
+  constructor() {
+    super()
+    this.state = {
+      menuStyles: {
+        position: 'fixed'
+      },
+      scrollBottom: window.height
+    };
+  }
 
-    componentWillMount() {
+  componentWillMount() {
 
     const bg = 'white'
     AppStore.setProps({tone:'light'});
@@ -49,11 +57,74 @@ export default class EventDetail extends React.Component {
     document.title = "Meeting #" + eventNumber + " - Kansas City Cocktail Club";
   }
 
+  componentDidMount() {
+    document.addEventListener("scroll", this.handleScroll.bind(this));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("scroll", this.handleScroll.bind(this));
+  }
+
+  _handleWaypointEnter() {
+    console.log('_handleWaypointEnter');
+  }
+
+  _handleWaypointLeave() {
+    console.log('_handleWaypointLeave');
+  }
+
+  getViewport() {
+
+     var viewPortWidth;
+     var viewPortHeight;
+
+     // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
+     if (typeof window.innerWidth != 'undefined') {
+       viewPortWidth = window.innerWidth,
+       viewPortHeight = window.innerHeight
+     }
+
+    // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+     else if (typeof document.documentElement != 'undefined'
+     && typeof document.documentElement.clientWidth !=
+     'undefined' && document.documentElement.clientWidth != 0) {
+        viewPortWidth = document.documentElement.clientWidth,
+        viewPortHeight = document.documentElement.clientHeight
+     }
+
+     // older versions of IE
+     else {
+       viewPortWidth = document.getElementsByTagName('body')[0].clientWidth,
+       viewPortHeight = document.getElementsByTagName('body')[0].clientHeight
+     }
+     return [viewPortWidth, viewPortHeight];
+    }
+
+  handleScroll() {
+    var newState = _.merge(this.state, { menuStyles: { position: 'fixed' } });
+    var doc = document.documentElement;
+    var viewport = this.getViewport();
+
+    newState.left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
+    newState.top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+
+    newState.right = (window.pageXOffset || doc.scrollRight) + viewport[0];
+    newState.bottom = (window.pageYOffset || doc.scrollBottom)  + viewport[1];
+
+    if (newState.bottom > document.getElementsByClassName(styles.mainLayer)[0].clientHeight) {
+      newState.menuStyles.position = 'absolute';
+      newState.menuStyles.bottom = 0;
+    }
+
+    this.setState(newState);
+  }
+
   render() {
     return (
       <div>
         <div className={classNames(styles.mainLayer)}>
           <Menu
+            styles={this.state.menuStyles}
             title={MenuStore.getProp('title')}
             tone={AppStore.getProp('tone')}
             active={MenuStore.getProp('active')}
@@ -104,7 +175,7 @@ export default class EventDetail extends React.Component {
                 />
               </div>
               <div className={classNames(styles.collageTwo, styles.row)}>
-                  <Frame width="45%"
+                <Frame width="45%"
                   height="50%"
                   backgroundImage={"url(http://localhost:8000/images/pages/events/" + eventNumber + "/frame-3.png)"}
                   backgroundSize="cover"
@@ -176,7 +247,9 @@ export default class EventDetail extends React.Component {
             </div>
           </div>
         </div>
-        <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)} />
+        <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)}>
+
+        </AlcoholFooter>
       </div>
     );
   }

@@ -75,7 +75,7 @@ export default class Menu extends Component {
 
   render() {
     return (
-        <div className={this.parent} className={this.getWrapperClasses()}>
+        <div style={this.props.styles} className={this.parent} className={this.getWrapperClasses()}>
           <MenuBar
             tone={this.props.tone}
             title={this.props.title}

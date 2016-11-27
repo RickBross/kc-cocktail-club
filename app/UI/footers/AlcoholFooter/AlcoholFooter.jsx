@@ -23,6 +23,7 @@ export default class AlcoholFooter extends React.Component {
   render() {
     return (
       <RevealFooter style={this.props.styles} classNames={classNames(this.props.classNames, styles.row)}>
+        {this.props.children}
         <Link to={"/recipes/" + this.props.alcohol}>
           <div className={classNames(styles.footerText)}>
             <span>Make the Drinks</span>

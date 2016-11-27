@@ -275,6 +275,7 @@ li.item {
     width: 5rem;
     height: 100vh;
     position: relative;
+    z-index:500;
     &.active {
       width: auto;
       .panel {
