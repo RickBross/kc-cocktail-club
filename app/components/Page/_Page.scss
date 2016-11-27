@@ -1,0 +1,170 @@
+@import "toolkit";
+
+.body {
+  position: relative;
+  font-size: inherit;
+  &.lightTone {
+    h1, h2, h3, h4, h5, h6, p  {
+      color: $lightInactiveSecondaryText;
+    }
+    h1,h2 {
+      color: $lightInactivePrimaryText;
+    }
+    .ghost {
+      color: $lightGhost;
+    }
+    a {
+      text-decoration-color: $lightInactivePrimaryLink;
+      h6 {
+        color: $lightInactivePrimaryLink;
+      }
+    }
+    li {
+      color: $black;
+    }
+    form {
+      input {
+        border-bottom: 2px solid $lightInactivePrimaryText;
+      }
+    }
+  }
+  &.darkTone {
+    color: white;
+    h1, h2, h3, h4, h5, h6, p  {
+      color: $darkInactiveSecondaryText;
+    }
+    h1,h2 {
+      color: $darkInactivePrimaryText;
+    }
+    form {
+      input {
+        border-bottom: 2px solid $darkInactivePrimaryText;
+      }
+    }
+  }
+}
+
+.row {
+  padding: 2rem 1.5rem;
+  position: relative;
+  h1, h2, h3, h4, h5, h6, p, ul, li, span  {
+    z-index: 100;
+    position:relative
+  }
+}
+
+.mainLayer {
+  margin-bottom: 15rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0px 3rem black;
+}
+
+h1, h2, h3, h4, h5, h6, p  {
+  margin: 0;
+}
+h1,h2 {
+  font-family: "Moonshiner";
+  font-weight: 100;
+}
+.mediumParagraph {
+  font-size:1.2rem;
+  line-height: 1.75rem;
+}
+button {
+  background: $lightInactivePrimaryBtn;
+  color: $white;
+  font-family: "Moonshiner Sharp";
+  border: none;
+  padding: .35rem 2.2rem .6rem;
+  margin-bottom: 2rem;
+  box-shadow: 5px 5px 0px rgba(0,0,0,.1);
+  letter-spacing: .35rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  transition: all .2s linear;
+  height: 2.5rem;
+  &:hover {
+    background: $lightHoverPrimaryBtn;
+    margin: 2px 2px 0 0;
+    box-shadow: 0 0 0px rgba(0,0,0,.1);
+  }
+}
+.container {
+  a {
+    color: $lightInactivePrimaryText;
+    text-decoration: underline;
+  }
+}
+.pageHeading {
+  margin-bottom: 2.5rem;
+  h4 {
+    font-family: 'Galano Classic';
+    font-weight: normal;
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: .02rem;
+    font-size: 1rem;
+  }
+}
+h1 {
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+}
+h2 {
+  font-size: 2rem;
+  letter-spacing: .2rem;
+}
+h6 {
+  font-family: "Galano Classic Bold";
+  font-size: .5rem;
+  letter-spacing: .2rem;
+  font-style: italic;
+}
+p {
+  font-family: "Galano Classic";
+  margin-bottom: 1rem;
+  font-size: .85rem;
+  line-height: 1.65rem;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+
+form {
+  input {
+    border: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-family: "Galano Classic Bold";
+    letter-spacing: .2rem;
+  }
+}
+
+.row, .floatRow {
+  @include container($total-columns);
+}
+.floatRow {
+  position: relative;
+  * {
+    position: absolute;
+    z-index:100;
+  }
+}
+
+
+@media (min-width: 415px) { // Phone Landscape
+  h1 {
+    letter-spacing: .6rem;
+  }
+  h2 {
+    letter-spacing: .4rem;
+  }
+}

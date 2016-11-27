@@ -1,4 +1,3 @@
-@import "toolkit";
 @import "./_Pages";
 
 .body {
@@ -22,13 +21,6 @@
 
 .frame {
   display: block;
-}
-
-.mainLayer {
-  margin-bottom: 15rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0px 3rem black;
 }
 
 @media (min-width: 415px) {
@@ -58,27 +50,25 @@
   .eventDescription {
     margin-bottom: 2rem;
   }
-  .body {
-    .row {
-      padding: 0;
-    }
-    .video {
-      margin-top:4rem;
-    }
-    .attendees {
-      margin-bottom:4rem;
-    }
-    .mediumParagraph {
-      margin-bottom: 4rem;
-    }
-    .collageTwo {
-      height: 30rem;
-      margin-bottom: 6rem;
-      display: block;
-    }
-    .collage {
-      display: block;
-    }
+  .row {
+    padding: 0;
+  }
+  .video {
+    margin-top:4rem;
+  }
+  .attendees {
+    margin-bottom:4rem;
+  }
+  .mediumParagraph {
+    margin-bottom: 4rem;
+  }
+  .collageTwo {
+    height: 30rem;
+    margin-bottom: 6rem;
+    display: block;
+  }
+  .collage {
+    display: block;
   }
   .videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
     z-index: 0;
