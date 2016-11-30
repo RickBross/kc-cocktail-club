@@ -4,11 +4,14 @@
   position: relative;
   font-size: inherit;
   &.lightTone {
-    h1, h2, h3, h4, h5, h6, p  {
-      color: $lightInactiveSecondaryText;
-    }
-    h1,h2 {
-      color: $lightInactivePrimaryText;
+    .mainLayer {
+      h1,h2 {
+        color: $lightInactivePrimaryText;
+        margin-bottom: 3rem;
+      }
+      h3, h4, h5, h6, p  {
+        color: $lightInactiveSecondaryText;
+      }
     }
     .ghost {
       color: $lightGhost;
@@ -18,9 +21,6 @@
       h6 {
         color: $lightInactivePrimaryLink;
       }
-    }
-    li {
-      color: $black;
     }
     form {
       input {
@@ -58,6 +58,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 0px 3rem black;
+  padding-top: 3rem;
 }
 
 h1, h2, h3, h4, h5, h6, p  {
@@ -68,7 +69,7 @@ h1,h2 {
   font-weight: 100;
 }
 .mediumParagraph {
-  font-size:1.2rem;
+  font-size:1rem;
   line-height: 1.75rem;
 }
 button {
@@ -90,14 +91,11 @@ button {
     box-shadow: 0 0 0px rgba(0,0,0,.1);
   }
 }
-.container {
-  a {
-    color: $lightInactivePrimaryText;
-    text-decoration: underline;
-  }
-}
 .pageHeading {
   margin-bottom: 2.5rem;
+  h1, h4 {
+    margin: 0;
+  }
   h4 {
     font-family: 'Galano Classic';
     font-weight: normal;
@@ -159,6 +157,19 @@ form {
   }
 }
 
+footer {
+  &.darkTone  {
+    a, p, h1, h2, h4, h5, h6, span {
+      color: $white !important;
+    }
+  }
+  &.lightTone {
+    a, p, h1, h2, h4, h5, h6, span {
+      color: $black !important;
+    }
+  }
+}
+
 
 @media (min-width: 415px) { // Phone Landscape
   h1 {
@@ -166,5 +177,12 @@ form {
   }
   h2 {
     letter-spacing: .4rem;
+  }
+}
+
+
+@media (min-width: 768px) { // Phone Landscape
+  .mainLayer {
+    padding-top: 0;
   }
 }

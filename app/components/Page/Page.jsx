@@ -18,12 +18,12 @@ export default class Page extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     document.addEventListener("scroll", this.handleScroll.bind(this));
   }
 
   componentWillUnmount() {
-    document.removeEventListener("scroll", this.handleScroll.bind(this));
+    document.removeEventListener("scroll", this.handleScroll.bind(this), false);
   }
 
   getViewport() {

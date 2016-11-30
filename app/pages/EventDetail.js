@@ -52,7 +52,7 @@ export default class EventDetail extends React.Component {
   render() {
     return (
       <Page>
-        <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
+        <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.eventDetail)}>
           <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.eventDescription, styles.column, styles.column12, styles.column7Desktop)}>
@@ -142,16 +142,16 @@ export default class EventDetail extends React.Component {
               </div>
             </div>
             <div className={classNames(styles.attendees, styles.row)}>
+              <GhostHeader
+                text="THE ATTENDEES"
+                classNames={[styles.attendeesHeader]}
+                tone="light"
+              />
               <div className={classNames(styles.column, styles.column12, styles.column6phoneLandscape)}>
                 <List
                   data={eventAttendees}
                   classNames={[styles.column]}
                   width="50%"
-                />
-                <GhostHeader
-                  text="THE ATTENDEES"
-                  classNames={[styles.attendeesHeader]}
-                  tone="light"
                 />
               </div>
               <div className={classNames(styles.column, styles.column12, styles.column6phoneLandscape)}>

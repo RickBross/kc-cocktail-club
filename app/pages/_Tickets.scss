@@ -1,7 +1,8 @@
 @import "toolkit";
+@import "../components/Page/Page";
 
 .tickets {
-  padding: 2rem 1.5rem 2rem ;
+  padding: 2rem 1.5rem 2rem;
   padding-top: 5rem;
   overflow-y: scroll;
   height: 100%;
@@ -38,6 +39,7 @@
 
 @media (min-width: 768px) { // Tablet
   .tickets {
+    margin-left: 5rem;
     h1 {
       letter-spacing: .8rem;
       font-size: 2.2rem;
@@ -61,7 +63,6 @@
 @media (min-width: 992px) { // Desktop
   .tickets {
     padding: 3rem;
-    padding-left: 8rem;
     .mediumParagraph {
       font-size:.625rem;
       line-height: 1.3rem;

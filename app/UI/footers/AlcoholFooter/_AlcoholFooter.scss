@@ -1,16 +1,7 @@
 @import "toolkit";
 
 
-.darkTone  {
-  p, h1, h2, h4, h5, h6, span {
-    color: $white !important;
-  }
-}
-.lightTone {
-  p, h1, h2, h4, h5, h6, span {
-    color: $black !important;
-  }
-}
+
 
 footer {
   z-index: -1;
@@ -23,9 +14,6 @@ footer {
     position: relative;
     z-index: 70;
     text-shadow: 0 2px 2px $black;
-  }
-  &, a {
-    color: $white;
   }
   img {
     display: none;

@@ -3,9 +3,11 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
+import Page from '../components/Page/Page';
 import Drink from '../UI/Drink/Drink';
 import Banner from '../UI/Banner/Banner';
 import GhostHeader from '../UI/GhostHeader/GhostHeader';
+import AlcoholFooter from '../UI/footers/AlcoholFooter/AlcoholFooter';
 import IngredientList from '../UI/IngredientList/IngredientList';
 import Video from '../UI/Video/Video';
 import MenuStore from '../stores/MenuStore';
@@ -54,23 +56,18 @@ export default class RecipeDetail extends React.Component {
       let alcoholKey = this.getAlcohol();
       let recipeKey = this.props.params.recipe;
     return (
-      <div>
-        <Menu
-          title={MenuStore.getProp('title')}
-          tone={AppStore.getProp('tone')}
-          active={MenuStore.getProp('active')}
-        />
-      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.recipe, styles[alcoholKey+'Alcohol'])}>
-        <div className={classNames(styles.bannerWrapper)}>
-          <Banner
-            classNames={classNames(styles.banner)}
-            accentClassNames={classNames(styles.accent)}
-            backgroundImage={"url(http://localhost:8000/images/recipes/" + recipeKey + "/banner.png)"}
-            backgroundSize="cover"
-            backgroundPosition="65% 0"
-            accent={"http://localhost:8000/images/recipes/" + recipeKey + "/drink.png"} />
-        </div>
-        <div className={classNames(styles.container)}>
+      <Page>
+        <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.recipe, styles[alcoholKey+'Alcohol'])}>
+          <div className={classNames(styles.bannerWrapper)}>
+            <Banner
+              classNames={classNames(styles.banner)}
+              accentClassNames={classNames(styles.accent)}
+              backgroundImage={"url(http://localhost:8000/images/recipes/" + recipeKey + "/banner.png)"}
+              backgroundSize="cover"
+              backgroundPosition="65% 0"
+              accent={"http://localhost:8000/images/recipes/" + recipeKey + "/drink.png"} />
+          </div>
+          <div className={classNames(styles.container)}>
             <div className={classNames(styles.history, styles.row)}>
               <GhostHeader
                 tone="light"
@@ -147,7 +144,10 @@ export default class RecipeDetail extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+        <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)}>
+
+        </AlcoholFooter>
+      </Page>
     );
   }
 }

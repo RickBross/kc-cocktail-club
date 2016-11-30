@@ -1,5 +1,5 @@
 @import "toolkit";
-@import "./_Pages";
+@import "../components/Page/Page";
 
 .makeBackground {
 
@@ -8,7 +8,7 @@
 .body.recipe {
   padding: 0;
   overflow: scroll;
-   overflow-x: hidden;
+  overflow-x: hidden;
   p {
     font-size: .9rem;
   }
@@ -68,6 +68,7 @@
 @media(min-width:768px) {
   .body.recipe {
     padding: 3rem;
+    margin-left: 5rem;
     p {
       font-size: .6rem;
       line-height: 1.3rem;
@@ -87,5 +88,11 @@
     .primaryPhoto {
       height: 500px;
     }
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+  .recipe {
+    padding: 3rem;
   }
 }

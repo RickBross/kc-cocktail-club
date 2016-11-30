@@ -3,7 +3,10 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
+import Page from '../components/Page/Page';
+
 import Frame from '../UI/Frame/Frame';
+import AlcoholFooter from '../UI/footers/AlcoholFooter/AlcoholFooter';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
@@ -29,14 +32,9 @@ export default class Booking extends React.Component {
   render() {
 
     return (
-      <div>
-        <Menu
-          title={MenuStore.getProp('title')}
-          tone={AppStore.getProp('tone')}
-          active={MenuStore.getProp('active')}
-        />
-      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
-        <div className={classNames(styles.container)}>
+      <Page>
+        <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
+          <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
                 <div className={classNames(styles.pageHeading)}>
@@ -87,7 +85,10 @@ export default class Booking extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+        <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)}>
+
+        </AlcoholFooter>
+      </Page>
     );
   }
 }

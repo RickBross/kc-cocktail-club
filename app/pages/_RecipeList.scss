@@ -1,9 +1,5 @@
 @import "toolkit";
-@import "./_Pages";
-
-.makeBackground {
-
-}
+@import "../components/Page/Page";
 
 .body.recipeList {
   padding: 0;
@@ -11,6 +7,7 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  padding-top: 5rem;
   a {
     text-decoration-color: $lightInactivePrimaryLink;
     h6 {
@@ -65,6 +62,7 @@
 @media(min-width:768px) {
   .body.recipeList {
     padding: 3rem;
+    margin-left: 5rem;
     .primaryPhoto {
       display: block;
       padding: 0 2rem;
