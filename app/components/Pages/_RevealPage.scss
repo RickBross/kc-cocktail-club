@@ -1,9 +1,11 @@
 @import "toolkit";
 
 .body {
-  position: relative;
   font-size: inherit;
   &.lightTone {
+    h3, h4, h5, h6, p  {
+      color: $lightInactiveSecondaryText;
+    }
     .mainLayer {
       h1,h2 {
         color: $lightInactivePrimaryText;
@@ -58,7 +60,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 0px 3rem black;
-  padding-top: 3rem;
+  background: white;
 }
 
 h1, h2, h3, h4, h5, h6, p  {
@@ -182,6 +184,9 @@ footer {
 
 
 @media (min-width: 768px) { // Phone Landscape
+  .body {
+    position: relative;
+  }
   .mainLayer {
     padding-top: 0;
   }

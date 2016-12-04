@@ -35,10 +35,16 @@
     .bar {
       background: $darkActivePrimaryBg;
     }
+    .title {
+      color: $lightActiveSecondaryText;
+    }
   }
   &.darkTone.active {
     .bar {
       background: $darkActivePrimaryBg;
+    }
+    .title {
+      color: $lightActiveSecondaryText;
     }
   }
   &.lightTone {

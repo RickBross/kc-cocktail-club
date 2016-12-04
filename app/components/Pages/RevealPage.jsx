@@ -1,4 +1,4 @@
-import styles from './_Page.scss';
+import styles from './_RevealPage.scss';
 import React from 'react';
 import classNames from 'classnames'
 
@@ -6,7 +6,7 @@ import Menu from '../Menu/Menu';
 import MenuStore from '../../stores/MenuStore';
 import AppStore from '../../stores/AppStore';
 
-export default class Page extends React.Component {
+export default class RevealPage extends React.Component {
 
   constructor() {
     super()
@@ -79,7 +79,7 @@ export default class Page extends React.Component {
         <Menu
           styles={this.state.menuStyles}
           title={MenuStore.getProp('title')}
-          tone={AppStore.getProp('tone')}
+          tone={MenuStore.getProp('tone')}
           active={MenuStore.getProp('active')}
         />
         <div className={classNames(styles.mainLayer)}>

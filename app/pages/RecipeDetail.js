@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
-import Page from '../components/Page/Page';
+import RevealPage from '../components/Pages/RevealPage';
 import Drink from '../UI/Drink/Drink';
 import Banner from '../UI/Banner/Banner';
 import GhostHeader from '../UI/GhostHeader/GhostHeader';
@@ -56,7 +56,7 @@ export default class RecipeDetail extends React.Component {
       let alcoholKey = this.getAlcohol();
       let recipeKey = this.props.params.recipe;
     return (
-      <Page>
+      <RevealPage>
         <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.recipe, styles[alcoholKey+'Alcohol'])}>
           <div className={classNames(styles.bannerWrapper)}>
             <Banner
@@ -147,7 +147,7 @@ export default class RecipeDetail extends React.Component {
         <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)}>
 
         </AlcoholFooter>
-      </Page>
+      </RevealPage>
     );
   }
 }

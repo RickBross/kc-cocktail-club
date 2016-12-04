@@ -52,7 +52,7 @@ export default class App extends React.Component {
   state = getAppState();
 
   componentWillMount() {
-    AppStore.setProps({tone:'dark'});
+    // AppStore.setProps({tone:'dark'});
   }
 
   componentDidMount() {

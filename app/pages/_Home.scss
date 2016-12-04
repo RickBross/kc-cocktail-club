@@ -1,17 +1,75 @@
-@import "./_Pages";
+@import "toolkit";
+@import "../components/Pages/_RevealPage";
 
 .body.home {
-  display: flex;
-  .logoWrapper {
-    padding: 2rem;
-    justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
-    width: 100vw;
-    height: 100vh;
+  .videoBg {
     display: flex;
+    .logoWrapper {
+      padding: 2rem;
+      justify-content: center; /* align horizontal */
+      align-items: center; /* align vertical */
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      background-image: url('http://localhost:8000/images/hero-bg.png');
+      background-size: cover;
+    }
   }
+}
+
+.mainLayer {
+  margin-bottom: 15rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0px 3rem black;
+  background: white;
 }
 
 .homeLogo {
   max-width: 100%;
+}
+
+.homeBelow {
+  max-width: 1050px;
+  padding: 1rem;
+  .explore {
+    display: flex;
+    span {
+      align-items: center;
+      display: flex;
+      font-family: 'Galano Classic Medium';
+      color: $lightInactivePrimaryLink;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.collage {
+  margin-bottom: 2rem;
+}
+.introduction {
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.pageHeading {
+  margin-bottom: 1rem;
+}
+
+@media(min-width:768px) {
+  .homeBelow {
+    padding: 0 0 0 5rem;
+  }
+  .introduction {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+}
+
+@media(min-width:1200px) {
+  .homeBelow {
+    max-width: 1150px;
+    padding: 0 0 0 5rem;
+  }
 }

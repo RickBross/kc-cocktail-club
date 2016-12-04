@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames'
 
-import Page from '../components/Page/Page';
+import RevealPage from '../components/Pages/RevealPage';
 
 import Frame from '../UI/Frame/Frame';
 import Video from '../UI/Video/Video';
@@ -28,9 +28,10 @@ let eventNumber, eventIndex, eventData, eventDate, eventAddress, eventAttendees,
 export default class EventDetail extends React.Component {
 
   componentWillMount() {
+    AppStore.setProps({tone:'light'});
+    MenuStore.setProps({tone:'light'});
 
     const bg = 'white'
-    AppStore.setProps({tone:'light'});
     MenuStore.setProps({title:'Discover'});
 
     AppStore.setProps({backgroundColor:bg});
@@ -51,7 +52,7 @@ export default class EventDetail extends React.Component {
 
   render() {
     return (
-      <Page>
+      <RevealPage>
         <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.eventDetail)}>
           <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
@@ -172,7 +173,7 @@ export default class EventDetail extends React.Component {
         <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)}>
 
         </AlcoholFooter>
-      </Page>
+      </RevealPage>
     );
   }
 }

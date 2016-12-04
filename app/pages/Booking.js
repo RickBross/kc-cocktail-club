@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
-import Page from '../components/Page/Page';
+import RevealPage from '../components/Pages/RevealPage';
 
 import Frame from '../UI/Frame/Frame';
 import AlcoholFooter from '../UI/footers/AlcoholFooter/AlcoholFooter';
@@ -16,11 +16,16 @@ import styles from './_Booking.scss';
 export default class Booking extends React.Component {
 
 
+  componentWillMount() {
+    AppStore.setProps({tone:'light'});
+    MenuStore.setProps({tone:'light'});
+  }
+
+
   componentDidMount() {
     document.title = "Private Events - Kansas City Cocktail Club";
 
     const bg = 'white'
-    AppStore.setProps({tone:'light'});
     MenuStore.setProps({title:'Discover'});
 
     AppStore.setProps({backgroundColor:bg});
@@ -32,7 +37,7 @@ export default class Booking extends React.Component {
   render() {
 
     return (
-      <Page>
+      <RevealPage>
         <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.booking)}>
           <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
@@ -88,7 +93,7 @@ export default class Booking extends React.Component {
         <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)}>
 
         </AlcoholFooter>
-      </Page>
+      </RevealPage>
     );
   }
 }

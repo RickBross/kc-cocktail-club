@@ -12,12 +12,15 @@ import styles from './_Events.scss';
 
 export default class Events extends React.Component {
 
+  componentWillMount() {
+    AppStore.setProps({tone:'dark'});
+    MenuStore.setProps({tone:'dark'});
+  }
 
   componentDidMount() {
     document.title = "Events - Kansas City Cocktail Club";
 
     const bg = 'white'
-    AppStore.setProps({tone:'dark'});
     MenuStore.setProps({title:'Discover'});
 
     AppStore.setProps({background:bg});
