@@ -36,7 +36,7 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     MenuStore.setProps({title:'Discover'});
-    MenuStore.setProps({tone:'light'});
+    MenuStore.setProps({tone:'dark'});
   }
 
   componentWillMount() {
