@@ -12,6 +12,8 @@ import AppStore from '../stores/AppStore';
 
 import AlcoholFooter from '../UI/footers/AlcoholFooter/AlcoholFooter';
 import Frame from '../UI/Frame/Frame';
+import Sticker from '../UI/Sticker/Sticker';
+import Pane from '../UI/Pane/Pane';
 import Collage from '../UI/Collage/Collage';
 import Video from '../UI/Video/Video';
 
@@ -36,7 +38,8 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     MenuStore.setProps({title:'Discover'});
-    MenuStore.setProps({tone:'light'});
+    MenuStore.setProps({tone:'dark'});
+    AppStore.setProps({tone:'light'});
   }
 
   componentWillMount() {
@@ -147,10 +150,20 @@ export default class Home extends React.Component {
                   backgroundImage={"url(http://localhost:8000/images/pages/events/1/frame-3.png)"}
                   backgroundSize="cover"
                   position="absolute"
-                  right="0"
+                  right="2rem"
                   top="10%"
                   margin='0 auto'
                   z='20'
+                />
+              <Sticker image="http://localhost:8000/images/tumbler.png"
+                  classNames={classNames(styles.tumbler)}
+                  styles={{zIndex: 20}}
+                  imageClassNames={classNames()}
+                  imageStyles={{}}
+                />
+              <Pane
+                  classNames={classNames(styles.pane)}
+                  styles={{zIndex: 10}}
                 />
               </Collage>
             </div>

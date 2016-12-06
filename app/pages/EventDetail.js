@@ -128,7 +128,7 @@ export default class EventDetail extends React.Component {
                 position="absolute"
                 margin='0 auto'
                 z='20'
-                accent={"http://localhost:8000/images/pages/events/" + eventNumber + "/frame-5-accent.png"}
+                accent={"http://localhost:8000/images/tumbler.png"}
                 accentStyle={{bottom: '-4rem', right: '-7rem', zIndex: '50'}}
               />
             </div>

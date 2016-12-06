@@ -57,6 +57,19 @@
   margin-bottom: 1rem;
 }
 
+.tumbler {
+  position: absolute;
+  left: 37%;
+  transform: rotate(60deg);
+}
+.pane {
+  position: absolute;
+  width: 46%;
+  height: 33%;
+  left: 20%;
+  top:60%;
+}
+
 @media(min-width:768px) {
   .homeBelow {
     padding: 0 0 0 5rem;
