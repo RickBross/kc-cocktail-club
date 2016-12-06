@@ -5,6 +5,7 @@
   width: 5rem;
   float: left;
   position: absolute;
+  z-index: 500;
 }
 
 .wrapper {
@@ -24,16 +25,36 @@
   }
   &.active {
     width: 100vw;
-    .bar {
-      background: $darkActivePrimaryBg;
-    }
-    .title {
-      color: $darkActivePrimaryText;
-    }
     .panel {
       letter-spacing: 0;
       opacity: 1;
       left:0
+    }
+  }
+  &.lightTone.active {
+    .bar {
+      background: $darkActivePrimaryBg;
+    }
+    .title {
+      color: $lightActiveSecondaryText;
+    }
+  }
+  &.darkTone.active {
+    .bar {
+      background: $darkActivePrimaryBg;
+    }
+    .title {
+      color: $lightActiveSecondaryText;
+    }
+  }
+  &.lightTone {
+    .title {
+      color: $lightActiveSecondaryText;
+    }
+  }
+  &.darkTone {
+    .title {
+      color: $darkActiveSecondaryText;
     }
   }
 }
@@ -67,7 +88,7 @@
 
 .lightTone {
   .title {
-    color: $lightActivePrimaryBg;
+    color: $lightActivePrimaryText;
   }
   &.active .wrapper {
     border-right: none;
@@ -86,8 +107,7 @@ nav {
 .itemLink:hover .item,
 .itemLink:focus .item,
 .itemLink:active .item {
-  background: $darkActivePrimaryBg;
-  color: $darkActivePrimaryText;
+  background: $lightActivePrimaryBgHover;
   position: relative;
   span:first-child {
     margin-left: 3.5rem;
@@ -135,9 +155,9 @@ li.item {
     list-style: none;
     padding: .2rem 0 0 0;
     margin: 0;
+    color: $darkActiveSecondaryText;
     &:hover {
       padding-left: 0;
-      color: $darkActivePrimaryText;
       background: none;
       &:hover::before, &:hover::after {
         display: none;
@@ -163,24 +183,10 @@ li.item {
     }
   }
 
-  &:not(.social):hover, &:not(.social):focus, &:not(.social):active {
-    background: $darkActivePrimaryBg;
-    color: $darkActivePrimaryText;
-    position: relative;
-    span:first-child {
-      margin-left: 3.5rem;
-      transition: margin-left 8s ease-out;
-    }
-    span:last-child {
-      margin-left: 3.5rem;
-      transition: margin-left 6s ease-out;
-    }
-  }
-
   &:hover::before {
     content: '';
     width: 7px;
-    background: black;
+    background: $white;
     height: 1px;
     position: absolute;
     display: block;
@@ -190,8 +196,8 @@ li.item {
   &:hover::after {
     content: '';
     display: block;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    border-right: 1px solid $white;
+    border-bottom: 1px solid $white;
     width: 4px;
     height: 4px;
     -webkit-transform: rotate(-45deg);

@@ -3,7 +3,9 @@ import { Link } from 'react-router';
 import classNames from 'classnames'
 
 import Menu from '../components/Menu/Menu';
+import RevealPage from '../components/Pages/RevealPage';
 import Frame from '../UI/Frame/Frame';
+import AlcoholFooter from '../UI/footers/AlcoholFooter/AlcoholFooter';
 import MenuStore from '../stores/MenuStore';
 import AppStore from '../stores/AppStore';
 
@@ -13,11 +15,13 @@ import styles from './_Tickets.scss';
 export default class Tickets extends React.Component {
 
 
-  componentDidMount() {
+  componentWillMount() {
+    AppStore.setProps({tone:'light'});
+    MenuStore.setProps({tone:'light'});
+    
     document.title = "Pricing Options - Kansas City Cocktail Club";
 
     const bg = 'white'
-    AppStore.setProps({tone:'light'});
     MenuStore.setProps({title:'Discover'});
 
     AppStore.setProps({backgroundColor:bg});
@@ -29,14 +33,9 @@ export default class Tickets extends React.Component {
   render() {
 
     return (
-      <div>
-        <Menu
-          title={MenuStore.getProp('title')}
-          tone={AppStore.getProp('tone')}
-          active={MenuStore.getProp('active')}
-        />
-      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.tickets)}>
-        <div className={classNames(styles.container)}>
+      <RevealPage>
+        <div className={classNames(styles[AppStore.getProp('tone') + "Tone"], styles.tickets)}>
+          <div className={classNames(styles.container)}>
             <div className={classNames(styles.row)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
                 <div className={classNames(styles.pageHeading)}>
@@ -92,7 +91,10 @@ export default class Tickets extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+        <AlcoholFooter alcohol="rum" classNames={classNames(styles.tac, styles.darkTone)} tone="dark">
+
+        </AlcoholFooter>
+      </RevealPage>
     );
   }
 }

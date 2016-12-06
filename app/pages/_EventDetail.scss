@@ -1,9 +1,14 @@
 @import "toolkit";
-@import "./_Pages";
+@import "../components/Pages/_RevealPage";
 
 .body {
   height: 100%;
 }
+
+.eventDetail {
+  padding-top: 5rem;
+}
+
 .collageTwo, .collage {
   display: none;
 }
@@ -13,7 +18,6 @@
   height: 30rem;
 }
 
-
 .videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
   top: -1.5rem;
   left: -3rem;
@@ -22,13 +26,6 @@
 
 .frame {
   display: block;
-}
-
-.mainLayer {
-  margin-bottom: 15rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0px 3rem black;
 }
 
 @media (min-width: 415px) {
@@ -52,33 +49,32 @@
       display: block;
     }
   }
+  .eventDetail {
+    padding: 3rem 3rem 0;
+    margin-left: 5rem;
+  }
 }
 
 @media (min-width: 992px) { // Desktop
   .eventDescription {
     margin-bottom: 2rem;
   }
-  .body {
-    .row {
-      padding: 0;
-    }
-    .video {
-      margin-top:4rem;
-    }
-    .attendees {
-      margin-bottom:4rem;
-    }
-    .mediumParagraph {
-      margin-bottom: 4rem;
-    }
-    .collageTwo {
-      height: 30rem;
-      margin-bottom: 6rem;
-      display: block;
-    }
-    .collage {
-      display: block;
-    }
+  .video {
+    margin-top:4rem;
+  }
+  .attendees {
+    margin-bottom:4rem;
+  }
+  .mediumParagraph {
+    margin-bottom: 4rem;
+  }
+  .collageTwo {
+    height: 30rem;
+    margin-bottom: 6rem;
+    display: block;
+  }
+  .collage {
+    display: block;
   }
   .videoHeader, .attendeesHeader, .drinksHeader, .footerHeader {
     z-index: 0;

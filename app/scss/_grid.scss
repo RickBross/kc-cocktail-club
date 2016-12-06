@@ -52,3 +52,164 @@ $total-columns: 12;
 .column12 {
    @include span(12 of 12)
 }
+// Phone Portrait ^^
+
+@media (min-width: 415px) { // Phone Landscape
+
+  .column1phoneLandscape {
+     @include span(1 of 12)
+  }
+  .column2phoneLandscape {
+     @include span(2 of 12)
+  }
+  .column3phoneLandscape {
+     @include span(3 of 12)
+  }
+  .column4phoneLandscape {
+     @include span(4 of 12)
+  }
+  .column5phoneLandscape {
+     @include span(5 of 12)
+  }
+  .column6phoneLandscape {
+     @include span(6 of 12)
+  }
+  .column7phoneLandscape {
+     @include span(7 of 12)
+  }
+  .column8phoneLandscape {
+     @include span(8 of 12)
+  }
+  .column9phoneLandscape {
+     @include span(9 of 12)
+  }
+  .column10phoneLandscape {
+     @include span(10 of 12)
+  }
+  .column11phoneLandscape {
+     @include span(11 of 12)
+  }
+  .column12phoneLandscape {
+     @include span(12 of 12)
+  }
+}
+
+@media (min-width: 768px) { // Tablet
+  .column1Tablet {
+     @include span(1 of 12)
+  }
+  .column2Tablet {
+     @include span(2 of 12)
+  }
+  .column3Tablet {
+     @include span(3 of 12)
+  }
+  .column4Tablet {
+     @include span(4 of 12)
+  }
+  .column5Tablet {
+     @include span(5 of 12)
+  }
+  .column6Tablet {
+    &:eq(2) {
+      margin-right: 0;
+    }
+    @include span(6 of 12)
+  }
+  .column7Tablet {
+     @include span(7 of 12)
+  }
+  .column8Tablet {
+     @include span(8 of 12)
+  }
+  .column9Tablet {
+     @include span(9 of 12)
+  }
+  .column10Tablet {
+     @include span(10 of 12)
+  }
+  .column11Tablet {
+     @include span(11 of 12)
+  }
+  .column12Tablet {
+     @include span(12 of 12)
+  }
+}
+
+@media (min-width: 992px) { // Desktop
+  .column1Desktop {
+     @include span(1 of 12)
+  }
+  .column2Desktop {
+     @include span(2 of 12)
+  }
+  .column3Desktop {
+     @include span(3 of 12)
+  }
+  .column4Desktop {
+     @include span(4 of 12)
+  }
+  .column5Desktop {
+     @include span(5 of 12)
+  }
+  .column6Desktop {
+     @include span(6 of 12)
+  }
+  .column7Desktop {
+     @include span(7 of 12)
+  }
+  .column8Desktop {
+     @include span(8 of 12)
+  }
+  .column9Desktop {
+     @include span(9 of 12)
+  }
+  .column10Desktop {
+     @include span(10 of 12)
+  }
+  .column11Desktop {
+     @include span(11 of 12)
+  }
+  .column12Desktop {
+     @include span(12 of 12)
+  }
+}
+
+@media (min-width: 1200px) { // Large Displays
+  .column1Large {
+    @include span(1 of 12)
+  }
+  .column2Large {
+    @include span(2 of 12)
+  }
+  .column3Large {
+    @include span(3 of 12)
+  }
+  .column4Large {
+    @include span(4 of 12)
+  }
+  .column5Large {
+    @include span(5 of 12)
+  }
+  .column6Large {
+    @include span(6 of 12)
+  }
+  .column7Large {
+    @include span(7 of 12)
+  }
+  .column8Large {
+    @include span(8 of 12)
+  }
+  .column9Large {
+    @include span(9 of 12)
+  }
+  .column10Large {
+    @include span(10 of 12)
+  }
+  .column11Large {
+    @include span(11 of 12)
+  }
+  .column12Large {
+    @include span(12 of 12)
+  }
+}

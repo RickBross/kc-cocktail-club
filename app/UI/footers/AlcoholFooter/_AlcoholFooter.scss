@@ -1,6 +1,8 @@
 @import "toolkit";
 
 
+
+
 footer {
   z-index: -1;
   height:15rem;
@@ -12,9 +14,6 @@ footer {
     position: relative;
     z-index: 70;
     text-shadow: 0 2px 2px $black;
-  }
-  &, a {
-    color: $white;
   }
   img {
     display: none;

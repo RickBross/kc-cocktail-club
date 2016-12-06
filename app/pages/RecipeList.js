@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames'
 
+import BasicPage from '../components/Pages/BasicPage';
+
 import Menu from '../components/Menu/Menu';
 import Frame from '../UI/Frame/Frame';
 import Banner from '../UI/Banner/Banner';
@@ -35,23 +37,18 @@ export default class RecipeList extends React.Component {
   render() {
       let alcoholKey = this.props.params.alcohol;
     return (
-      <div>
-        <Menu
-          title={MenuStore.getProp('title')}
-          tone={AppStore.getProp('tone')}
-          active={MenuStore.getProp('active')}
-        />
-      <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.recipeList, styles[alcoholKey + 'Alcohol'])}>
-        <div>
-          <Banner
-            classNames={classNames(styles.banner)}
-            accentClassNames={classNames(styles.accent)}
-            backgroundImage={"url(http://localhost:8000/images/pages/" + alcoholKey + "/primary.png)"}
-            backgroundSize="cover"
-            backgroundPosition="65% 0"
-            accent={"http://localhost:8000/images/pages/" + alcoholKey + "/accent.png"} />
-        </div>
-        <div className={classNames(styles.container)}>
+      <BasicPage>
+        <div className={classNames(styles.body, styles[AppStore.getProp('tone') + "Tone"], styles.recipeList, styles[alcoholKey + 'Alcohol'])}>
+          <div>
+            <Banner
+              classNames={classNames(styles.banner)}
+              accentClassNames={classNames(styles.accent)}
+              backgroundImage={"url(http://localhost:8000/images/pages/" + alcoholKey + "/primary.png)"}
+              backgroundSize="cover"
+              backgroundPosition="65% 0"
+              accent={"http://localhost:8000/images/pages/" + alcoholKey + "/accent.png"} />
+          </div>
+          <div className={classNames(styles.container)}>
             <div className={classNames(styles.row, styles.description)}>
               <div className={classNames(styles.column, styles.column12, styles.column6Tablet, styles.column7Desktop)}>
                 <div className={classNames(styles.pageHeading)}>
@@ -86,7 +83,7 @@ export default class RecipeList extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </BasicPage>
     );
   }
 }

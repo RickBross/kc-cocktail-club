@@ -1,14 +1,11 @@
 @import "toolkit";
-@import "./_Pages";
+@import "../components/Pages/_RevealPage";
 
-.makeBackground {
-
-}
-
-.body.tickets {
-  padding: 2rem 1.5rem;
+.tickets {
+  padding: 2rem 1.5rem 2rem;
   padding-top: 5rem;
   overflow-y: scroll;
+  height: 100%;
   .primaryPhoto {
     display: none;
     padding: 3rem 0;
@@ -39,17 +36,46 @@
   }
 }
 
-@media(min-width:768px) {
-  .body.tickets {
-    padding: 3rem;
+
+@media (min-width: 768px) { // Tablet
+  .tickets {
+    margin-left: 5rem;
+    h1 {
+      letter-spacing: .8rem;
+      font-size: 2.2rem;
+    }
+    h2 {
+      letter-spacing: .6rem;
+    }
+    .mediumParagraph {
+      font-size:.625rem;
+      line-height: 1.3rem;
+    }
     .primaryPhoto {
       display: block;
     }
-  }
-  .primaryFrame {
-    display: block;
+    .primaryFrame {
+      display: block;
+    }
   }
 }
 
 @media (min-width: 992px) { // Desktop
+  .tickets {
+    padding: 3rem;
+    .mediumParagraph {
+      font-size:.625rem;
+      line-height: 1.3rem;
+    }
+    h1 {
+      letter-spacing: .8rem;
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) { // Large Displays
+  .tickets h1 {
+    letter-spacing: 1rem;
+  }
 }

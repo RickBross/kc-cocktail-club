@@ -1,9 +1,6 @@
 @import "toolkit";
-@import "./_Pages";
+@import "../components/Pages/_RevealPage";
 
-.makeBackground {
-
-}
 .body.booking {
   overflow-y: scroll;
   padding-top: 5rem;
@@ -44,6 +41,7 @@
 @media(min-width:768px) {
   .body.booking {
     padding: 3rem;
+    margin-left: 5rem;
     .primaryPhoto {
       display: block;
     }
