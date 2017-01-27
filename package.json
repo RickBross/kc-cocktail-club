@@ -23,7 +23,8 @@
     "start": "NODE_ENV=development node dev-server ./webpack/config",
     "test": "NODE_ENV=test karma start",
     "test-travis": "NODE_ENV=test karma start --single-run",
-    "webpack": "webpack --colors --progress --config ./webpack/config"
+    "webpack": "webpack --colors --progress --config ./webpack/config",
+    "deploy": "cd build && ../node_modules/s3-upload/bin/s3-upload.js"
   },
   "dependencies": {
     "classnames": "^2.1.3",
@@ -68,6 +69,7 @@
     "postcss-loader": "^0.5.1",
     "react-hot-loader": "^1.2.8",
     "rimraf": "^2.4.1",
+    "s3-upload": "^0.1.0",
     "sass-loader": "^2.0.0",
     "sinon": "^1.15.4",
     "source-map-support": "^0.3.2",
